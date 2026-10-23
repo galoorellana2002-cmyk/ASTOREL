@@ -1,4 +1,4 @@
-import { anthropicHeaders } from "./anthropicHeaders";
+import { anthropicHeaders, extractText } from "./anthropicHeaders";
 import { summaryForAI, type Summary } from "./finance";
 
 const SYSTEM = [
@@ -7,6 +7,7 @@ const SYSTEM = [
   "Cuando hagas cuentas, muéstralas brevemente. Distingue flujo de caja (ingresos - gastos) de utilidad real (utilidad de autos vendidos - gastos generales): el dinero invertido en autos sin vender no es pérdida.",
   "Puedes sugerir dónde recortar gastos o qué revisar. No eres contador ni asesor financiero con licencia: para impuestos (SRI, IVA, renta) o decisiones de inversión recomienda consultar a un contador.",
   "Máximo 150 palabras salvo que pidan más detalle.",
+  "Escribe en texto plano: sin markdown, sin asteriscos ni almohadillas. Para listas usa líneas que empiecen con •.",
 ].join("\n");
 
 /** Respuesta de la IA con las cifras reales como contexto. Devuelve null si no hay clave o falla. */
@@ -22,7 +23,7 @@ export async function financeAnswer(question: string, s: Summary, period: string
       headers: anthropicHeaders(key),
       body: JSON.stringify({
         model: process.env.FINANCE_MODEL || process.env.CHAT_MODEL || "claude-sonnet-5-5",
-        max_tokens: 700,
+        max_tokens: 2000,
         system: `${SYSTEM}\n\nDATOS:\n${summaryForAI(s, period)}`,
         messages: [{ role: "user", content: question }],
       }),
@@ -33,8 +34,17 @@ export async function financeAnswer(question: string, s: Summary, period: string
       console.error(`[finanzas-ia] Anthropic respondió ${res.status}: ${detail}`);
       return null;
     }
-    const data = (await res.json()) as { content?: Array<{ type: string; text?: string }> };
-    return data.content?.find((c) => c.type === "text")?.text?.trim() || null;
+    const data = (await res.json()) as {
+      content?: Array<{ type: string; text?: string }>;
+      stop_reason?: string;
+      usage?: { output_tokens?: number };
+    };
+    const text = extractText(data);
+    console.warn(
+      `[finanzas-ia] stop=${data.stop_reason ?? "?"} bloques=${(data.content ?? []).map((c) => c.type).join(",") || "ninguno"} tokens_salida=${data.usage?.output_tokens ?? "?"} caracteres=${text.length}`,
+    );
+    if (!text) return null;
+    return data.stop_reason === "max_tokens" ? `${text}\n\n(Respuesta recortada: pide "más detalle" para continuar.)` : text;
   } catch (e) {
     console.error("[finanzas-ia] Falló la llamada a Anthropic:", e instanceof Error ? e.message : e);
     return null;
