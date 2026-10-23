@@ -211,7 +211,10 @@ export function respond(message: string, ctx: BotContext): BotResult {
 /** Si hay ANTHROPIC_API_KEY, la respuesta de texto la redacta Claude con el inventario real. */
 export async function llmReply(history: Array<{ role: "user" | "assistant"; content: string }>, ctx: BotContext): Promise<string | null> {
   const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) return null;
+  if (!key) {
+    console.error("[chat] Falta ANTHROPIC_API_KEY en el entorno.");
+    return null;
+  }
   const inventory = ctx.vehicles
     .filter((v) => v.status === "AVAILABLE")
     .map((v) => `- ${v.brand} ${v.model} ${v.year}, ${usd(v.priceCents)}, ${v.km} km, ${v.bodyType}`)
@@ -229,11 +232,16 @@ export async function llmReply(history: Array<{ role: "user" | "assistant"; cont
       body: JSON.stringify({ model: process.env.CHAT_MODEL || "claude-haiku-5-5", max_tokens: 300, system, messages: history.slice(-12) }),
       signal: AbortSignal.timeout(8000),
     });
-    if (!res.ok) return null;
+    if (!res.ok) {
+      const detail = (await res.text().catch(() => "")).slice(0, 300);
+      console.error(`[chat] Anthropic respondió ${res.status}: ${detail}`);
+      return null;
+    }
     const data = (await res.json()) as { content?: Array<{ type: string; text?: string }> };
     const out = data.content?.find((c) => c.type === "text")?.text?.trim();
     return out || null;
-  } catch {
+  } catch (e) {
+    console.error("[chat] Falló la llamada a Anthropic:", e instanceof Error ? e.message : e);
     return null;
   }
 }
