@@ -1,3 +1,4 @@
+import { anthropicHeaders } from "./anthropicHeaders";
 import { summaryForAI, type Summary } from "./finance";
 
 const SYSTEM = [
@@ -15,7 +16,7 @@ export async function financeAnswer(question: string, s: Summary, period: string
   try {
     const res = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
-      headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" },
+      headers: anthropicHeaders(key),
       body: JSON.stringify({
         model: process.env.FINANCE_MODEL || process.env.CHAT_MODEL || "claude-sonnet-5-5",
         max_tokens: 700,

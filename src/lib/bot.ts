@@ -1,3 +1,4 @@
+import { anthropicHeaders } from "./anthropicHeaders";
 import { normalize } from "./leadScoring";
 
 export interface BotVehicle {
@@ -228,7 +229,7 @@ export async function llmReply(history: Array<{ role: "user" | "assistant"; cont
   try {
     const res = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
-      headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" },
+      headers: anthropicHeaders(key),
       body: JSON.stringify({ model: process.env.CHAT_MODEL || "claude-haiku-5-5", max_tokens: 300, system, messages: history.slice(-12) }),
       signal: AbortSignal.timeout(8000),
     });
