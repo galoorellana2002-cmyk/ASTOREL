@@ -12,7 +12,10 @@ const SYSTEM = [
 /** Respuesta de la IA con las cifras reales como contexto. Devuelve null si no hay clave o falla. */
 export async function financeAnswer(question: string, s: Summary, period: string): Promise<string | null> {
   const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) return null;
+  if (!key) {
+    console.error("[finanzas-ia] Falta ANTHROPIC_API_KEY en el entorno.");
+    return null;
+  }
   try {
     const res = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
@@ -25,15 +28,20 @@ export async function financeAnswer(question: string, s: Summary, period: string
       }),
       signal: AbortSignal.timeout(20000),
     });
-    if (!res.ok) return null;
+    if (!res.ok) {
+      const detail = (await res.text().catch(() => "")).slice(0, 300);
+      console.error(`[finanzas-ia] Anthropic respondió ${res.status}: ${detail}`);
+      return null;
+    }
     const data = (await res.json()) as { content?: Array<{ type: string; text?: string }> };
     return data.content?.find((c) => c.type === "text")?.text?.trim() || null;
-  } catch {
+  } catch (e) {
+    console.error("[finanzas-ia] Falló la llamada a Anthropic:", e instanceof Error ? e.message : e);
     return null;
   }
 }
 
 /** Sin clave de IA: devuelve el análisis calculado por reglas. */
 export function fallbackAnswer(s: Summary): string {
-  return `${s.insights.map((i) => `• ${i}`).join("\n")}\n\n(Análisis automático. Define ANTHROPIC_API_KEY en .env para poder hacerle preguntas libres a la IA.)`;
+  return `${s.insights.map((i) => `• ${i}`).join("\n")}\n\n(Análisis automático por reglas: la IA no respondió en este momento. Revisa ANTHROPIC_API_KEY, el saldo de tu cuenta de Anthropic y los registros del servidor.)`;
 }

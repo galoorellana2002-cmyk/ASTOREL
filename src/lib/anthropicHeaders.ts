@@ -5,3 +5,14 @@ export function anthropicHeaders(key: string): Record<string, string> {
   if (ws) h["anthropic-workspace-id"] = ws;
   return h;
 }
+
+/** Une todos los bloques de texto de la respuesta y quita el formato markdown (la interfaz muestra texto plano). */
+export function extractText(data: { content?: Array<{ type: string; text?: string }>; stop_reason?: string }): string {
+  const raw = (data.content ?? []).filter((c) => c.type === "text").map((c) => c.text ?? "").join("").trim();
+  return raw
+    .replace(/\*\*(.+?)\*\*/gs, "$1")
+    .replace(/__(.+?)__/gs, "$1")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/^\s*[-*]\s+/gm, "• ")
+    .trim();
+}
