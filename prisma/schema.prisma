@@ -1,0 +1,157 @@
+// PostgreSQL en Supabase.
+//  DATABASE_URL = conexión por pooler (puerto 6543, con ?pgbouncer=true) para la app.
+//  DIRECT_URL   = conexión directa (puerto 5432) para `prisma db push`.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// Los "enums" son String validados con zod (más simple de ampliar sin migraciones).
+// Valores permitidos: ver src/lib/constants.ts
+
+model Vehicle {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  brand       String
+  model       String
+  version     String   @default("")
+  year        Int
+  km          Int
+  priceCents  Int
+  bodyType    String   @default("SUV") // SUV | Sedán | Camioneta | Hatchback | Otro
+  color       String   @default("")
+  hex         String   @default("#5d6066") // color de la ilustración mientras no haya fotos
+  description String   @default("")
+  status      String   @default("AVAILABLE") // AVAILABLE | RESERVED | SOLD
+  published   Boolean  @default(true)
+  modelUrl    String? // ruta del .glb escaneado
+  coverUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  images       VehicleImage[]
+  defects      Defect[]
+  legal        LegalCheck[]
+  reservations Reservation[]
+  leads        Lead[]
+  movements    Movement[]
+
+  @@index([published, status])
+}
+
+model VehicleImage {
+  id        String  @id @default(cuid())
+  url       String
+  position  Int     @default(0)
+  vehicleId String
+  vehicle   Vehicle @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+}
+
+// Defecto detectado. posX/Y/Z son fracciones (-0.5..0.5) de las dimensiones del
+// modelo respecto a su centro, así no dependen de la escala del escaneo.
+model Defect {
+  id        String  @id @default(cuid())
+  zone      String
+  detail    String
+  category  String  @default("PINTURA") // PINTURA | LLANTAS | TAPIZADO | VIDRIOS | MECANICA | OTRO
+  severity  String  @default("LEVE") // LEVE | MODERADO
+  posX      Float   @default(0)
+  posY      Float   @default(0)
+  posZ      Float   @default(0)
+  vehicleId String
+  vehicle   Vehicle @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+}
+
+model LegalCheck {
+  id        String  @id @default(cuid())
+  label     String
+  value     String
+  status    String  @default("OK") // OK | WARN
+  vehicleId String
+  vehicle   Vehicle @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+}
+
+model Lead {
+  id             String   @id @default(cuid())
+  name           String?
+  phone          String?
+  email          String?
+  source         String   @default("CHAT") // CHAT | FORM
+  segment        String   @default("MIRON") // MIRON | PREGUNTON | NEGOCIANTE | CLIENTE_FINAL
+  segmentLocked  Boolean  @default(false) // true si el admin lo fijó a mano
+  score          Int      @default(0)
+  reasons        String   @default("[]") // JSON con las razones de la clasificación
+  status         String   @default("NUEVO")
+  notes          String   @default("")
+  vehicleId      String?
+  vehicle        Vehicle? @relation(fields: [vehicleId], references: [id], onDelete: SetNull)
+  vehiclesViewed Int      @default(0)
+  viewerOpens    Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  sessions     ChatSession[]
+  reservations Reservation[]
+
+  @@index([segment, status])
+}
+
+model ChatSession {
+  id        String        @id @default(cuid())
+  leadId    String
+  lead      Lead          @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  createdAt DateTime      @default(now())
+  messages  ChatMessage[]
+}
+
+model ChatMessage {
+  id        String      @id @default(cuid())
+  sessionId String
+  session   ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  role      String // user | bot
+  content   String
+  createdAt DateTime    @default(now())
+
+  @@index([sessionId, createdAt])
+}
+
+model Reservation {
+  id        String   @id @default(cuid())
+  vehicleId String
+  vehicle   Vehicle  @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+  leadId    String
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  status    String   @default("PENDIENTE") // PENDIENTE | CONFIRMADA | CANCELADA
+  note      String   @default("")
+  createdAt DateTime @default(now())
+}
+
+model Admin {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+// Libro contable: cada ingreso o gasto del patio. Si pertenece a un auto
+// (compra, reparación, venta) se enlaza con vehicleId y de ahí sale la utilidad por auto.
+model Movement {
+  id          String   @id @default(cuid())
+  type        String // INGRESO | GASTO
+  category    String // ver src/lib/constants.ts
+  amountCents Int
+  date        DateTime
+  description String   @default("")
+  vehicleId   String?
+  vehicle     Vehicle? @relation(fields: [vehicleId], references: [id], onDelete: SetNull)
+  createdAt   DateTime @default(now())
+
+  @@index([date])
+  @@index([type, category])
+  @@index([vehicleId])
+}
