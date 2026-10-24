@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
+import { MessageCircle, Send, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface Msg {
   role: "user" | "bot";
@@ -104,54 +107,109 @@ export function ChatWidget() {
 
   return (
     <>
-      {!open && (
-        <button type="button" className="chat-fab" onClick={() => setOpen(true)} aria-label="Abrir el chat">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z" />
-          </svg>
-          Chatea con nosotros
-        </button>
-      )}
-      <section className="chat-panel" hidden={!open} aria-label="Chat con el patio">
-        <div className="chat-head">
-          <div>
-            <b>Asistente del patio</b>
-            <small>Respuestas al instante</small>
-          </div>
-          <button type="button" onClick={() => setOpen(false)} aria-label="Cerrar el chat">
-            ×
-          </button>
-        </div>
-        <div className="chat-log" ref={log} role="log" aria-live="polite">
-          {msgs.map((m, i) => (
-            <div key={i} className={`msg ${m.role}`}>
-              {m.text}
-            </div>
-          ))}
-          {busy && <div className="typing">Escribiendo…</div>}
-        </div>
-        {sugg.length > 0 && (
-          <div className="chat-sugg">
-            {sugg.map((s) => (
-              <button key={s} type="button" onClick={() => void send(s)}>
-                {s}
-              </button>
-            ))}
-          </div>
+      <AnimatePresence>
+        {!open && (
+          <motion.button
+            key="fab"
+            type="button"
+            initial={{ opacity: 0, y: 16, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 12, scale: 0.9 }}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.25 }}
+            onClick={() => setOpen(true)}
+            aria-label="Abrir el chat"
+            className="fixed bottom-[max(16px,env(safe-area-inset-bottom,0px))] right-[max(16px,env(safe-area-inset-right,0px))] z-40 inline-flex min-h-12 items-center gap-2.5 rounded-full bg-inv px-5 max-sm:size-12 max-sm:justify-center max-sm:px-0 text-[15px] text-inv-fg shadow-lift"
+          >
+            <MessageCircle className="size-5" aria-hidden="true" />
+            <span className="max-sm:sr-only">Chatea con nosotros</span>
+          </motion.button>
         )}
-        <form
-          className="chat-form"
-          onSubmit={(e) => {
-            e.preventDefault();
-            void send(input);
-          }}
-        >
-          <input ref={inputRef} value={input} onChange={(e) => setInput(e.target.value)} maxLength={500} placeholder="Escribe tu mensaje" aria-label="Tu mensaje" />
-          <button type="submit" disabled={busy || !input.trim()}>
-            Enviar
-          </button>
-        </form>
-      </section>
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {open && (
+          <motion.section
+            key="panel"
+            aria-label="Chat con el patio"
+            initial={{ opacity: 0, y: 24, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 16, scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 380, damping: 32 }}
+            style={{ transformOrigin: "bottom right" }}
+            className="fixed bottom-[max(16px,env(safe-area-inset-bottom,0px))] right-[max(16px,env(safe-area-inset-right,0px))] z-[85] flex h-[min(580px,calc(100svh-96px))] w-[min(390px,calc(100vw-32px))] flex-col overflow-hidden rounded-3xl border border-hair bg-card shadow-lift"
+          >
+            <div className="flex items-center justify-between gap-3 bg-black px-[18px] py-3.5 text-white">
+              <div className="flex flex-col leading-tight">
+                <span>Asistente del patio</span>
+                <small className="mt-0.5 flex items-center gap-1.5 text-xs text-white/60">
+                  <i className="size-1.5 rounded-full bg-[#30d158]" aria-hidden="true" />
+                  Respuestas al instante
+                </small>
+              </div>
+              <button type="button" onClick={() => setOpen(false)} aria-label="Cerrar el chat" className="grid size-9 place-items-center rounded-full text-white/80 transition hover:bg-white/10 hover:text-white focus-visible:outline-white">
+                <X className="size-5" />
+              </button>
+            </div>
+
+            <div ref={log} role="log" aria-live="polite" className="flex flex-1 flex-col gap-2.5 overflow-y-auto bg-bg p-4">
+              {msgs.map((m, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className={cn(
+                    "max-w-[86%] whitespace-pre-wrap break-words rounded-2xl px-3.5 py-2.5 text-[15px] leading-snug",
+                    m.role === "bot" ? "self-start rounded-bl-sm border border-hair bg-alt" : "self-end rounded-br-sm bg-inv text-inv-fg",
+                  )}
+                >
+                  {m.text}
+                </motion.div>
+              ))}
+              {busy && (
+                <div className="flex gap-1 self-start rounded-2xl rounded-bl-sm border border-hair bg-alt px-4 py-3" aria-label="Escribiendo">
+                  {[0, 1, 2].map((d) => (
+                    <motion.i key={d} className="size-1.5 rounded-full bg-mut" animate={{ opacity: [0.25, 1, 0.25] }} transition={{ duration: 1, repeat: Infinity, delay: d * 0.18 }} />
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {sugg.length > 0 && (
+              <div className="flex flex-wrap gap-2 border-t border-hair bg-bg px-4 pb-1 pt-3">
+                {sugg.map((t) => (
+                  <button key={t} type="button" onClick={() => void send(t)} className="rounded-full border border-line px-3 py-1.5 text-[13px] text-fg transition hover:border-fg hover:bg-fg hover:text-bg">
+                    {t}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <form
+              className="flex gap-2 border-t border-hair bg-bg p-3"
+              onSubmit={(e) => {
+                e.preventDefault();
+                void send(input);
+              }}
+            >
+              <input
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                maxLength={500}
+                placeholder="Escribe tu mensaje"
+                aria-label="Tu mensaje"
+                className="h-11 min-w-0 flex-1 rounded-full border border-line bg-card px-4 text-[15px] text-fg placeholder:text-mut/70 focus-visible:border-fg focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-fg"
+              />
+              <button type="submit" disabled={busy || !input.trim()} aria-label="Enviar" className="grid size-11 shrink-0 place-items-center rounded-full bg-inv text-inv-fg transition hover:opacity-85 disabled:opacity-40">
+                <Send className="size-[18px]" />
+              </button>
+            </form>
+          </motion.section>
+        )}
+      </AnimatePresence>
     </>
   );
 }

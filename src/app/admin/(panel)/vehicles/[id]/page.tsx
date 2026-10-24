@@ -3,22 +3,24 @@ import { db } from "@/lib/db";
 import { VehicleForm } from "@/components/admin/VehicleForm";
 import { deleteVehicle } from "../../../actions";
 import { ConfirmButton } from "@/components/admin/ConfirmButton";
+import { AdminHead } from "@/components/admin/ui";
 
 export default async function EditVehiclePage({ params }: { params: { id: string } }) {
   const v = await db.vehicle.findUnique({ where: { id: params.id }, include: { defects: true, legal: true } });
   if (!v) notFound();
   return (
     <>
-      <div className="adm-head">
-        <div>
-          <h1>{v.brand} {v.model} {v.year}</h1>
-          <p className="adm-sub">/autos/{v.slug}</p>
-        </div>
-        <form action={deleteVehicle}>
-          <input type="hidden" name="id" value={v.id} />
-          <ConfirmButton className="btn sm danger" message="¿Eliminar este auto y su modelo 3D? No se puede deshacer.">Eliminar auto</ConfirmButton>
-        </form>
-      </div>
+      <AdminHead
+        title={`${v.brand} ${v.model} ${v.year}`}
+        sub={`/autos/${v.slug}`}
+        back={{ href: "/admin/vehicles", label: "← Autos" }}
+        action={
+          <form action={deleteVehicle}>
+            <input type="hidden" name="id" value={v.id} />
+            <ConfirmButton message="¿Eliminar este auto y su modelo 3D? No se puede deshacer.">Eliminar auto</ConfirmButton>
+          </form>
+        }
+      />
       <VehicleForm
         vehicle={{
           id: v.id, brand: v.brand, model: v.model, version: v.version, year: v.year, km: v.km, priceUsd: v.priceCents / 100, bodyType: v.bodyType, color: v.color,

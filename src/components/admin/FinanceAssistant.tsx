@@ -1,6 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const IDEAS = ["¿Estoy ganando o perdiendo dinero?", "¿Dónde puedo recortar gastos?", "¿Qué auto me dejó más utilidad?", "Explícame la diferencia entre flujo de caja y utilidad"];
 
@@ -25,24 +29,41 @@ export function FinanceAssistant({ period }: { period: string }) {
   }
 
   return (
-    <div className="fin-ai">
-      <div className="chips-row">
-        {IDEAS.map((i) => <button key={i} type="button" className="btn sm out" onClick={() => ask(i)} disabled={busy}>{i}</button>)}
-      </div>
-      <div className="fin-log" aria-live="polite">
-        {log.map((m, i) => (
-          <div key={i}>
-            <p className="fin-q">{m.q}</p>
-            <p className="fin-a">{m.a}</p>
-          </div>
+    <div>
+      <div className="mb-3 flex flex-wrap gap-2">
+        {IDEAS.map((i) => (
+          <Button key={i} type="button" size="sm" variant="outline" className="h-auto min-h-9 whitespace-normal py-1.5 text-left" onClick={() => ask(i)} disabled={busy}>
+            {i}
+          </Button>
         ))}
-        {busy && <p className="small">Analizando tus cifras…</p>}
       </div>
-      <form onSubmit={(e) => { e.preventDefault(); void ask(q); }} style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <input className="field" style={{ flex: "1 1 240px" }} value={q} onChange={(e) => setQ(e.target.value)} maxLength={600} placeholder="Pregunta sobre tus gastos, ganancias o pérdidas…" aria-label="Pregunta al asistente financiero" />
-        <button className="btn sm" type="submit" disabled={busy || !q.trim()}>Preguntar</button>
+      <div aria-live="polite" className="mb-3 flex flex-col gap-3.5">
+        <AnimatePresence initial={false}>
+          {log.map((m, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+              <p className="mb-1 text-[15px]">{m.q}</p>
+              <p className="whitespace-pre-wrap rounded-xl border border-hair bg-alt px-3.5 py-3 text-[15px] leading-relaxed">{m.a}</p>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+        {busy && (
+          <p className="flex items-center gap-2 text-[13px] text-mut">
+            <Sparkles className="size-4 animate-pulse" aria-hidden="true" />
+            Analizando tus cifras…
+          </p>
+        )}
+      </div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          void ask(q);
+        }}
+        className="flex flex-wrap gap-2"
+      >
+        <Input className="flex-[1_1_240px]" value={q} onChange={(e) => setQ(e.target.value)} maxLength={600} placeholder="Pregunta sobre tus gastos, ganancias o pérdidas…" aria-label="Pregunta al asistente financiero" />
+        <Button size="sm" className="h-11" type="submit" disabled={busy || !q.trim()}>Preguntar</Button>
       </form>
-      <p className="small" style={{ marginTop: 8 }}>Es un asistente de gestión: usa solo tus movimientos registrados y no reemplaza a un contador (impuestos, SRI).</p>
+      <p className="mt-2 text-[13px] text-mut">Es un asistente de gestión: usa solo tus movimientos registrados y no reemplaza a un contador (impuestos, SRI).</p>
     </div>
   );
 }

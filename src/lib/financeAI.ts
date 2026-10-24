@@ -27,7 +27,7 @@ export async function financeAnswer(question: string, s: Summary, period: string
         system: `${SYSTEM}\n\nDATOS:\n${summaryForAI(s, period)}`,
         messages: [{ role: "user", content: question }],
       }),
-      signal: AbortSignal.timeout(20000),
+      signal: AbortSignal.timeout(45000),
     });
     if (!res.ok) {
       const detail = (await res.text().catch(() => "")).slice(0, 300);

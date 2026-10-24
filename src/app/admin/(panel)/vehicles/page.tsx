@@ -1,44 +1,50 @@
 import Link from "next/link";
+import { Plus } from "lucide-react";
 import { db } from "@/lib/db";
 import { money, kmFmt } from "@/lib/format";
 import { VEHICLE_STATUS_LABEL, type VehicleStatus } from "@/lib/constants";
+import { Badge, Pill } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Panel } from "@/components/ui/card";
+import { Small, Table, TBody, TD, TH, THead, TR } from "@/components/ui/table";
+import { AdminHead, Flash } from "@/components/admin/ui";
 
 export default async function VehiclesAdminPage({ searchParams }: { searchParams: { saved?: string } }) {
   const vehicles = await db.vehicle.findMany({ orderBy: { createdAt: "desc" }, include: { _count: { select: { defects: true } } } });
   return (
     <>
-      <div className="adm-head">
-        <div>
-          <h1>Autos</h1>
-          <p className="adm-sub">{vehicles.length} en total. El modelo 3D se sube en cada auto (archivo .glb).</p>
-        </div>
-        <Link className="btn sm" href="/admin/vehicles/new">Agregar auto</Link>
-      </div>
-      {searchParams.saved && <p className="flash" role="status">Cambios guardados.</p>}
-      <div className="panel">
-        <div className="tbl-wrap">
-          <table className="tbl">
-            <thead>
-              <tr><th>Auto</th><th>Año</th><th>Km</th><th>Precio</th><th>Estado</th><th>3D</th><th>Defectos</th><th>Público</th></tr>
-            </thead>
-            <tbody>
-              {vehicles.map((v) => (
-                <tr key={v.id}>
-                  <td><Link className="row-link" href={`/admin/vehicles/${v.id}`}>{v.brand} {v.model}</Link><div className="small">{v.version}</div></td>
-                  <td>{v.year}</td>
-                  <td>{kmFmt(v.km)}</td>
-                  <td>{money(v.priceCents)}</td>
-                  <td><span className={`pill ${v.status}`}>{VEHICLE_STATUS_LABEL[v.status as VehicleStatus] ?? v.status}</span></td>
-                  <td>{v.modelUrl ? "Sí" : <span className="small">Pendiente</span>}</td>
-                  <td>{v._count.defects}</td>
-                  <td>{v.published ? "Sí" : <span className="pill off">Oculto</span>}</td>
-                </tr>
-              ))}
-              {!vehicles.length && <tr><td colSpan={8} className="small">Todavía no hay autos.</td></tr>}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <AdminHead
+        title="Autos"
+        sub={`${vehicles.length} en total. El modelo 3D se sube en cada auto (archivo .glb).`}
+        action={
+          <Button asChild size="sm">
+            <Link href="/admin/vehicles/new"><Plus aria-hidden="true" />Agregar auto</Link>
+          </Button>
+        }
+      />
+      {searchParams.saved && <Flash>Cambios guardados.</Flash>}
+      <Panel>
+        <Table>
+          <THead>
+            <TR className="hover:bg-transparent"><TH>Auto</TH><TH>Año</TH><TH>Km</TH><TH>Precio</TH><TH>Estado</TH><TH>3D</TH><TH>Defectos</TH><TH>Público</TH></TR>
+          </THead>
+          <TBody>
+            {vehicles.map((v) => (
+              <TR key={v.id}>
+                <TD><Link className="hover:underline" href={`/admin/vehicles/${v.id}`}>{v.brand} {v.model}</Link><Small>{v.version}</Small></TD>
+                <TD>{v.year}</TD>
+                <TD>{kmFmt(v.km)}</TD>
+                <TD>{money(v.priceCents)}</TD>
+                <TD><Pill k={v.status}>{VEHICLE_STATUS_LABEL[v.status as VehicleStatus] ?? v.status}</Pill></TD>
+                <TD>{v.modelUrl ? "Sí" : <Small>Pendiente</Small>}</TD>
+                <TD>{v._count.defects}</TD>
+                <TD>{v.published ? "Sí" : <Badge tone="outline">Oculto</Badge>}</TD>
+              </TR>
+            ))}
+            {!vehicles.length && <TR><TD colSpan={8}><Small>Todavía no hay autos.</Small></TD></TR>}
+          </TBody>
+        </Table>
+      </Panel>
     </>
   );
 }

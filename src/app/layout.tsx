@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { PATIO_NAME } from "@/lib/format";
+import { MotionProvider } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
   title: { default: PATIO_NAME, template: `%s · ${PATIO_NAME}` },
@@ -17,7 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" />
       </head>
-      <body>{children}</body>
+      <body>
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

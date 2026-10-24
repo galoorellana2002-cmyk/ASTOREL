@@ -1,7 +1,13 @@
 import Link from "next/link";
+import { Plus } from "lucide-react";
 import { db } from "@/lib/db";
 import { SEGMENTS, SEGMENT_HINT, SEGMENT_LABEL, type Segment } from "@/lib/constants";
 import { dateTime } from "@/lib/format";
+import { Button } from "@/components/ui/button";
+import { Panel } from "@/components/ui/card";
+import { Pill } from "@/components/ui/badge";
+import { Small, Table, TBody, TD, TR } from "@/components/ui/table";
+import { AdminHead, BarRow, StatCard, StatGrid, TwoCol } from "@/components/admin/ui";
 
 export default async function DashboardPage() {
   const weekAgo = new Date(Date.now() - 7 * 24 * 3600 * 1000);
@@ -19,54 +25,54 @@ export default async function DashboardPage() {
 
   return (
     <>
-      <div className="adm-head">
-        <div>
-          <h1>Resumen</h1>
-          <p className="adm-sub">Cómo va el patio esta semana.</p>
-        </div>
-        <Link className="btn sm" href="/admin/vehicles/new">Agregar auto</Link>
-      </div>
+      <AdminHead
+        title="Resumen"
+        sub="Cómo va el patio esta semana."
+        action={
+          <Button asChild size="sm">
+            <Link href="/admin/vehicles/new"><Plus aria-hidden="true" />Agregar auto</Link>
+          </Button>
+        }
+      />
 
-      <div className="stat-cards">
-        <div className="stat-card"><b>{available}</b><span>Autos disponibles</span><small>{reserved} reservados</small></div>
-        <div className="stat-card"><b>{newLeads}</b><span>Clientes nuevos (7 días)</span><small>{total} en total</small></div>
-        <div className="stat-card"><b>{pending}</b><span>Reservas por confirmar</span><small><Link href="/admin/reservations" style={{ textDecoration: "underline" }}>Revisar ahora</Link></small></div>
-        <div className="stat-card"><b>{counts.get("CLIENTE_FINAL") ?? 0}</b><span>Clientes finales</span><small>Los que quieren comprar: atiéndelos primero.</small></div>
-      </div>
+      <StatGrid>
+        <StatCard value={available} label="Autos disponibles" hint={`${reserved} reservados`} />
+        <StatCard value={newLeads} label="Clientes nuevos (7 días)" hint={`${total} en total`} />
+        <StatCard value={pending} label="Reservas por confirmar" hint={<Link href="/admin/reservations" className="underline underline-offset-2">Revisar ahora</Link>} />
+        <StatCard value={counts.get("CLIENTE_FINAL") ?? 0} label="Clientes finales" hint="Los que quieren comprar: atiéndelos primero." />
+      </StatGrid>
 
-      <div className="two-col">
-        <div className="panel">
-          <h2>Clientes por tipo</h2>
-          <div className="segbars">
+      <TwoCol>
+        <Panel title="Clientes por tipo">
+          <div className="flex flex-col gap-1">
             {SEGMENTS.map((s: Segment) => (
-              <Link key={s} className="segbar" href={`/admin/leads?segment=${s}`} title={SEGMENT_HINT[s]}>
-                <span>{SEGMENT_LABEL[s]}</span>
-                <i style={{ width: `${((counts.get(s) ?? 0) / max) * 100}%` }} />
-                <b style={{ fontWeight: 500 }}>{counts.get(s) ?? 0}</b>
+              <Link key={s} href={`/admin/leads?segment=${s}`} title={SEGMENT_HINT[s]} className="-mx-2 rounded-lg px-2 py-1.5 transition hover:bg-fg/5">
+                <BarRow className="grid-cols-[110px_1fr_36px]" label={SEGMENT_LABEL[s]} value={counts.get(s) ?? 0} pct={((counts.get(s) ?? 0) / max) * 100} />
               </Link>
             ))}
           </div>
-        </div>
-        <div className="panel">
-          <h2>Actividad reciente</h2>
-          <div className="tbl-wrap">
-            <table className="tbl" style={{ minWidth: 0 }}>
-              <tbody>
-                {recent.map((l) => (
-                  <tr key={l.id}>
-                    <td>
-                      <Link className="row-link" href={`/admin/leads/${l.id}`}>{l.name ?? "Visitante anónimo"}</Link>
-                      <div className="small">{l.vehicle ? `${l.vehicle.brand} ${l.vehicle.model} ${l.vehicle.year}` : dateTime(l.updatedAt)}</div>
-                    </td>
-                    <td><span className={`pill ${l.segment}`}>{SEGMENT_LABEL[l.segment as Segment] ?? l.segment}</span></td>
-                  </tr>
-                ))}
-                {!recent.length && <tr><td className="small">Aún no hay clientes. Cuando alguien chatee o reserve, aparece aquí.</td></tr>}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+        </Panel>
+        <Panel title="Actividad reciente">
+          <Table className="min-w-0">
+            <TBody>
+              {recent.map((l) => (
+                <TR key={l.id}>
+                  <TD>
+                    <Link className="hover:underline" href={`/admin/leads/${l.id}`}>{l.name ?? "Visitante anónimo"}</Link>
+                    <Small>{l.vehicle ? `${l.vehicle.brand} ${l.vehicle.model} ${l.vehicle.year}` : dateTime(l.updatedAt)}</Small>
+                  </TD>
+                  <TD className="text-right"><Pill k={l.segment}>{SEGMENT_LABEL[l.segment as Segment] ?? l.segment}</Pill></TD>
+                </TR>
+              ))}
+              {!recent.length && (
+                <TR>
+                  <TD><Small>Aún no hay clientes. Cuando alguien chatee o reserve, aparece aquí.</Small></TD>
+                </TR>
+              )}
+            </TBody>
+          </Table>
+        </Panel>
+      </TwoCol>
     </>
   );
 }

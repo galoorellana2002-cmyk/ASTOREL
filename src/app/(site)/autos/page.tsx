@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
+import { Search } from "lucide-react";
 import { VehicleCard } from "@/components/VehicleCard";
+import { Button } from "@/components/ui/button";
+import { Input, Select } from "@/components/ui/input";
+import { Reveal } from "@/components/ui/reveal";
 import { getCatalog, type CatalogFilters } from "@/lib/vehicles";
 import { BODY_TYPES } from "@/lib/constants";
 
@@ -20,47 +24,60 @@ export default async function AutosPage({ searchParams }: { searchParams: Search
   const vehicles = await getCatalog(filters);
 
   return (
-    <div className="wrap">
-      <div className="page-head">
-        <h1>Autos del patio</h1>
-        <p>Cada auto tiene su modelo 3D, sus defectos marcados y su ficha legal.</p>
+    <div className="container">
+      <div className="pb-2 pt-[clamp(40px,6vw,72px)]">
+        <Reveal>
+          <h1 className="text-[clamp(34px,5vw,60px)] leading-[1.05] tracking-tightest">Autos del patio</h1>
+          <p className="mt-2.5 max-w-[560px] text-[19px] text-mut">Cada auto tiene su modelo 3D, sus defectos marcados y su ficha legal.</p>
+        </Reveal>
       </div>
-      <form className="filters" method="get">
-        <label className="grow">
+
+      <form method="get" className="my-7 flex flex-wrap items-center gap-2.5 rounded-2xl border border-hair bg-alt p-3">
+        <label className="relative min-w-[220px] flex-1">
           <span className="sr-only">Buscar</span>
-          <input className="field" style={{ width: "100%" }} type="search" name="q" placeholder="Busca por marca, modelo o color" defaultValue={filters.q} />
+          <Search aria-hidden="true" className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-mut" />
+          <Input type="search" name="q" placeholder="Busca por marca, modelo o color" defaultValue={filters.q} className="pl-10" />
         </label>
         <label>
           <span className="sr-only">Tipo</span>
-          <select className="field" name="tipo" defaultValue={filters.tipo ?? ""}>
+          <Select name="tipo" defaultValue={filters.tipo ?? ""}>
             <option value="">Todos los tipos</option>
             {BODY_TYPES.map((t) => (
               <option key={t} value={t}>{t}</option>
             ))}
-          </select>
+          </Select>
         </label>
         <label>
           <span className="sr-only">Precio máximo</span>
-          <select className="field" name="max" defaultValue={filters.max ? String(filters.max) : ""}>
+          <Select name="max" defaultValue={filters.max ? String(filters.max) : ""}>
             <option value="">Cualquier precio</option>
             {[10000, 15000, 20000, 30000, 50000].map((p) => (
               <option key={p} value={p}>Hasta ${p.toLocaleString("es-EC")}</option>
             ))}
-          </select>
+          </Select>
         </label>
         <label>
           <span className="sr-only">Ordenar</span>
-          <select className="field" name="orden" defaultValue={filters.orden ?? "recientes"}>
+          <Select name="orden" defaultValue={filters.orden ?? "recientes"}>
             <option value="recientes">Más recientes</option>
             <option value="precio-asc">Precio: menor a mayor</option>
             <option value="precio-desc">Precio: mayor a menor</option>
             <option value="km">Menor kilometraje</option>
-          </select>
+          </Select>
         </label>
-        <button className="btn sm" type="submit">Filtrar</button>
+        <Button type="submit" size="sm">Filtrar</Button>
       </form>
-      <div className="grid-cars">
-        {vehicles.length ? vehicles.map((v) => <VehicleCard key={v.id} v={v} />) : <p className="empty-state">No encontramos autos con esos filtros.</p>}
+
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,300px),1fr))] gap-5 pb-16">
+        {vehicles.length ? (
+          vehicles.map((v, i) => (
+            <Reveal key={v.id} delay={Math.min(i, 6) * 0.05} className="flex">
+              <VehicleCard v={v} className="w-full" />
+            </Reveal>
+          ))
+        ) : (
+          <p className="col-span-full py-16 text-center text-lg text-mut">No encontramos autos con esos filtros.</p>
+        )}
       </div>
     </div>
   );

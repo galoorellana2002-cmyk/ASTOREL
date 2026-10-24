@@ -1,7 +1,12 @@
-import { db } from "@/lib/db";
 import Link from "next/link";
+import { db } from "@/lib/db";
 import { dateTime, money } from "@/lib/format";
 import { setReservationStatus } from "../../actions";
+import { Button } from "@/components/ui/button";
+import { Panel } from "@/components/ui/card";
+import { Pill } from "@/components/ui/badge";
+import { Small, Table, TBody, TD, TH, THead, TR } from "@/components/ui/table";
+import { AdminHead } from "@/components/admin/ui";
 
 export default async function ReservationsPage() {
   const rows = await db.reservation.findMany({
@@ -11,41 +16,34 @@ export default async function ReservationsPage() {
   });
   return (
     <>
-      <div className="adm-head">
-        <div>
-          <h1>Reservas</h1>
-          <p className="adm-sub">Confirmar una reserva marca el auto como reservado en la tienda.</p>
-        </div>
-      </div>
-      <div className="panel">
-        <div className="tbl-wrap">
-          <table className="tbl">
-            <thead><tr><th>Fecha</th><th>Auto</th><th>Cliente</th><th>Comentario</th><th>Estado</th><th></th></tr></thead>
-            <tbody>
-              {rows.map((r) => (
-                <tr key={r.id}>
-                  <td>{dateTime(r.createdAt)}</td>
-                  <td>{r.vehicle.brand} {r.vehicle.model} {r.vehicle.year}<div className="small">{money(r.vehicle.priceCents)}</div></td>
-                  <td><Link className="row-link" href={`/admin/leads/${r.lead.id}`}>{r.lead.name ?? "Sin nombre"}</Link><div className="small">{r.lead.phone}</div></td>
-                  <td>{r.note || "—"}</td>
-                  <td><span className={`pill ${r.status}`}>{r.status}</span></td>
-                  <td>
-                    <div style={{ display: "flex", gap: 6 }}>
-                      {r.status !== "CONFIRMADA" && (
-                        <form action={setReservationStatus}><input type="hidden" name="id" value={r.id} /><input type="hidden" name="status" value="CONFIRMADA" /><button className="btn sm" type="submit">Confirmar</button></form>
-                      )}
-                      {r.status !== "CANCELADA" && (
-                        <form action={setReservationStatus}><input type="hidden" name="id" value={r.id} /><input type="hidden" name="status" value="CANCELADA" /><button className="btn sm out" type="submit">Cancelar</button></form>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
-              {!rows.length && <tr><td colSpan={6} className="small">Aún no hay reservas.</td></tr>}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <AdminHead title="Reservas" sub="Confirmar una reserva marca el auto como reservado en la tienda." />
+      <Panel>
+        <Table>
+          <THead><TR className="hover:bg-transparent"><TH>Fecha</TH><TH>Auto</TH><TH>Cliente</TH><TH>Comentario</TH><TH>Estado</TH><TH /></TR></THead>
+          <TBody>
+            {rows.map((r) => (
+              <TR key={r.id}>
+                <TD>{dateTime(r.createdAt)}</TD>
+                <TD>{r.vehicle.brand} {r.vehicle.model} {r.vehicle.year}<Small>{money(r.vehicle.priceCents)}</Small></TD>
+                <TD><Link className="hover:underline" href={`/admin/leads/${r.lead.id}`}>{r.lead.name ?? "Sin nombre"}</Link><Small>{r.lead.phone}</Small></TD>
+                <TD>{r.note || "—"}</TD>
+                <TD><Pill k={r.status}>{r.status}</Pill></TD>
+                <TD>
+                  <div className="flex gap-1.5">
+                    {r.status !== "CONFIRMADA" && (
+                      <form action={setReservationStatus}><input type="hidden" name="id" value={r.id} /><input type="hidden" name="status" value="CONFIRMADA" /><Button size="sm" type="submit">Confirmar</Button></form>
+                    )}
+                    {r.status !== "CANCELADA" && (
+                      <form action={setReservationStatus}><input type="hidden" name="id" value={r.id} /><input type="hidden" name="status" value="CANCELADA" /><Button size="sm" variant="outline" type="submit">Cancelar</Button></form>
+                    )}
+                  </div>
+                </TD>
+              </TR>
+            ))}
+            {!rows.length && <TR><TD colSpan={6}><Small>Aún no hay reservas.</Small></TD></TR>}
+          </TBody>
+        </Table>
+      </Panel>
     </>
   );
 }

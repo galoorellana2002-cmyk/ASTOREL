@@ -6,6 +6,12 @@ import { MovementForm } from "@/components/admin/MovementForm";
 import { FinanceAssistant } from "@/components/admin/FinanceAssistant";
 import { deleteMovement } from "../../actions";
 import { ConfirmButton } from "@/components/admin/ConfirmButton";
+import { Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Panel } from "@/components/ui/card";
+import { Small, Table, TBody, TD, TH, THead, TR } from "@/components/ui/table";
+import { AdminHead, BarRow, ChipLink, ChipRow, StatCard, StatGrid, TwoCol } from "@/components/admin/ui";
+import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -16,126 +22,115 @@ export default async function FinancePage({ searchParams }: { searchParams: { pe
   const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/Guayaquil" });
   const maxCat = Math.max(1, ...s.expensesByCategory.map((c) => c.cents));
   const maxMonth = Math.max(1, ...s.byMonth.map((m) => Math.max(m.income, m.expense)));
-  const tone = (c: number) => (c < 0 ? "neg" : "pos");
+  const tone = (c: number) => (c < 0 ? ("neg" as const) : ("pos" as const));
 
   return (
     <>
-      <div className="adm-head">
-        <div>
-          <h1>Finanzas</h1>
-          <p className="adm-sub">Ingresos, gastos, ganancias y pérdidas del patio.</p>
-        </div>
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <a className="btn sm" href={`/admin/export/svg?period=${period}`} download>Descargar reporte SVG</a>
-          <a className="btn sm out" href={`/admin/export/csv?period=${period}`} download>Exportar CSV</a>
-        </div>
-      </div>
+      <AdminHead
+        title="Finanzas"
+        sub="Ingresos, gastos, ganancias y pérdidas del patio."
+        action={
+          <div className="flex flex-wrap gap-2">
+            <Button asChild size="sm"><a href={`/admin/export/svg?period=${period}`} download><Download aria-hidden="true" />Descargar reporte SVG</a></Button>
+            <Button asChild size="sm" variant="outline"><a href={`/admin/export/csv?period=${period}`} download>Exportar CSV</a></Button>
+          </div>
+        }
+      />
 
-      <nav className="chips-row" aria-label="Periodo" style={{ marginBottom: 18 }}>
+      <ChipRow className="mb-[18px]">
         {PERIODS.map((p) => (
-          <Link key={p.id} href={`/admin/finance?period=${p.id}`} aria-current={p.id === period ? "true" : undefined}>{p.label}</Link>
+          <ChipLink key={p.id} href={`/admin/finance?period=${p.id}`} active={p.id === period}>{p.label}</ChipLink>
         ))}
-      </nav>
+      </ChipRow>
 
-      <div className="stat-cards">
-        <div className="stat-card"><b>{usd(s.incomeCents)}</b><span>Ingresos</span><small>Ventas y otros cobros</small></div>
-        <div className="stat-card"><b>{usd(s.expenseCents)}</b><span>Gastos totales</span><small>Incluye compra de autos</small></div>
-        <div className="stat-card"><b className={tone(s.cashCents)}>{usd(s.cashCents)}</b><span>Flujo de caja</span><small>Ingresos − gastos</small></div>
-        <div className="stat-card"><b className={tone(s.netCents)}>{usd(s.netCents)}</b><span>{s.netCents < 0 ? "Pérdida real" : "Utilidad real"}</span><small>{s.marginPct === null ? "Sin ventas completas aún" : `${s.marginPct.toFixed(1)}% sobre ventas`}</small></div>
-      </div>
-      <p className="small" style={{ margin: "-10px 0 22px" }}>
+      <StatGrid>
+        <StatCard value={usd(s.incomeCents)} label="Ingresos" hint="Ventas y otros cobros" />
+        <StatCard value={usd(s.expenseCents)} label="Gastos totales" hint="Incluye compra de autos" />
+        <StatCard value={usd(s.cashCents)} tone={tone(s.cashCents)} label="Flujo de caja" hint="Ingresos − gastos" />
+        <StatCard value={usd(s.netCents)} tone={tone(s.netCents)} label={s.netCents < 0 ? "Pérdida real" : "Utilidad real"} hint={s.marginPct === null ? "Sin ventas completas aún" : `${s.marginPct.toFixed(1)}% sobre ventas`} />
+      </StatGrid>
+      <p className="-mt-3.5 mb-6 text-[13px] text-mut">
         Utilidad real = utilidad de autos vendidos ({usd(s.salesProfitCents)}) − gastos generales ({usd(s.operatingCents)}). Dinero invertido en autos sin vender: {usd(s.stockCents)} (no es pérdida).
       </p>
 
-      <div className="panel">
-        <h2>Asistente financiero (IA)</h2>
-        <ul className="fin-insights">{s.insights.map((i) => <li key={i}>{i}</li>)}</ul>
+      <Panel title="Asistente financiero (IA)" className="mb-5">
+        <ul className="m-0 mb-4 flex list-disc flex-col gap-1.5 pl-[18px] text-[15px] leading-snug">{s.insights.map((i) => <li key={i}>{i}</li>)}</ul>
         <FinanceAssistant period={period} />
-      </div>
+      </Panel>
 
-      <div className="two-col">
-        <div className="panel">
-          <h2>Gastos por categoría</h2>
-          <div className="segbars">
+      <TwoCol>
+        <Panel title="Gastos por categoría">
+          <div className="flex flex-col gap-2.5">
             {s.expensesByCategory.map((c) => (
-              <div key={c.category} className="segbar fin-cat">
-                <span>{c.label}</span>
-                <i style={{ width: `${Math.max(2, (c.cents / maxCat) * 100)}%` }} />
-                <b>{usd(c.cents)}</b>
-              </div>
+              <BarRow key={c.category} label={c.label} value={usd(c.cents)} pct={Math.max(2, (c.cents / maxCat) * 100)} />
             ))}
-            {!s.expensesByCategory.length && <p className="small">Sin gastos en este periodo.</p>}
+            {!s.expensesByCategory.length && <Small>Sin gastos en este periodo.</Small>}
           </div>
-        </div>
-        <div className="panel">
-          <h2>Por mes</h2>
-          <div className="segbars">
+        </Panel>
+        <Panel title="Por mes">
+          <div className="flex flex-col gap-2.5">
             {s.byMonth.map((m) => (
-              <div key={m.key} className="fin-month">
+              <div key={m.key} className="grid grid-cols-[54px_1fr_auto] items-center gap-2.5 text-sm">
                 <span>{m.label}</span>
-                <div className="bars"><i style={{ width: `${(m.income / maxMonth) * 100}%`, background: "var(--ok)" }} /><i style={{ width: `${(m.expense / maxMonth) * 100}%` }} /></div>
-                <small>{usd(m.income)} / {usd(m.expense)}</small>
+                <div className="flex flex-col gap-[3px]">
+                  <i className="block h-[7px] min-w-[2px] rounded bg-ok" style={{ width: `${(m.income / maxMonth) * 100}%` }} />
+                  <i className="block h-[7px] min-w-[2px] rounded bg-fg" style={{ width: `${(m.expense / maxMonth) * 100}%` }} />
+                </div>
+                <small className="whitespace-nowrap text-xs text-mut">{usd(m.income)} / {usd(m.expense)}</small>
               </div>
             ))}
-            {!s.byMonth.length && <p className="small">Sin movimientos.</p>}
-            {!!s.byMonth.length && <p className="small">Verde: ingresos · Negro: gastos</p>}
+            {!s.byMonth.length && <Small>Sin movimientos.</Small>}
+            {!!s.byMonth.length && <Small>Verde: ingresos · Negro: gastos</Small>}
           </div>
-        </div>
-      </div>
+        </Panel>
+      </TwoCol>
 
-      <div className="panel">
-        <h2>Resultado por auto</h2>
-        <div className="tbl-wrap">
-          <table className="tbl">
-            <thead><tr><th>Auto</th><th>Costo total</th><th>Venta</th><th>Utilidad</th></tr></thead>
-            <tbody>
-              {s.vehicles.map((v) => (
-                <tr key={v.vehicleId}>
-                  <td>{v.label}</td>
-                  <td>{usd(v.costCents)}</td>
-                  <td>{v.revenueCents ? usd(v.revenueCents) : "—"}</td>
-                  <td className={v.profitCents === null ? "" : tone(v.profitCents)}>{v.profitCents === null ? (v.missingCost ? "Falta registrar la compra" : "Sin vender") : usd(v.profitCents)}</td>
-                </tr>
-              ))}
-              {!s.vehicles.length && <tr><td colSpan={4} className="small">Registra la compra de un auto eligiéndolo en el formulario de abajo.</td></tr>}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <Panel title="Resultado por auto" className="mb-5">
+        <Table>
+          <THead><TR className="hover:bg-transparent"><TH>Auto</TH><TH>Costo total</TH><TH>Venta</TH><TH>Utilidad</TH></TR></THead>
+          <TBody>
+            {s.vehicles.map((v) => (
+              <TR key={v.vehicleId}>
+                <TD>{v.label}</TD>
+                <TD>{usd(v.costCents)}</TD>
+                <TD>{v.revenueCents ? usd(v.revenueCents) : "—"}</TD>
+                <TD className={cn(v.profitCents !== null && (tone(v.profitCents) === "neg" ? "text-bad" : "text-ok"))}>{v.profitCents === null ? (v.missingCost ? "Falta registrar la compra" : "Sin vender") : usd(v.profitCents)}</TD>
+              </TR>
+            ))}
+            {!s.vehicles.length && <TR><TD colSpan={4}><Small>Registra la compra de un auto eligiéndolo en el formulario de abajo.</Small></TD></TR>}
+          </TBody>
+        </Table>
+      </Panel>
 
-      <div className="panel">
-        <h2>Registrar movimiento</h2>
-        {searchParams.ok && <p className="small" role="status" style={{ marginBottom: 10 }}>Movimiento guardado.</p>}
+      <Panel title="Registrar movimiento" className="mb-5">
+        {searchParams.ok && <p role="status" className="mb-2.5 text-[13px] text-ok">Movimiento guardado.</p>}
         <MovementForm vehicles={vehicles} today={today} />
-        <p className="small" style={{ marginTop: 10 }}>Al registrar la venta de un auto, queda marcado como vendido en la tienda.</p>
-      </div>
+        <Small className="mt-2.5">Al registrar la venta de un auto, queda marcado como vendido en la tienda.</Small>
+      </Panel>
 
-      <div className="panel">
-        <h2>Movimientos</h2>
-        <div className="tbl-wrap">
-          <table className="tbl">
-            <thead><tr><th>Fecha</th><th>Categoría</th><th>Auto</th><th>Detalle</th><th>Monto</th><th></th></tr></thead>
-            <tbody>
-              {movements.slice(0, 200).map((m) => (
-                <tr key={m.id}>
-                  <td>{m.date.toISOString().slice(0, 10)}</td>
-                  <td>{CATEGORY_LABEL[m.category] ?? m.category}</td>
-                  <td>{m.vehicleId ? label.get(m.vehicleId) ?? "—" : "General"}</td>
-                  <td>{m.description || "—"}</td>
-                  <td className={m.type === "INGRESO" ? "pos" : ""}>{m.type === "INGRESO" ? "+" : "−"}{usd(m.amountCents)}</td>
-                  <td>
-                    <form action={deleteMovement}>
-                      <input type="hidden" name="id" value={m.id} />
-                      <ConfirmButton message="¿Eliminar este movimiento?" className="btn sm out">Eliminar</ConfirmButton>
-                    </form>
-                  </td>
-                </tr>
-              ))}
-              {!movements.length && <tr><td colSpan={6} className="small">Aún no hay movimientos en este periodo.</td></tr>}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <Panel title="Movimientos">
+        <Table>
+          <THead><TR className="hover:bg-transparent"><TH>Fecha</TH><TH>Categoría</TH><TH>Auto</TH><TH>Detalle</TH><TH>Monto</TH><TH /></TR></THead>
+          <TBody>
+            {movements.slice(0, 200).map((m) => (
+              <TR key={m.id}>
+                <TD>{m.date.toISOString().slice(0, 10)}</TD>
+                <TD>{CATEGORY_LABEL[m.category] ?? m.category}</TD>
+                <TD>{m.vehicleId ? label.get(m.vehicleId) ?? "—" : "General"}</TD>
+                <TD>{m.description || "—"}</TD>
+                <TD className={cn("whitespace-nowrap tabular-nums", m.type === "INGRESO" && "text-ok")}>{m.type === "INGRESO" ? "+" : "−"}{usd(m.amountCents)}</TD>
+                <TD>
+                  <form action={deleteMovement}>
+                    <input type="hidden" name="id" value={m.id} />
+                    <ConfirmButton variant="outline" message="¿Eliminar este movimiento?">Eliminar</ConfirmButton>
+                  </form>
+                </TD>
+              </TR>
+            ))}
+            {!movements.length && <TR><TD colSpan={6}><Small>Aún no hay movimientos en este periodo.</Small></TD></TR>}
+          </TBody>
+        </Table>
+      </Panel>
     </>
   );
 }

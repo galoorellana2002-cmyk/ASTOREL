@@ -3,6 +3,11 @@
 import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import { saveVehicle, type FormState } from "@/app/admin/actions";
+import { Plus, Trash2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Panel } from "@/components/ui/card";
+import { Check, Field, Input, Select, Textarea } from "@/components/ui/input";
+import { ErrorNote } from "@/components/admin/ui";
 import { BODY_TYPES, DEFECT_CATEGORIES, DEFECT_CATEGORY_LABEL, SEVERITIES, SEVERITY_LABEL, VEHICLE_STATUS, VEHICLE_STATUS_LABEL } from "@/lib/constants";
 
 interface DefectRow { zone: string; detail: string; category: string; severity: string; posX: number; posY: number; posZ: number }
@@ -22,9 +27,9 @@ const DEFAULT_LEGAL: LegalRow[] = [
 function Submit({ editing, busy }: { editing: boolean; busy: boolean }) {
   const { pending } = useFormStatus();
   return (
-    <button className="btn" type="submit" disabled={pending || busy}>
+    <Button type="submit" disabled={pending || busy}>
       {busy ? "Subiendo archivo…" : pending ? "Guardando…" : editing ? "Guardar cambios" : "Crear auto"}
-    </button>
+    </Button>
   );
 }
 
@@ -85,109 +90,104 @@ export function VehicleForm({ vehicle }: { vehicle?: VehicleFormData }) {
   const setD = (i: number, patch: Partial<DefectRow>) => setDefects((rows) => rows.map((r, j) => (j === i ? { ...r, ...patch } : r)));
   const setL = (i: number, patch: Partial<LegalRow>) => setLegal((rows) => rows.map((r, j) => (j === i ? { ...r, ...patch } : r)));
 
+  const item = "grid grid-cols-[repeat(auto-fit,minmax(min(100%,150px),1fr))] items-end gap-2 rounded-xl border border-hair bg-alt p-3";
+  const grid = "grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-3.5";
+
   return (
-    <form action={action} className="repeat" style={{ gap: 18 }}>
+    <form action={action} className="flex flex-col gap-5">
       {vehicle && <input type="hidden" name="id" value={vehicle.id} />}
       <input type="hidden" name="modelUrl" value={modelUrl} />
       <input type="hidden" name="coverUrl" value={coverUrl} />
       <input type="hidden" name="defects" value={JSON.stringify(defects)} />
       <input type="hidden" name="legal" value={JSON.stringify(legal)} />
 
-      <section className="panel">
-        <h2>Datos del auto</h2>
-        <div className="form-grid">
-          <label className="lbl">Marca<input className="field" name="brand" defaultValue={vehicle?.brand} required maxLength={40} /></label>
-          <label className="lbl">Modelo<input className="field" name="model" defaultValue={vehicle?.model} required maxLength={40} /></label>
-          <label className="lbl">Versión<input className="field" name="version" defaultValue={vehicle?.version} maxLength={60} placeholder="2.0 GLS" /></label>
-          <label className="lbl">Año<input className="field" type="number" name="year" defaultValue={vehicle?.year ?? new Date().getFullYear()} required min={1980} /></label>
-          <label className="lbl">Kilometraje<input className="field" type="number" name="km" defaultValue={vehicle?.km ?? 0} required min={0} /></label>
-          <label className="lbl">Precio (USD)<input className="field" type="number" name="priceUsd" defaultValue={vehicle?.priceUsd} required min={0} step="1" /></label>
-          <label className="lbl">Tipo
-            <select className="field" name="bodyType" defaultValue={vehicle?.bodyType ?? "SUV"}>{BODY_TYPES.map((t) => <option key={t}>{t}</option>)}</select>
-          </label>
-          <label className="lbl">Color<input className="field" name="color" defaultValue={vehicle?.color} maxLength={40} /></label>
-          <label className="lbl">Color de la ilustración
-            <input className="field" type="color" name="hex" defaultValue={vehicle?.hex ?? "#5d6066"} style={{ padding: 4 }} />
-          </label>
-          <label className="lbl">Estado
-            <select className="field" name="status" defaultValue={vehicle?.status ?? "AVAILABLE"}>
+      <Panel title="Datos del auto">
+        <div className={grid}>
+          <Field label="Marca"><Input name="brand" defaultValue={vehicle?.brand} required maxLength={40} /></Field>
+          <Field label="Modelo"><Input name="model" defaultValue={vehicle?.model} required maxLength={40} /></Field>
+          <Field label="Versión"><Input name="version" defaultValue={vehicle?.version} maxLength={60} placeholder="2.0 GLS" /></Field>
+          <Field label="Año"><Input type="number" name="year" defaultValue={vehicle?.year ?? new Date().getFullYear()} required min={1980} /></Field>
+          <Field label="Kilometraje"><Input type="number" name="km" defaultValue={vehicle?.km ?? 0} required min={0} /></Field>
+          <Field label="Precio (USD)"><Input type="number" name="priceUsd" defaultValue={vehicle?.priceUsd} required min={0} step="1" /></Field>
+          <Field label="Tipo">
+            <Select name="bodyType" defaultValue={vehicle?.bodyType ?? "SUV"}>{BODY_TYPES.map((t) => <option key={t}>{t}</option>)}</Select>
+          </Field>
+          <Field label="Color"><Input name="color" defaultValue={vehicle?.color} maxLength={40} /></Field>
+          <Field label="Color de la ilustración"><Input type="color" name="hex" defaultValue={vehicle?.hex ?? "#5d6066"} /></Field>
+          <Field label="Estado">
+            <Select name="status" defaultValue={vehicle?.status ?? "AVAILABLE"}>
               {VEHICLE_STATUS.map((s) => <option key={s} value={s}>{VEHICLE_STATUS_LABEL[s]}</option>)}
-            </select>
-          </label>
-          <label className="check"><input type="checkbox" name="published" defaultChecked={vehicle?.published ?? true} /> Visible en la tienda</label>
-          <label className="lbl wide">Descripción<textarea className="field" name="description" defaultValue={vehicle?.description} maxLength={2000} rows={3} /></label>
+            </Select>
+          </Field>
+          <Check name="published" defaultChecked={vehicle?.published ?? true} className="self-end">Visible en la tienda</Check>
+          <Field label="Descripción" className="col-span-full"><Textarea name="description" defaultValue={vehicle?.description} maxLength={2000} rows={3} /></Field>
         </div>
-      </section>
+      </Panel>
 
-      <section className="panel">
-        <h2>Archivos</h2>
-        <div className="form-grid">
-          <label className="lbl">
-            Modelo 3D (.glb, máx. 50 MB)
-            <input className="field" type="file" accept=".glb,model/gltf-binary" onChange={(e) => onPick("model", e)} />
-            {busy === "model" && <span className="small">Subiendo modelo…</span>}
-            {modelUrl && <span className="small">Modelo listo. Se asocia al guardar el auto.</span>}
+      <Panel title="Archivos">
+        <div className={grid}>
+          <Field label="Modelo 3D (.glb, máx. 50 MB)">
+            <Input type="file" accept=".glb,model/gltf-binary" onChange={(e) => onPick("model", e)} />
+            {busy === "model" && <span className="text-[13px]">Subiendo modelo…</span>}
+            {modelUrl && <span className="text-[13px] text-ok">Modelo listo. Se asocia al guardar el auto.</span>}
             {vehicle?.modelUrl && (
-              <span className="small">
-                Actual: {vehicle.modelUrl} <label className="check" style={{ minHeight: 0 }}><input type="checkbox" name="removeModel" /> Quitar</label>
+              <span className="break-all text-[13px]">
+                Actual: {vehicle.modelUrl} <Check name="removeModel" className="min-h-0 text-[13px] text-fg">Quitar</Check>
               </span>
             )}
-          </label>
-          <label className="lbl">
-            Foto de portada (JPG, PNG o WebP, máx. 6 MB)
-            <input className="field" type="file" accept="image/jpeg,image/png,image/webp" onChange={(e) => onPick("image", e)} />
-            {busy === "image" && <span className="small">Subiendo foto…</span>}
-            {coverUrl && <span className="small">Foto lista. Se asocia al guardar el auto.</span>}
-            {vehicle?.coverUrl && <span className="small">Actual: {vehicle.coverUrl}</span>}
-          </label>
+          </Field>
+          <Field label="Foto de portada (JPG, PNG o WebP, máx. 6 MB)">
+            <Input type="file" accept="image/jpeg,image/png,image/webp" onChange={(e) => onPick("image", e)} />
+            {busy === "image" && <span className="text-[13px]">Subiendo foto…</span>}
+            {coverUrl && <span className="text-[13px] text-ok">Foto lista. Se asocia al guardar el auto.</span>}
+            {vehicle?.coverUrl && <span className="break-all text-[13px]">Actual: {vehicle.coverUrl}</span>}
+          </Field>
         </div>
-      </section>
+      </Panel>
 
-      <section className="panel">
-        <h2>Defectos detectados</h2>
-        <p className="small" style={{ marginBottom: 10 }}>
+      <Panel title="Defectos detectados">
+        <p className="mb-3 text-[13px] text-mut">
           La posición son tres números entre -0,5 y 0,5 respecto al centro del modelo: X (izquierda −, derecha +), Y (abajo −, arriba +) y Z (atrás −, adelante +). Pruébalos en la página del auto y ajústalos hasta que el punto caiga donde está el defecto.
         </p>
-        <div className="repeat">
+        <div className="flex flex-col gap-2.5">
           {defects.map((d, i) => (
-            <div className="item" key={i}>
-              <label className="lbl">Zona<input className="field" value={d.zone} onChange={(e) => setD(i, { zone: e.target.value })} maxLength={80} /></label>
-              <label className="lbl">Categoría
-                <select className="field" value={d.category} onChange={(e) => setD(i, { category: e.target.value })}>{DEFECT_CATEGORIES.map((c) => <option key={c} value={c}>{DEFECT_CATEGORY_LABEL[c]}</option>)}</select>
-              </label>
-              <label className="lbl">Gravedad
-                <select className="field" value={d.severity} onChange={(e) => setD(i, { severity: e.target.value })}>{SEVERITIES.map((s) => <option key={s} value={s}>{SEVERITY_LABEL[s]}</option>)}</select>
-              </label>
-              <label className="lbl wide">Detalle<input className="field" value={d.detail} onChange={(e) => setD(i, { detail: e.target.value })} maxLength={200} /></label>
+            <div className={item} key={i}>
+              <Field label="Zona"><Input value={d.zone} onChange={(e) => setD(i, { zone: e.target.value })} maxLength={80} /></Field>
+              <Field label="Categoría">
+                <Select value={d.category} onChange={(e) => setD(i, { category: e.target.value })}>{DEFECT_CATEGORIES.map((c) => <option key={c} value={c}>{DEFECT_CATEGORY_LABEL[c]}</option>)}</Select>
+              </Field>
+              <Field label="Gravedad">
+                <Select value={d.severity} onChange={(e) => setD(i, { severity: e.target.value })}>{SEVERITIES.map((s) => <option key={s} value={s}>{SEVERITY_LABEL[s]}</option>)}</Select>
+              </Field>
+              <Field label="Detalle" className="col-span-full"><Input value={d.detail} onChange={(e) => setD(i, { detail: e.target.value })} maxLength={200} /></Field>
               {(["posX", "posY", "posZ"] as const).map((k) => (
-                <label className="lbl" key={k}>{k.slice(3)}<input className="field" type="number" step="0.05" min={-1} max={1} value={d[k]} onChange={(e) => setD(i, { [k]: Number(e.target.value) })} /></label>
+                <Field label={k.slice(3)} key={k}><Input type="number" step="0.05" min={-1} max={1} value={d[k]} onChange={(e) => setD(i, { [k]: Number(e.target.value) })} /></Field>
               ))}
-              <button type="button" className="btn sm danger" onClick={() => setDefects((r) => r.filter((_, j) => j !== i))}>Quitar</button>
+              <Button type="button" size="sm" variant="danger" onClick={() => setDefects((r) => r.filter((_, j) => j !== i))}><Trash2 aria-hidden="true" />Quitar</Button>
             </div>
           ))}
-          <div><button type="button" className="btn sm out" onClick={() => setDefects((r) => [...r, { zone: "", detail: "", category: "PINTURA", severity: "LEVE", posX: 0, posY: 0, posZ: 0 }])}>Agregar defecto</button></div>
+          <div><Button type="button" size="sm" variant="outline" onClick={() => setDefects((r) => [...r, { zone: "", detail: "", category: "PINTURA", severity: "LEVE", posX: 0, posY: 0, posZ: 0 }])}><Plus aria-hidden="true" />Agregar defecto</Button></div>
         </div>
-      </section>
+      </Panel>
 
-      <section className="panel">
-        <h2>Ficha legal</h2>
-        <div className="repeat">
+      <Panel title="Ficha legal">
+        <div className="flex flex-col gap-2.5">
           {legal.map((l, i) => (
-            <div className="item" key={i}>
-              <label className="lbl">Concepto<input className="field" value={l.label} onChange={(e) => setL(i, { label: e.target.value })} maxLength={60} /></label>
-              <label className="lbl">Valor<input className="field" value={l.value} onChange={(e) => setL(i, { value: e.target.value })} maxLength={120} /></label>
-              <label className="lbl">Estado
-                <select className="field" value={l.status} onChange={(e) => setL(i, { status: e.target.value })}><option value="OK">Al día</option><option value="WARN">Con aviso</option></select>
-              </label>
-              <button type="button" className="btn sm danger" onClick={() => setLegal((r) => r.filter((_, j) => j !== i))}>Quitar</button>
+            <div className={item} key={i}>
+              <Field label="Concepto"><Input value={l.label} onChange={(e) => setL(i, { label: e.target.value })} maxLength={60} /></Field>
+              <Field label="Valor"><Input value={l.value} onChange={(e) => setL(i, { value: e.target.value })} maxLength={120} /></Field>
+              <Field label="Estado">
+                <Select value={l.status} onChange={(e) => setL(i, { status: e.target.value })}><option value="OK">Al día</option><option value="WARN">Con aviso</option></Select>
+              </Field>
+              <Button type="button" size="sm" variant="danger" onClick={() => setLegal((r) => r.filter((_, j) => j !== i))}><Trash2 aria-hidden="true" />Quitar</Button>
             </div>
           ))}
-          <div><button type="button" className="btn sm out" onClick={() => setLegal((r) => [...r, { label: "", value: "", status: "OK" }])}>Agregar concepto</button></div>
+          <div><Button type="button" size="sm" variant="outline" onClick={() => setLegal((r) => [...r, { label: "", value: "", status: "OK" }])}><Plus aria-hidden="true" />Agregar concepto</Button></div>
         </div>
-      </section>
+      </Panel>
 
-      {upError && <p className="msg-err" role="alert">{upError}</p>}
-      {state?.error && <p className="msg-err" role="alert">{state.error}</p>}
+      {upError && <ErrorNote>{upError}</ErrorNote>}
+      {state?.error && <ErrorNote>{state.error}</ErrorNote>}
       <div><Submit editing={Boolean(vehicle)} busy={busy !== null} /></div>
     </form>
   );

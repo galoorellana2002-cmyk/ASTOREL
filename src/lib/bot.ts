@@ -1,4 +1,4 @@
-import { anthropicHeaders } from "./anthropicHeaders";
+import { anthropicHeaders, extractText } from "./anthropicHeaders";
 import { normalize } from "./leadScoring";
 
 export interface BotVehicle {
@@ -244,8 +244,8 @@ export async function llmReply(history: Array<{ role: "user" | "assistant"; cont
       console.error(`[chat] Anthropic respondió ${res.status}: ${detail}`);
       return null;
     }
-    const data = (await res.json()) as { content?: Array<{ type: string; text?: string }> };
-    const out = data.content?.find((c) => c.type === "text")?.text?.trim();
+    const data = (await res.json()) as { content?: Array<{ type: string; text?: string }>; stop_reason?: string };
+    const out = extractText(data);
     if (!out) return null;
     if (out.toUpperCase().includes("FUERA_DE_TEMA")) return OFF_TOPIC_REPLY(ctx.patioName);
     return out.length > 700 ? `${out.slice(0, 700).trimEnd()}…` : out;

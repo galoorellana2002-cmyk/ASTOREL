@@ -1,14 +1,17 @@
 "use client";
 
 import { useFormState, useFormStatus } from "react-dom";
+import { CheckCircle2 } from "lucide-react";
 import { createReservation, type ReserveState } from "@/app/actions";
+import { Button } from "@/components/ui/button";
+import { Field, Input, Textarea } from "@/components/ui/input";
 
 function Submit() {
   const { pending } = useFormStatus();
   return (
-    <button className="btn" type="submit" disabled={pending}>
+    <Button type="submit" disabled={pending}>
       {pending ? "Enviando…" : "Solicitar reserva"}
-    </button>
+    </Button>
   );
 }
 
@@ -18,36 +21,34 @@ export function ReserveForm({ vehicleId }: { vehicleId: string }) {
   const [state, action] = useFormState(createReservation, initial);
   if (state.ok) {
     return (
-      <div className="reserve" role="status">
-        <p className="done">¡Listo! Recibimos tu solicitud. Un asesor te escribirá por WhatsApp para confirmar.</p>
+      <div role="status" className="mt-7 flex items-start gap-3 rounded-2xl border border-ok/30 bg-ok/10 p-5 text-ok">
+        <CheckCircle2 className="mt-0.5 size-5 shrink-0" aria-hidden="true" />
+        <p>¡Listo! Recibimos tu solicitud. Un asesor te escribirá por WhatsApp para confirmar.</p>
       </div>
     );
   }
   return (
-    <form className="reserve" action={action}>
-      <h3>Reservar este auto</h3>
-      <p className="small">No se cobra nada ahora. Un asesor te contacta para confirmar la reserva.</p>
+    <form action={action} className="mt-7 flex flex-col gap-3 rounded-2xl border border-hair bg-card p-5 shadow-soft">
+      <h3 className="text-xl tracking-tight">Reservar este auto</h3>
+      <p className="text-[13px] text-mut">No se cobra nada ahora. Un asesor te contacta para confirmar la reserva.</p>
       <input type="hidden" name="vehicleId" value={vehicleId} />
-      <div className="hp" aria-hidden="true">
+      <div aria-hidden="true" className="absolute -left-[9999px] size-px overflow-hidden">
         <label>
           No llenar
           <input name="website" tabIndex={-1} autoComplete="off" />
         </label>
       </div>
-      <label className="lbl">
-        Tu nombre
-        <input className="field" name="name" required minLength={2} maxLength={80} autoComplete="name" />
-      </label>
-      <label className="lbl">
-        Tu celular
-        <input className="field" name="phone" required inputMode="tel" autoComplete="tel" placeholder="0991234567" />
-      </label>
-      <label className="lbl">
-        Comentario (opcional)
-        <textarea className="field" name="note" maxLength={300} rows={2} />
-      </label>
+      <Field label="Tu nombre">
+        <Input name="name" required minLength={2} maxLength={80} autoComplete="name" />
+      </Field>
+      <Field label="Tu celular">
+        <Input name="phone" required inputMode="tel" autoComplete="tel" placeholder="0991234567" />
+      </Field>
+      <Field label="Comentario (opcional)">
+        <Textarea name="note" maxLength={300} rows={2} />
+      </Field>
       {state.error && (
-        <p className="err" role="alert">
+        <p role="alert" className="text-sm text-bad">
           {state.error}
         </p>
       )}
