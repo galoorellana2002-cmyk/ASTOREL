@@ -41,9 +41,12 @@ export function ReserveForm({ vehicleId }: { vehicleId: string }) {
       <Field label="Tu nombre">
         <Input name="name" required minLength={2} maxLength={80} autoComplete="name" />
       </Field>
-      <Field label="Tu celular">
-        <Input name="phone" required inputMode="tel" autoComplete="tel" placeholder="0991234567" />
-      </Field>
+      <div className="flex flex-col gap-1.5">
+        <Field label="Tu celular">
+          <Input name="phone" required inputMode="tel" autoComplete="tel" placeholder="0991234567" aria-describedby="phone-help" />
+        </Field>
+        <span id="phone-help" className="text-xs text-mut">Solo lo usamos para confirmar tu reserva por WhatsApp.</span>
+      </div>
       <Field label="Comentario (opcional)">
         <Textarea name="note" maxLength={300} rows={2} />
       </Field>

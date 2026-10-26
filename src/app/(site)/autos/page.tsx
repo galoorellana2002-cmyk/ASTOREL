@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Search } from "lucide-react";
 import { VehicleCard } from "@/components/VehicleCard";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,7 @@ import { Input, Select } from "@/components/ui/input";
 import { Reveal } from "@/components/ui/reveal";
 import { getCatalog, type CatalogFilters } from "@/lib/vehicles";
 import { BODY_TYPES } from "@/lib/constants";
+import { waLink } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Autos del patio" };
 export const dynamic = "force-dynamic";
@@ -33,38 +35,34 @@ export default async function AutosPage({ searchParams }: { searchParams: Search
       </div>
 
       <form method="get" className="my-7 flex flex-wrap items-center gap-2.5 rounded-2xl border border-hair bg-alt p-3">
-        <label className="relative min-w-[220px] flex-1">
-          <span className="sr-only">Buscar</span>
+        <div className="relative min-w-[220px] flex-1">
           <Search aria-hidden="true" className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-mut" />
-          <Input type="search" name="q" placeholder="Busca por marca, modelo o color" defaultValue={filters.q} className="pl-10" />
-        </label>
-        <label>
-          <span className="sr-only">Tipo</span>
-          <Select name="tipo" defaultValue={filters.tipo ?? ""}>
+          <Input type="search" name="q" aria-label="Buscar por marca, modelo o color" placeholder="Busca por marca, modelo o color" defaultValue={filters.q} className="pl-10" />
+        </div>
+        <div>
+          <Select aria-label="Tipo de auto" name="tipo" defaultValue={filters.tipo ?? ""}>
             <option value="">Todos los tipos</option>
             {BODY_TYPES.map((t) => (
               <option key={t} value={t}>{t}</option>
             ))}
           </Select>
-        </label>
-        <label>
-          <span className="sr-only">Precio máximo</span>
-          <Select name="max" defaultValue={filters.max ? String(filters.max) : ""}>
+        </div>
+        <div>
+          <Select aria-label="Precio máximo" name="max" defaultValue={filters.max ? String(filters.max) : ""}>
             <option value="">Cualquier precio</option>
             {[10000, 15000, 20000, 30000, 50000].map((p) => (
               <option key={p} value={p}>Hasta ${p.toLocaleString("es-EC")}</option>
             ))}
           </Select>
-        </label>
-        <label>
-          <span className="sr-only">Ordenar</span>
-          <Select name="orden" defaultValue={filters.orden ?? "recientes"}>
+        </div>
+        <div>
+          <Select aria-label="Ordenar por" name="orden" defaultValue={filters.orden ?? "recientes"}>
             <option value="recientes">Más recientes</option>
             <option value="precio-asc">Precio: menor a mayor</option>
             <option value="precio-desc">Precio: mayor a menor</option>
             <option value="km">Menor kilometraje</option>
           </Select>
-        </label>
+        </div>
         <Button type="submit" size="sm">Filtrar</Button>
       </form>
 
@@ -76,7 +74,15 @@ export default async function AutosPage({ searchParams }: { searchParams: Search
             </Reveal>
           ))
         ) : (
-          <p className="col-span-full py-16 text-center text-lg text-mut">No encontramos autos con esos filtros.</p>
+          <div className="col-span-full flex flex-col items-center gap-4 py-16 text-center">
+            <p className="text-lg text-mut">No encontramos autos con esos filtros.</p>
+            <div className="flex flex-wrap justify-center gap-2.5">
+              <Button asChild size="sm"><Link href="/autos">Quitar filtros</Link></Button>
+              <Button asChild size="sm" variant="outline">
+                <a href={waLink("Hola, busco un auto y no lo encontré en la página. ¿Me ayudan?")} target="_blank" rel="noopener noreferrer">Cuéntanos qué buscas</a>
+              </Button>
+            </div>
+          </div>
         )}
       </div>
     </div>

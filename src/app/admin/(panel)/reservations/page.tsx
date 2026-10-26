@@ -25,7 +25,7 @@ export default async function ReservationsPage() {
               <TR key={r.id}>
                 <TD>{dateTime(r.createdAt)}</TD>
                 <TD>{r.vehicle.brand} {r.vehicle.model} {r.vehicle.year}<Small>{money(r.vehicle.priceCents)}</Small></TD>
-                <TD><Link className="hover:underline" href={`/admin/leads/${r.lead.id}`}>{r.lead.name ?? "Sin nombre"}</Link><Small>{r.lead.phone}</Small></TD>
+                <TD><Link className="inline-block py-1 hover:underline" href={`/admin/leads/${r.lead.id}`}>{r.lead.name ?? "Sin nombre"}</Link><Small>{r.lead.phone}</Small></TD>
                 <TD>{r.note || "—"}</TD>
                 <TD><Pill k={r.status}>{r.status}</Pill></TD>
                 <TD>

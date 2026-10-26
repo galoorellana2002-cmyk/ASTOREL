@@ -38,7 +38,7 @@ export function Footer() {
           <img src="/brand/logo-astorel-blanco.svg" alt={PATIO_NAME} className="mb-1 h-5 w-auto self-start" />
           <span>© {new Date().getFullYear()} {PATIO_NAME}</span>
           <span>Los defectos y la ficha legal son referenciales. Confirma siempre en la visita.</span>
-          <Link href="/admin" className="w-fit underline underline-offset-[3px] transition hover:text-white focus-visible:outline-white">Acceso administrador</Link>
+          <Link href="/admin" className="inline-flex min-h-11 w-fit items-center underline underline-offset-[3px] transition hover:text-white focus-visible:outline-white">Acceso administrador</Link>
         </div>
       </div>
     </footer>

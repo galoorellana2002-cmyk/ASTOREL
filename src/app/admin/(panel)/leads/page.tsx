@@ -39,7 +39,7 @@ export default async function LeadsPage({ searchParams }: { searchParams: { segm
             {leads.map((l) => (
               <TR key={l.id}>
                 <TD>
-                  <Link className="hover:underline" href={`/admin/leads/${l.id}`}>{l.name ?? "Visitante anónimo"}</Link>
+                  <Link className="inline-block py-1 hover:underline" href={`/admin/leads/${l.id}`}>{l.name ?? "Visitante anónimo"}</Link>
                   <Small>{l.phone ?? "Sin teléfono"}</Small>
                 </TD>
                 <TD><Pill k={l.segment}>{SEGMENT_LABEL[l.segment as Segment] ?? l.segment}</Pill>{l.segmentLocked && <span className="text-[13px] text-mut"> · manual</span>}</TD>

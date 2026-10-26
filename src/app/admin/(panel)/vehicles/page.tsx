@@ -31,7 +31,7 @@ export default async function VehiclesAdminPage({ searchParams }: { searchParams
           <TBody>
             {vehicles.map((v) => (
               <TR key={v.id}>
-                <TD><Link className="hover:underline" href={`/admin/vehicles/${v.id}`}>{v.brand} {v.model}</Link><Small>{v.version}</Small></TD>
+                <TD><Link className="inline-block py-1 hover:underline" href={`/admin/vehicles/${v.id}`}>{v.brand} {v.model}</Link><Small>{v.version}</Small></TD>
                 <TD>{v.year}</TD>
                 <TD>{kmFmt(v.km)}</TD>
                 <TD>{money(v.priceCents)}</TD>

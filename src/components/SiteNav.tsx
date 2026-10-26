@@ -30,12 +30,12 @@ export function SiteNav({ name }: { name: string }) {
       <nav className={cn("sticky top-[env(safe-area-inset-top,0px)] z-50 bg-black/95 text-white backdrop-blur-xl transition-shadow duration-300", scrolled && "shadow-[0_8px_30px_rgb(0_0_0/.35)]")}>
         <div className="container grid h-14 grid-cols-[1fr_auto_1fr] items-center gap-3">
           <Dialog.Trigger asChild>
-            <button type="button" className="inline-flex min-h-11 items-center gap-2.5 justify-self-start text-[15px] text-white/90 transition hover:text-white focus-visible:outline-white">
+            <button type="button" className="inline-flex min-h-11 min-w-11 items-center gap-2.5 justify-self-start text-[15px] text-white/90 transition hover:text-white focus-visible:outline-white">
               <Menu className="size-5" strokeWidth={1.6} aria-hidden="true" />
               <span className="max-[420px]:sr-only">Menú</span>
             </button>
           </Dialog.Trigger>
-          <Link href="/" className="inline-flex items-center focus-visible:outline-white" aria-label={name}>
+          <Link href="/" className="inline-flex min-h-11 items-center px-2 focus-visible:outline-white" aria-label={name}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/brand/logo-astorel-blanco.svg" alt={name} className="h-[18px] w-auto max-[420px]:h-[15px]" />
           </Link>

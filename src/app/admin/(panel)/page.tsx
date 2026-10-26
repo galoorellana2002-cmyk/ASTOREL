@@ -38,7 +38,7 @@ export default async function DashboardPage() {
       <StatGrid>
         <StatCard value={available} label="Autos disponibles" hint={`${reserved} reservados`} />
         <StatCard value={newLeads} label="Clientes nuevos (7 días)" hint={`${total} en total`} />
-        <StatCard value={pending} label="Reservas por confirmar" hint={<Link href="/admin/reservations" className="underline underline-offset-2">Revisar ahora</Link>} />
+        <StatCard value={pending} label="Reservas por confirmar" hint={<Link href="/admin/reservations" className="inline-flex min-h-6 items-center underline underline-offset-2">Revisar ahora</Link>} />
         <StatCard value={counts.get("CLIENTE_FINAL") ?? 0} label="Clientes finales" hint="Los que quieren comprar: atiéndelos primero." />
       </StatGrid>
 
@@ -58,7 +58,7 @@ export default async function DashboardPage() {
               {recent.map((l) => (
                 <TR key={l.id}>
                   <TD>
-                    <Link className="hover:underline" href={`/admin/leads/${l.id}`}>{l.name ?? "Visitante anónimo"}</Link>
+                    <Link className="inline-block py-1 hover:underline" href={`/admin/leads/${l.id}`}>{l.name ?? "Visitante anónimo"}</Link>
                     <Small>{l.vehicle ? `${l.vehicle.brand} ${l.vehicle.model} ${l.vehicle.year}` : dateTime(l.updatedAt)}</Small>
                   </TD>
                   <TD className="text-right"><Pill k={l.segment}>{SEGMENT_LABEL[l.segment as Segment] ?? l.segment}</Pill></TD>

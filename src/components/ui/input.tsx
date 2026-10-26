@@ -18,7 +18,7 @@ Textarea.displayName = "Textarea";
 export const Select = React.forwardRef<HTMLSelectElement, React.SelectHTMLAttributes<HTMLSelectElement> & { wrapperClassName?: string }>(
   ({ className, wrapperClassName, children, ...props }, ref) => (
     <div className={cn("relative min-w-0", wrapperClassName)}>
-      <select ref={ref} className={cn(control, "h-11 appearance-none pr-9", className)} {...props}>
+      <select ref={ref} className={cn(control, "h-11 cursor-pointer appearance-none pr-9", className)} {...props}>
         {children}
       </select>
       <ChevronDown aria-hidden="true" className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-mut" />

@@ -33,7 +33,7 @@ export default async function VehiclePage({ params }: { params: { slug: string }
     <div className="container">
       <TrackViewed slug={v.slug} />
       <nav aria-label="Ruta" className="flex flex-wrap items-center gap-1.5 pt-5 text-sm text-mut">
-        <Link href="/autos" className="transition hover:text-fg hover:underline">Autos</Link>
+        <Link href="/autos" className="inline-flex min-h-8 items-center transition hover:text-fg hover:underline">Autos</Link>
         <ChevronRight className="size-3.5" aria-hidden="true" />
         <span className="text-fg">{label}</span>
       </nav>

@@ -9,6 +9,7 @@ import { getCatalog } from "@/lib/vehicles";
 import { waLink } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
+export const metadata = { alternates: { canonical: "/" } };
 
 const SECTION = "py-[clamp(56px,8vw,104px)]";
 const TITLE = "text-balance text-center text-[clamp(30px,4.4vw,52px)] leading-[1.08] tracking-tightest";
@@ -84,7 +85,7 @@ export default async function HomePage() {
             <div className="relative overflow-hidden rounded-3xl border border-vline bg-[radial-gradient(ellipse_80%_70%_at_50%_58%,#34353b_0%,#0b0b0d_72%)] px-[6%] pb-10 pt-14">
               <CarArt type="suv" hex="#b4b6bc" dots={[[300, 92], [486, 150], [420, 60]]} />
               <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm backdrop-blur-md">
-                <span>Puerta delantera derecha</span>
+                <span><span className="mr-2 rounded-full border border-white/20 px-2 py-0.5 text-[11px] uppercase tracking-wider text-vmut">Ejemplo</span>Puerta delantera derecha</span>
                 <span className="text-vmut">Rayón superficial · Gravedad leve</span>
               </div>
             </div>
