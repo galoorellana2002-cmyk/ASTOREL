@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="bg-band text-band-fg">
       <div className="container">
-        <a href="#top" className="inline-flex min-h-11 items-center gap-2 border-b border-band-line py-5 text-sm text-band-mut transition hover:text-white focus-visible:outline-white sm:w-full">
+        <a href="#top" className="inline-flex min-h-11 items-center gap-2 pb-2 pt-8 text-sm text-band-mut transition hover:text-white focus-visible:outline-white sm:w-full">
           <ArrowUp className="size-4" aria-hidden="true" />
           Volver arriba
         </a>
@@ -33,7 +33,7 @@ export function Footer() {
             <a className={linkCls} href={wa} target="_blank" rel="noopener noreferrer">Coordinar una visita</a>
           </div>
         </div>
-        <div className="flex flex-col gap-2.5 border-t border-band-line pb-8 pt-6 text-xs text-band-mut">
+        <div className="flex flex-col gap-2.5 pb-8 pt-6 text-[13px] text-band-mut">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/logo-astorel-blanco.svg" alt={PATIO_NAME} className="mb-1 h-5 w-auto self-start" />
           <span>© {new Date().getFullYear()} {PATIO_NAME}</span>

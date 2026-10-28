@@ -12,7 +12,7 @@ export function VehicleCard({ v, className }: { v: VehicleCardData; className?: 
   return (
     <Link
       href={`/autos/${v.slug}`}
-      className={cn("group relative flex min-w-0 flex-col overflow-hidden rounded-[22px] border border-white/10 bg-black text-white transition duration-500 ease-out hover:-translate-y-1.5 hover:border-white/25 hover:shadow-lift focus-visible:outline-fg", className)}
+      className={cn("group relative flex min-w-0 flex-col overflow-hidden rounded-[22px] bg-black text-white transition duration-500 ease-out hover:-translate-y-1.5 hover:shadow-lift focus-visible:outline-fg", className)}
     >
       <div className="relative flex aspect-[16/10] items-center justify-center bg-[radial-gradient(ellipse_80%_70%_at_50%_62%,#34353b_0%,#0d0e11_70%)] px-[6%] pt-[6%]">
         {v.coverUrl ? (
@@ -36,13 +36,13 @@ export function VehicleCard({ v, className }: { v: VehicleCardData; className?: 
         <span className="mt-2.5 text-xl tabular-nums">{money(v.priceCents)}</span>
         <div className="mt-3.5 flex flex-wrap gap-2 pr-14">
           {[defects, legal].map((c) => (
-            <span key={c.txt} className="inline-flex items-center gap-[7px] rounded-full border border-[#34353a] px-2.5 py-[3px] text-[13px] text-[#d4d5d8]">
+            <span key={c.txt} className="inline-flex items-center gap-[7px] rounded-full bg-white/[.08] px-2.5 py-1 text-[13px] text-[#e4e5e8]">
               <Dot tone={c.tone} />
               {c.txt}
             </span>
           ))}
         </div>
-        <span aria-hidden="true" className="absolute bottom-[18px] right-[18px] grid size-10 place-items-center rounded-full border border-[#55565b] transition duration-300 group-hover:border-white group-hover:bg-white group-hover:text-black">
+        <span aria-hidden="true" className="absolute bottom-[18px] right-[18px] grid size-10 place-items-center rounded-full bg-white/10 transition duration-300 group-hover:bg-white group-hover:text-black">
           <ArrowRight className="size-[18px] transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={1.8} />
         </span>
       </div>

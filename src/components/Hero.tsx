@@ -9,9 +9,9 @@ import { CarArt } from "./CarArt";
 import { cn } from "@/lib/utils";
 
 const SLIDES = [
-  { id: "s1", eyebrow: "Visor 3D", title: "Primero lo ves en 3D.", sub: "Cada auto del patio, por fuera y por dentro.", cta: "Probar el visor", href: "/autos" },
-  { id: "s2", eyebrow: "Revisión de detalles", title: "Cada detalle, a la vista.", sub: "Rayones, llantas y tapizados marcados antes de que vengas.", cta: "Ver los autos", href: "/autos" },
-  { id: "s3", eyebrow: "Ficha legal", title: "Ficha legal al día.", sub: "Matrícula, multas y revisión técnica verificadas.", cta: "Cómo funciona", href: "/#confianza" },
+  { id: "s1", title: "Primero lo ves en 3D.", sub: "Cada auto del patio, por fuera y por dentro.", cta: "Probar el visor", href: "/autos" },
+  { id: "s2", title: "Cada detalle, a la vista.", sub: "Rayones, llantas y tapizados marcados antes de que vengas.", cta: "Ver los autos", href: "/autos" },
+  { id: "s3", title: "Ficha legal al día.", sub: "Matrícula, multas y revisión técnica verificadas.", cta: "Cómo funciona", href: "/#confianza" },
 ];
 
 const BG = [
@@ -39,7 +39,7 @@ export function Hero() {
   const go = (n: number) => setIdx((n + SLIDES.length) % SLIDES.length);
   const s = SLIDES[idx]!;
 
-  const arrow = "absolute top-[44%] z-20 hidden size-12 -translate-y-1/2 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md transition hover:bg-white hover:text-black focus-visible:outline-white md:grid";
+  const arrow = "absolute top-[44%] z-20 hidden size-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white hover:text-black focus-visible:outline-white md:grid";
 
   return (
     <header id="top" role="region" aria-roledescription="carrusel" aria-label="Destacados del patio" className="group relative overflow-hidden bg-black text-white">
@@ -103,17 +103,14 @@ export function Hero() {
           <div className="absolute inset-x-0 bottom-[72px] z-10 max-md:bottom-[68px]">
             <div className="container">
               <div className="flex max-w-4xl flex-col items-start gap-5 max-md:gap-4">
-                <motion.p {...rise(0)} className="text-[13px] uppercase tracking-[.16em] text-white/65">
-                  {s.eyebrow}
-                </motion.p>
-                <motion.h1 {...rise(1)} className="text-[clamp(40px,5.4vw,80px)] leading-[1.02] tracking-tightest">
+                <motion.h1 {...rise(0)} className="text-[clamp(40px,6.2vw,96px)] leading-[0.98] tracking-tightest">
                   {s.title}
                 </motion.h1>
-                <motion.p {...rise(2)} className="max-w-[460px] text-[clamp(16px,1.7vw,20px)] leading-snug text-white/85">
+                <motion.p {...rise(1)} className="max-w-[460px] text-[clamp(17px,1.7vw,20px)] leading-snug text-white/90">
                   {s.sub}
                 </motion.p>
-                <motion.div {...rise(3)}>
-                  <Button asChild variant="glass" size="lg">
+                <motion.div {...rise(2)}>
+                  <Button asChild variant="light" size="lg">
                     <Link href={s.href}>{s.cta}</Link>
                   </Button>
                 </motion.div>
@@ -142,7 +139,7 @@ export function Hero() {
             </button>
           ))}
         </div>
-        <button type="button" aria-label={paused ? "Reanudar carrusel" : "Pausar carrusel"} onClick={() => setPaused((p) => !p)} className="grid size-8 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md transition hover:bg-white hover:text-black focus-visible:outline-white">
+        <button type="button" aria-label={paused ? "Reanudar carrusel" : "Pausar carrusel"} onClick={() => setPaused((p) => !p)} className="grid size-8 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white hover:text-black focus-visible:outline-white">
           {paused ? <Play className="size-3 fill-current" /> : <Pause className="size-3 fill-current" />}
         </button>
       </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CarFront, FileText, Phone, Rotate3d, ScanSearch, ShieldCheck } from "lucide-react";
+import { CarFront, FileText, Phone } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { CatalogSlider } from "@/components/CatalogSlider";
 import { CarArt } from "@/components/CarArt";
@@ -11,14 +11,14 @@ import { waLink } from "@/lib/format";
 export const dynamic = "force-dynamic";
 export const metadata = { alternates: { canonical: "/" } };
 
-const SECTION = "py-[clamp(56px,8vw,104px)]";
-const TITLE = "text-balance text-center text-[clamp(30px,4.4vw,52px)] leading-[1.08] tracking-tightest";
-const SUB = "mx-auto mt-4 max-w-[560px] text-center text-[19px] text-mut";
+const SECTION = "py-[clamp(72px,10vw,144px)]";
+const TITLE = "text-balance text-center text-[clamp(34px,5vw,64px)] leading-[1.04] tracking-tightest";
+const SUB = "mx-auto mt-5 max-w-[560px] text-center text-[19px] text-fg/75";
 
 const TRUST = [
-  { icon: ScanSearch, title: "Revisión de detalles", text: "Pintura, llantas y tapizados se revisan con fotos de cerca. Lo que no se ve perfecto queda marcado y explicado." },
-  { icon: ShieldCheck, title: "Ficha legal clara", text: "Matrícula, gravámenes, multas y revisión técnica en una sola vista, antes de pedir una visita." },
-  { icon: Rotate3d, title: "Recorrido en 3D", text: "Mira el auto por fuera y por dentro desde tu teléfono, o proyéctalo en tu calle con realidad aumentada." },
+  { title: "Revisión de detalles", text: "Pintura, llantas y tapizados se revisan con fotos de cerca. Lo que no se ve perfecto queda marcado y explicado." },
+  { title: "Ficha legal clara", text: "Matrícula, gravámenes, multas y revisión técnica en una sola vista, antes de pedir una visita." },
+  { title: "Recorrido en 3D", text: "Mira el auto por fuera y por dentro desde tu teléfono, o proyéctalo en tu calle con realidad aumentada." },
 ];
 
 export default async function HomePage() {
@@ -76,17 +76,16 @@ export default async function HomePage() {
       <section id="visor" className={`${SECTION} overflow-hidden bg-vbg text-vfg`}>
         <div className="container">
           <Reveal className="text-center">
-            <span className="mb-2 block text-[13px] uppercase tracking-[.16em] text-vmut">Visor 3D</span>
             <h2 className={TITLE}>Gíralo. Acércate. Revisa cada detalle.</h2>
-            <p className={`${SUB} text-vmut`}>Cada defecto aparece marcado sobre el auto, con su zona y su gravedad. Abre cualquier auto para probarlo.</p>
+            <p className={`${SUB} text-vfg/80`}>Cada defecto aparece marcado sobre el auto, con su zona y su gravedad. Abre cualquier auto para probarlo.</p>
           </Reveal>
 
           <Reveal delay={0.1} y={40} className="mx-auto mt-12 max-w-4xl">
-            <div className="relative overflow-hidden rounded-3xl border border-vline bg-[radial-gradient(ellipse_80%_70%_at_50%_58%,#34353b_0%,#0b0b0d_72%)] px-[6%] pb-10 pt-14">
+            <div className="relative overflow-hidden rounded-3xl bg-[radial-gradient(ellipse_80%_70%_at_50%_58%,#34353b_0%,#0b0b0d_72%)] px-[6%] pb-10 pt-14">
               <CarArt type="suv" hex="#b4b6bc" dots={[[300, 92], [486, 150], [420, 60]]} />
-              <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm backdrop-blur-md">
-                <span><span className="mr-2 rounded-full border border-white/20 px-2 py-0.5 text-[11px] uppercase tracking-wider text-vmut">Ejemplo</span>Puerta delantera derecha</span>
-                <span className="text-vmut">Rayón superficial · Gravedad leve</span>
+              <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-between gap-2 rounded-2xl bg-vcard px-4 py-3 text-[15px]">
+                <span><span className="mr-2 text-vmut">Ejemplo ·</span>Puerta delantera derecha</span>
+                <span className="text-vfg/80">Rayón superficial · Gravedad leve</span>
               </div>
             </div>
           </Reveal>
@@ -104,19 +103,13 @@ export default async function HomePage() {
           <Reveal>
             <h2 className={TITLE}>Sin sorpresas al llegar</h2>
           </Reveal>
-          <div className="mt-12 grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-x-9 gap-y-10">
-            {TRUST.map((t, i) => {
-              const Icon = t.icon;
-              return (
-                <Reveal key={t.title} delay={i * 0.11}>
-                  <div className="mb-[18px] grid size-12 place-items-center rounded-full border border-fg">
-                    <Icon className="size-6" strokeWidth={1.4} aria-hidden="true" />
-                  </div>
-                  <h3 className="mb-2 text-2xl tracking-tight">{t.title}</h3>
-                  <p className="text-base text-mut">{t.text}</p>
-                </Reveal>
-              );
-            })}
+          <div className="mt-14 grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-x-9 gap-y-12">
+            {TRUST.map((t, i) => (
+              <Reveal key={t.title} delay={i * 0.11}>
+                <h3 className="mb-3 text-[clamp(24px,2.2vw,30px)] leading-tight tracking-tight">{t.title}</h3>
+                <p className="text-[17px] leading-relaxed text-fg">{t.text}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
