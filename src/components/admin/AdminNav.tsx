@@ -26,9 +26,9 @@ export function AdminNav() {
             key={i.href}
             href={i.href}
             aria-current={active ? "page" : undefined}
-            className={cn("relative flex shrink-0 items-center gap-2.5 rounded-lg px-3 py-2.5 text-[15px] transition-colors focus-visible:outline-white max-md:py-2 max-md:text-sm", active ? "text-white" : "text-[#c9cacd] hover:bg-white/5 hover:text-white")}
+            className={cn("relative flex shrink-0 items-center gap-2.5 rounded-none px-3 py-2.5 text-[15px] transition-colors focus-visible:outline-white max-md:py-2 max-md:text-sm", active ? "text-white" : "text-[#c9cacd] hover:bg-white/5 hover:text-white")}
           >
-            {active && <motion.span layoutId="adm-active" className="absolute inset-0 rounded-lg bg-white/12" transition={{ type: "spring", stiffness: 420, damping: 36 }} />}
+            {active && <motion.span layoutId="adm-active" className="absolute inset-0 rounded-none bg-white/12 border-l-2 border-white" transition={{ type: "spring", stiffness: 420, damping: 36 }} />}
             <Icon className="relative size-[18px]" strokeWidth={1.6} aria-hidden="true" />
             <span className="relative">{i.label}</span>
           </Link>

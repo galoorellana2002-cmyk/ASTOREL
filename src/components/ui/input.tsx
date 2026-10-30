@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const control =
-  "w-full min-w-0 rounded-lg border border-line bg-card px-3.5 text-[15px] text-fg transition placeholder:text-mut/70 focus-visible:border-fg focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-fg disabled:cursor-not-allowed disabled:opacity-50";
+  "w-full min-w-0 rounded-none border border-line bg-card px-3.5 text-[15px] text-fg transition placeholder:text-mut/70 focus-visible:border-fg focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-fg disabled:cursor-not-allowed disabled:opacity-50";
 
 export const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(({ className, type, ...props }, ref) => (
   <input ref={ref} type={type} className={cn(control, "h-11", type === "color" && "cursor-pointer p-1", type === "file" && "h-auto cursor-pointer py-2 file:mr-3 file:rounded-md file:border-0 file:bg-alt file:px-3 file:py-1.5 file:text-sm file:text-fg", className)} {...props} />

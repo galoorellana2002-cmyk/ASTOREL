@@ -42,7 +42,7 @@ export function FinanceAssistant({ period }: { period: string }) {
           {log.map((m, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
               <p className="mb-1 text-[15px]">{m.q}</p>
-              <p className="whitespace-pre-wrap rounded-xl border border-hair bg-alt px-3.5 py-3 text-[15px] leading-relaxed">{m.a}</p>
+              <p className="whitespace-pre-wrap rounded-none border border-hair bg-alt px-3.5 py-3 text-[15px] leading-relaxed">{m.a}</p>
             </motion.div>
           ))}
         </AnimatePresence>

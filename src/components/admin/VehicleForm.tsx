@@ -90,7 +90,7 @@ export function VehicleForm({ vehicle }: { vehicle?: VehicleFormData }) {
   const setD = (i: number, patch: Partial<DefectRow>) => setDefects((rows) => rows.map((r, j) => (j === i ? { ...r, ...patch } : r)));
   const setL = (i: number, patch: Partial<LegalRow>) => setLegal((rows) => rows.map((r, j) => (j === i ? { ...r, ...patch } : r)));
 
-  const item = "grid grid-cols-[repeat(auto-fit,minmax(min(100%,150px),1fr))] items-end gap-2 rounded-xl border border-hair bg-alt p-3";
+  const item = "grid grid-cols-[repeat(auto-fit,minmax(min(100%,150px),1fr))] items-end gap-2 rounded-none border border-hair bg-alt p-3";
   const grid = "grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-3.5";
 
   return (

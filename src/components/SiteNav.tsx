@@ -4,14 +4,15 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Heart, MapPin, Menu, X } from "lucide-react";
+import { Wordmark } from "@/components/Wordmark";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
-  { href: "/autos", label: "Autos del patio" },
-  { href: "/#visor", label: "Visor 3D" },
-  { href: "/#confianza", label: "Confianza" },
-  { href: "/#contacto", label: "Contacto" },
+  { href: "/autos", label: "Inventario" },
+  { href: "/#visor", label: "Experiencia 3D" },
+  { href: "/#beneficios", label: "Cómo comprar" },
+  { href: "/#confianza", label: "Nosotros" },
 ];
 
 export function SiteNav({ name }: { name: string }) {
@@ -27,21 +28,43 @@ export function SiteNav({ name }: { name: string }) {
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
-      <nav className={cn("sticky top-[env(safe-area-inset-top,0px)] z-50 bg-black/95 text-white backdrop-blur-xl transition-shadow duration-300", scrolled && "shadow-[0_8px_30px_rgb(0_0_0/.35)]")}>
-        <div className="container grid h-14 grid-cols-[1fr_auto_1fr] items-center gap-3">
-          <Dialog.Trigger asChild>
-            <button type="button" className="inline-flex min-h-11 min-w-11 items-center gap-2.5 justify-self-start text-[15px] text-white/90 transition hover:text-white focus-visible:outline-white">
-              <Menu className="size-5" strokeWidth={1.6} aria-hidden="true" />
-              <span className="max-[420px]:sr-only">Menú</span>
-            </button>
-          </Dialog.Trigger>
-          <Link href="/" className="inline-flex min-h-11 items-center px-2 focus-visible:outline-white" aria-label={name}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/logo-astorel-blanco.svg" alt={name} className="h-[18px] w-auto max-[420px]:h-[15px]" />
+      <div className="hidden bg-band text-band-fg sm:block">
+        <div className="container flex h-[34px] items-center justify-between text-[10px] tracking-[.1em]">
+          <span>OTRA FORMA DE ENCONTRAR TU PRÓXIMO AUTO.</span>
+          <span className="inline-flex items-center gap-2 tracking-normal">
+            <MapPin className="size-3" aria-hidden="true" />
+            Quito, Ecuador
+          </span>
+        </div>
+      </div>
+      <nav className={cn("sticky top-[env(safe-area-inset-top,0px)] z-50 border-b border-hair bg-bg/95 text-fg backdrop-blur-xl transition-shadow duration-300", scrolled && "shadow-[0_8px_30px_rgb(0_0_0/.12)]")}>
+        <div className="container flex h-16 items-center justify-between gap-4 md:h-[90px]">
+          <Link href="/" className="inline-flex min-h-11 items-center focus-visible:outline-fg" aria-label={name}>
+            <Wordmark name={name} className="h-[15px] md:h-[17px]" />
           </Link>
-          <Link href="/#contacto" className="inline-flex min-h-11 items-center justify-self-end text-[15px] text-white/90 underline-offset-[6px] transition hover:text-white hover:underline focus-visible:outline-white">
-            Contacto
-          </Link>
+          <ul className="hidden items-center gap-8 text-[13px] md:flex">
+            {LINKS.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="inline-flex min-h-11 items-center underline-offset-[6px] transition hover:underline focus-visible:outline-fg">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="flex items-center gap-3 md:gap-6">
+            <Link href="/autos" aria-label="Ver autos del patio" className="hidden min-h-11 min-w-11 items-center justify-center sm:inline-flex focus-visible:outline-fg">
+              <Heart className="size-5" strokeWidth={1.4} aria-hidden="true" />
+            </Link>
+            <Link href="/#contacto" className="inline-flex h-11 items-center gap-[18px] border border-fg px-[18px] text-xs transition hover:bg-fg hover:text-bg focus-visible:outline-fg">
+              Hablemos
+              <ArrowUpRight className="size-4" strokeWidth={1.4} aria-hidden="true" />
+            </Link>
+            <Dialog.Trigger asChild>
+              <button type="button" aria-label="Menú" className="inline-flex min-h-11 min-w-11 items-center justify-center md:hidden focus-visible:outline-fg">
+                <Menu className="size-5" strokeWidth={1.6} aria-hidden="true" />
+              </button>
+            </Dialog.Trigger>
+          </div>
         </div>
       </nav>
 
@@ -59,7 +82,7 @@ export function SiteNav({ name }: { name: string }) {
             </Dialog.Close>
           </div>
           <ul className="mx-auto my-auto flex w-full max-w-[1280px] flex-col py-10">
-            {LINKS.map((l, i) => (
+            {[...LINKS, { href: "/#contacto", label: "Contacto" }].map((l, i) => (
               <motion.li key={l.href} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.08 + i * 0.07, ease: [0.2, 0.7, 0.2, 1] }}>
                 <Link
                   href={l.href}

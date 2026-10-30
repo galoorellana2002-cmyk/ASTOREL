@@ -22,7 +22,7 @@ export function AdminHead({ title, sub, action, back }: { title: React.ReactNode
 
 export function StatCard({ value, label, hint, tone }: { value: React.ReactNode; label: string; hint?: React.ReactNode; tone?: "pos" | "neg" }) {
   return (
-    <div className="rounded-2xl border border-hair bg-card p-5 shadow-soft">
+    <div className="border border-hair bg-card p-5">
       <b className={cn("block break-words text-[clamp(28px,3vw,38px)] leading-[1.1] tracking-tightest tabular-nums", tone === "pos" && "text-ok", tone === "neg" && "text-bad")}>{value}</b>
       <span className="mt-1 block text-sm text-mut">{label}</span>
       {hint && <small className="mt-1.5 block text-xs leading-snug text-mut">{hint}</small>}
@@ -36,7 +36,7 @@ export function StatGrid({ children }: { children: React.ReactNode }) {
 
 export function Flash({ children }: { children: React.ReactNode }) {
   return (
-    <p role="status" className="mb-4 rounded-xl bg-ok/12 px-3.5 py-2.5 text-[15px] text-ok">
+    <p role="status" className="mb-4 rounded-none bg-ok/12 px-3.5 py-2.5 text-[15px] text-ok">
       {children}
     </p>
   );
@@ -44,7 +44,7 @@ export function Flash({ children }: { children: React.ReactNode }) {
 
 export function ErrorNote({ children }: { children: React.ReactNode }) {
   return (
-    <p role="alert" className="rounded-xl bg-bad/10 px-3.5 py-2.5 text-[15px] text-bad">
+    <p role="alert" className="rounded-none bg-bad/10 px-3.5 py-2.5 text-[15px] text-bad">
       {children}
     </p>
   );

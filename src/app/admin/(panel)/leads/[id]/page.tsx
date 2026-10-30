@@ -69,7 +69,7 @@ export default async function LeadDetailPage({ params }: { params: { id: string 
                   <div
                     key={m.id}
                     title={dateTime(m.createdAt)}
-                    className={cn("max-w-[86%] whitespace-pre-wrap break-words rounded-2xl px-3.5 py-2.5 text-[15px] leading-snug", m.role === "bot" ? "self-start rounded-bl-sm border border-hair bg-alt" : "self-end rounded-br-sm bg-inv text-inv-fg")}
+                    className={cn("max-w-[86%] whitespace-pre-wrap break-words rounded-none px-3.5 py-2.5 text-[15px] leading-snug", m.role === "bot" ? "self-start rounded-bl-sm border border-hair bg-alt" : "self-end rounded-br-sm bg-inv text-inv-fg")}
                   >
                     {m.content}
                   </div>
