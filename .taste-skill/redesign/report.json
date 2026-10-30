@@ -1,0 +1,2572 @@
+{
+ "url": "http://localhost:3000/",
+ "at": "2026-10-28T16:39:02.596Z",
+ "allow": [
+  "gradient"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    0.64,
+    0.48,
+    0.81,
+    0.81,
+    0.7,
+    0.91,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 16,
+    "css": 2,
+    "transitions": 1,
+    "scripted": 13,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 6790,
+     "screens": 7.5,
+     "words": 371,
+     "img": 4,
+     "video": 0,
+     "canvas": 0,
+     "svg": 6,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Autos usados, sin letra chica.",
+     "words": 5,
+     "chars": 30,
+     "lines": 2,
+     "size": 86.4,
+     "vw": 6,
+     "font": "Questrial",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "left",
+     "widthRatio": 0.43,
+     "top": 324,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Autos usados, sin letra chica.",
+     "words": 5,
+     "lines": 2,
+     "size": 86.4,
+     "font": "Questrial"
+    },
+    "headings": [
+     {
+      "text": "Autos usados, sin letra chica.",
+      "words": 5,
+      "chars": 30,
+      "lines": 2,
+      "size": 86.4,
+      "vw": 6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 324,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Elige un auto y lee su hoja.",
+      "words": 7,
+      "chars": 28,
+      "lines": 2,
+      "size": 80.6,
+      "vw": 5.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.42,
+      "top": 1058,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Toyota Corolla 2006",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.42,
+      "top": 1339,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "$8.000",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.42,
+      "top": 1389,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Sin sorpresas al llegar.",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 80.6,
+      "vw": 5.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 1872,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Revisión de detalles",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 2002,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ficha legal clara",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 2662,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Kia Sportage 2019",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.27,
+      "top": 2904,
+      "tag": "dd",
+      "kind": "statement"
+     },
+     {
+      "text": "Recorrido en 3D",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 3322,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Así compras aquí.",
+      "words": 3,
+      "chars": 17,
+      "lines": 2,
+      "size": 80.6,
+      "vw": 5.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 4299,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "¿Lo miras aquí",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 123.8,
+      "vw": 8.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.98,
+      "top": 5062,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "o lo visitas?",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 123.8,
+      "vw": 8.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.98,
+      "top": 5758,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Autos del patio",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.15,
+      "top": 6086,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Visor 3D",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.08,
+      "top": 6149,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Ficha legal",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.11,
+      "top": 6211,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Cómo comprar",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.15,
+      "top": 6274,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Contacto",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.09,
+      "top": 6336,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 17,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 4,
+     "centered": 3,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Questrial",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      15,
+      16,
+      17,
+      18,
+      34,
+      81,
+      86,
+      124
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "Questrial",
+      "size": 17,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 21
+     },
+     "measureChars": 44,
+     "max": {
+      "size": 123.8,
+      "vw": 8.6,
+      "font": "Questrial",
+      "text": "¿Lo miras aquí"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.18,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#000000",
+       "top": 56,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 68,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 2002,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#b1b1b1",
+       "top": 3322,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.69
+       }
+      },
+      {
+       "color": "#0b0b0d",
+       "top": 5022,
+       "hsl": {
+        "h": 240,
+        "s": 0.08,
+        "l": 0.05
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#000000",
+       "share": 0.57
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.25
+      },
+      {
+       "color": "#a1a1a6",
+       "share": 0.1
+      },
+      {
+       "color": "#5c5c5c",
+       "share": 0.05
+      },
+      {
+       "color": "#f5f5f7",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#000000",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 3,
+     "radius": 8,
+     "height": 56,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Chevrolet D-Max 2016 · 118.000 km $17.20",
+      "Ver los autos del patio",
+      "Chatea con nosotros"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 3,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.relative.flex → radial-gradient(80% 70% at 50% 58%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)",
+      "div.relative.aspect-square → radial-gradient(80% 70% at 50% 58%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)",
+      "div.relative.h-[50svh] → radial-gradient(80% 70% at 40% 70%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 5,
+     "boxRadius": 20,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 2002
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "svg",
+      "ratio": 0.09
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "questrial"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 6790,
+    "margins": {
+     "left": 96,
+     "right": 96
+    },
+    "sections": [
+     {
+      "sel": "header#top.bg-black.p-3",
+      "tag": "header",
+      "top": 56,
+      "height": 844,
+      "words": 40,
+      "media": 1,
+      "middle": 137,
+      "heading": {
+       "text": "Autos usados, sin letra chica.",
+       "size": 86,
+       "tag": "h1"
+      },
+      "left": 105,
+      "right": 44,
+      "textLeft": 105,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#autos.py-[clamp(88px,11vw,176px)]",
+      "tag": "section",
+      "top": 900,
+      "height": 972,
+      "words": 46,
+      "media": 1,
+      "middle": 48,
+      "heading": {
+       "text": "Elige un auto y lee su hoja.",
+       "size": 81,
+       "tag": "h2"
+      },
+      "left": 96,
+      "right": 153,
+      "textLeft": 744,
+      "textRight": 153,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#confianza.pb-[clamp(88px,11vw,176px)]",
+      "tag": "section",
+      "top": 1872,
+      "height": 2269,
+      "words": 105,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Sin sorpresas al llegar.",
+       "size": 81,
+       "tag": "h2"
+      },
+      "left": 96,
+      "right": 186,
+      "textLeft": 96,
+      "textRight": 186,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section#proceso.py-[clamp(88px,11vw,176px)].bg-band",
+      "tag": "section",
+      "top": 4141,
+      "height": 881,
+      "words": 97,
+      "media": 0,
+      "middle": 366,
+      "heading": {
+       "text": "Así compras aquí.",
+       "size": 81,
+       "tag": "h2"
+      },
+      "left": 96,
+      "right": 120,
+      "textLeft": 96,
+      "textRight": 120,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contacto.flex.flex-col",
+      "tag": "section",
+      "top": 5022,
+      "height": 900,
+      "words": 24,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "¿Lo miras aquí",
+       "size": 124,
+       "tag": "p"
+      },
+      "left": 340,
+      "right": 340,
+      "textLeft": 340,
+      "textRight": 340,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-band.text-band-fg",
+      "tag": "footer",
+      "top": 5922,
+      "height": 868,
+      "words": 38,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Autos del patio",
+       "size": 34,
+       "tag": "a"
+      },
+      "left": 778,
+      "right": 121,
+      "textLeft": 778,
+      "textRight": 121,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Autos usados, sin letra chica.",
+      "size": 86,
+      "top": 324,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 128,
+      "n": 6
+     },
+     {
+      "x": 96,
+      "n": 3
+     },
+     {
+      "x": 888,
+      "n": 3
+     },
+     {
+      "x": 744,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 14,
+    "bodySize": 17,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.14,
+    "voidBox": {
+     "x": 660,
+     "y": 120,
+     "w": 780,
+     "h": 240
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 7,
+   "filled": [
+    0.65,
+    0.55,
+    0.96,
+    0.96,
+    0.75,
+    0.98,
+    1
+   ],
+   "motion": {
+    "elements": 16,
+    "css": 2,
+    "transitions": 1,
+    "scripted": 13,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 7056,
+     "screens": 6.9,
+     "words": 371,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 6,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg",
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Autos usados, sin letra chica.",
+     "words": 5,
+     "chars": 30,
+     "lines": 2,
+     "size": 46.1,
+     "vw": 6,
+     "font": "Questrial",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "left",
+     "widthRatio": 0.37,
+     "top": 396,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Autos usados, sin letra chica.",
+     "words": 5,
+     "lines": 2,
+     "size": 46.1,
+     "font": "Questrial"
+    },
+    "headings": [
+     {
+      "text": "Autos usados, sin letra chica.",
+      "words": 5,
+      "chars": 30,
+      "lines": 2,
+      "size": 46.1,
+      "vw": 6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.37,
+      "top": 396,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Elige un auto y lee su hoja.",
+      "words": 7,
+      "chars": 28,
+      "lines": 2,
+      "size": 43,
+      "vw": 5.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.45,
+      "top": 1068,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Toyota Corolla 2006",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.45,
+      "top": 1320,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "$8.000",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.45,
+      "top": 1360,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Sin sorpresas al llegar.",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 43,
+      "vw": 5.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 1837,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Revisión de detalles",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 1929,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ficha legal clara",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 2713,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Kia Sportage 2019",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.42,
+      "top": 3022,
+      "tag": "dd",
+      "kind": "statement"
+     },
+     {
+      "text": "Recorrido en 3D",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 3497,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Así compras aquí.",
+      "words": 3,
+      "chars": 17,
+      "lines": 2,
+      "size": 43,
+      "vw": 5.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 4457,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "¿Lo miras aquí",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 66,
+      "vw": 8.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 5328,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "o lo visitas?",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 66,
+      "vw": 8.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 6081,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Autos del patio",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.26,
+      "top": 6352,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Visor 3D",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.15,
+      "top": 6412,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Ficha legal",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.19,
+      "top": 6472,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Cómo comprar",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.27,
+      "top": 6532,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Contacto",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.16,
+      "top": 6592,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 17,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 4,
+     "centered": 3,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Questrial",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      15,
+      16,
+      17,
+      18,
+      26,
+      28,
+      32,
+      43,
+      46,
+      66
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "Questrial",
+      "size": 17,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 21
+     },
+     "measureChars": 29,
+     "max": {
+      "size": 66,
+      "vw": 8.6,
+      "font": "Questrial",
+      "text": "¿Lo miras aquí"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.18,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#000000",
+       "top": 56,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 68,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 1929,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#b1b1b1",
+       "top": 3497,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.69
+       }
+      },
+      {
+       "color": "#0b0b0d",
+       "top": 5288,
+       "hsl": {
+        "h": 240,
+        "s": 0.08,
+        "l": 0.05
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#000000",
+       "share": 0.57
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.25
+      },
+      {
+       "color": "#a1a1a6",
+       "share": 0.1
+      },
+      {
+       "color": "#5c5c5c",
+       "share": 0.05
+      },
+      {
+       "color": "#f5f5f7",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#000000",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 3,
+     "radius": 8,
+     "height": 56,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Chevrolet D-Max 2016 · 118.000 km $17.20",
+      "Ver los autos del patio",
+      "Chatea con nosotros"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 3,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.relative.flex → radial-gradient(80% 70% at 50% 58%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)",
+      "div.relative.aspect-square → radial-gradient(80% 70% at 50% 58%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)",
+      "div.relative.h-[50svh] → radial-gradient(80% 70% at 40% 70%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 5,
+     "boxRadius": 20,
+     "squareMedia": 0,
+     "roundedMedia": 2,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.42
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "questrial"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 7056,
+    "margins": {
+     "left": 16,
+     "right": 40
+    },
+    "sections": [
+     {
+      "sel": "header#top.bg-black.p-3",
+      "tag": "header",
+      "top": 56,
+      "height": 924,
+      "words": 40,
+      "media": 2,
+      "middle": 52,
+      "heading": {
+       "text": "Autos usados, sin letra chica.",
+       "size": 46,
+       "tag": "h1"
+      },
+      "left": 52,
+      "right": 12,
+      "textLeft": 52,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#autos.py-[clamp(88px,11vw,176px)]",
+      "tag": "section",
+      "top": 980,
+      "height": 857,
+      "words": 46,
+      "media": 1,
+      "middle": 48,
+      "heading": {
+       "text": "Elige un auto y lee su hoja.",
+       "size": 43,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 88,
+      "textLeft": 408,
+      "textRight": 88,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#confianza.pb-[clamp(88px,11vw,176px)]",
+      "tag": "section",
+      "top": 1837,
+      "height": 2532,
+      "words": 105,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Sin sorpresas al llegar.",
+       "size": 43,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 48,
+      "textLeft": 16,
+      "textRight": 48,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section#proceso.py-[clamp(88px,11vw,176px)].bg-band",
+      "tag": "section",
+      "top": 4369,
+      "height": 919,
+      "words": 97,
+      "media": 0,
+      "middle": 154,
+      "heading": {
+       "text": "Así compras aquí.",
+       "size": 43,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 40,
+      "textLeft": 16,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contacto.flex.flex-col",
+      "tag": "section",
+      "top": 5288,
+      "height": 900,
+      "words": 24,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "¿Lo miras aquí",
+       "size": 66,
+       "tag": "p"
+      },
+      "left": 181,
+      "right": 174,
+      "textLeft": 181,
+      "textRight": 174,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-band.text-band-fg",
+      "tag": "footer",
+      "top": 6188,
+      "height": 868,
+      "words": 38,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Autos del patio",
+       "size": 32,
+       "tag": "a"
+      },
+      "left": 415,
+      "right": 64,
+      "textLeft": 415,
+      "textRight": 64,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Autos usados, sin letra chica.",
+      "size": 46,
+      "top": 396,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 48,
+      "n": 6
+     },
+     {
+      "x": 16,
+      "n": 3
+     },
+     {
+      "x": 432,
+      "n": 3
+     },
+     {
+      "x": 408,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 14,
+    "bodySize": 17,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.71,
+    0.59,
+    0.54,
+    0.71,
+    0.87,
+    0.65,
+    0.83,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 15,
+    "css": 2,
+    "transitions": 1,
+    "scripted": 12,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 7101,
+     "screens": 8.4,
+     "words": 371,
+     "img": 4,
+     "video": 0,
+     "canvas": 0,
+     "svg": 6,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Autos usados, sin letra chica.",
+     "words": 5,
+     "chars": 30,
+     "lines": 2,
+     "size": 44,
+     "vw": 11.3,
+     "font": "Questrial",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.81,
+     "top": 597,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Autos usados, sin letra chica.",
+     "words": 5,
+     "lines": 2,
+     "size": 44,
+     "font": "Questrial"
+    },
+    "headings": [
+     {
+      "text": "Autos usados, sin letra chica.",
+      "words": 5,
+      "chars": 30,
+      "lines": 2,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 597,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Elige un auto y lee su hoja.",
+      "words": 7,
+      "chars": 28,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1496,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Toyota Corolla 2006",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1742,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "$8.000",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1782,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Sin sorpresas al llegar.",
+      "words": 4,
+      "chars": 24,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2259,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Revisión de detalles",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2388,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ficha legal clara",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2979,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Kia Sportage 2019",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.67,
+      "top": 3125,
+      "tag": "dd",
+      "kind": "statement"
+     },
+     {
+      "text": "Recorrido en 3D",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3570,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Así compras aquí.",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4337,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "¿Lo miras aquí",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5428,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "o lo visitas?",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5846,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Autos del patio",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.51,
+      "top": 6484,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Visor 3D",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 6540,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Ficha legal",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 6596,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Cómo comprar",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.53,
+      "top": 6652,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Contacto",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.32,
+      "top": 6708,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 17,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 4,
+     "centered": 3,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Questrial",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      15,
+      16,
+      17,
+      18,
+      22,
+      26,
+      32,
+      40,
+      44
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Questrial",
+      "size": 17,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 21
+     },
+     "measureChars": 37,
+     "max": {
+      "size": 44,
+      "vw": 11.3,
+      "font": "Questrial",
+      "text": "Autos usados, sin letra chica."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.17,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#000000",
+       "top": 56,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 449,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 2388,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#b1b1b1",
+       "top": 3570,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.69
+       }
+      },
+      {
+       "color": "#0b0b0d",
+       "top": 5364,
+       "hsl": {
+        "h": 240,
+        "s": 0.08,
+        "l": 0.05
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#000000",
+       "share": 0.58
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.24
+      },
+      {
+       "color": "#a1a1a6",
+       "share": 0.1
+      },
+      {
+       "color": "#5c5c5c",
+       "share": 0.05
+      },
+      {
+       "color": "#f5f5f7",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#000000",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 2,
+     "radius": 8,
+     "height": 56,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Chevrolet D-Max 2016 · 118.000 km $17.20",
+      "Ver los autos del patio"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 3,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.relative.flex → radial-gradient(80% 70% at 50% 58%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)",
+      "div.relative.aspect-square → radial-gradient(80% 70% at 50% 58%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)",
+      "div.relative.h-[50svh] → radial-gradient(80% 70% at 40% 70%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 5,
+     "boxRadius": 20,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "svg",
+      "ratio": 0.1
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "questrial"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 7101,
+    "margins": {
+     "left": 16,
+     "right": 22
+    },
+    "sections": [
+     {
+      "sel": "header#top.bg-black.p-3",
+      "tag": "header",
+      "top": 56,
+      "height": 954,
+      "words": 40,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 41,
+      "right": 41,
+      "textLeft": 41,
+      "textRight": 41,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#autos.py-[clamp(88px,11vw,176px)]",
+      "tag": "section",
+      "top": 1010,
+      "height": 1248,
+      "words": 46,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Elige un auto y lee su hoja.",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 102,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#confianza.pb-[clamp(88px,11vw,176px)]",
+      "tag": "section",
+      "top": 2259,
+      "height": 1990,
+      "words": 105,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Sin sorpresas al llegar.",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 36,
+      "textLeft": 16,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#proceso.py-[clamp(88px,11vw,176px)].bg-band",
+      "tag": "section",
+      "top": 4249,
+      "height": 1115,
+      "words": 97,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Así compras aquí.",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 40,
+      "textLeft": 16,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contacto.flex.flex-col",
+      "tag": "section",
+      "top": 5364,
+      "height": 567,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "¿Lo miras aquí",
+       "size": 44,
+       "tag": "p"
+      },
+      "left": 22,
+      "right": 22,
+      "textLeft": 22,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-band.text-band-fg",
+      "tag": "footer",
+      "top": 5930,
+      "height": 1171,
+      "words": 38,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 85,
+      "textLeft": 16,
+      "textRight": 85,
+      "fullBleed": true,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Autos usados, sin letra chica.",
+      "size": 44,
+      "top": 597,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 36,
+      "n": 9
+     },
+     {
+      "x": 16,
+      "n": 5
+     }
+    ],
+    "leftBlocks": 14,
+    "bodySize": 17,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 1 picture(s) on the page (1 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 768,
+   "message": "11 different font sizes (13, 15, 16, 17, 18, 26, 28, 32, 43, 46, 66).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "off-centre",
+   "width": 768,
+   "message": "The margins differ: 16px on the left, 40px on the right, at 768px.",
+   "fix": "Put the navigation and the content on one pair of margins; check for padding on one side only, a scrollbar gutter, or a header on another inset than the page."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/redesign/desktop-fold.jpg",
+   "pages": [
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/redesign/desktop-page-01.jpg",
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/redesign/desktop-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/redesign/tablet-fold.jpg",
+   "pages": [
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/redesign/tablet-page-01.jpg",
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/redesign/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/redesign/mobile-fold.jpg",
+   "pages": [
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/redesign/mobile-page-01.jpg",
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/redesign/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

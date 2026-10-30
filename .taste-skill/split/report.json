@@ -1,0 +1,1803 @@
+{
+ "url": "http://localhost:3000/",
+ "at": "2026-10-28T17:05:28.988Z",
+ "allow": [
+  "gradient"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 7,
+   "filled": [
+    0.99,
+    0.62,
+    1,
+    0.97,
+    0.9,
+    1,
+    0.99
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 0,
+    "transitions": 1,
+    "scripted": 18,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 5489,
+     "screens": 6.1,
+     "words": 346,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 4,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg",
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "astorel : autos usados con ficha legal y visor 3D",
+     "words": 10,
+     "chars": 49,
+     "lines": 1,
+     "size": 309.6,
+     "vw": 21.5,
+     "font": "Questrial",
+     "weight": 400,
+     "tracking": -0.04,
+     "leading": 0.9,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "right",
+     "widthRatio": 0.62,
+     "top": 581,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "astorel : autos usados con ficha legal y visor 3D",
+     "words": 10,
+     "lines": 1,
+     "size": 309.6,
+     "font": "Questrial"
+    },
+    "headings": [
+     {
+      "text": "astorel : autos usados con ficha legal y visor 3D",
+      "words": 10,
+      "chars": 49,
+      "lines": 1,
+      "size": 309.6,
+      "vw": 21.5,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.62,
+      "top": 581,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Elige un auto y míralo a la izquierda.",
+      "words": 8,
+      "chars": 38,
+      "lines": 2,
+      "size": 43.2,
+      "vw": 3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.44,
+      "top": 1044,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Toyota Corolla 2006",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 43.2,
+      "vw": 3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.44,
+      "top": 1268,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "$8.000",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 43.2,
+      "vw": 3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.44,
+      "top": 1326,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Sin sorpresas al llegar.",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 63.4,
+      "vw": 4.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.44,
+      "top": 1971,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Así compras aquí.",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 63.4,
+      "vw": 4.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.44,
+      "top": 3278,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ven a verlo en persona.",
+      "words": 5,
+      "chars": 23,
+      "lines": 2,
+      "size": 63.4,
+      "vw": 4.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.41,
+      "top": 4566,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Questrial",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      26,
+      43,
+      63,
+      310
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Questrial",
+      "size": 18,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 21
+     },
+     "measureChars": 42,
+     "max": {
+      "size": 309.6,
+      "vw": 21.5,
+      "font": "Questrial",
+      "text": "astorel"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.04,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Ver los autos del patio",
+      "above": "astorel : autos usados con ficha legal y",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 435
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#000000",
+       "top": 56,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 900,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 1827,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#000000",
+       "share": 0.55
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.35
+      },
+      {
+       "color": "#a1a1a6",
+       "share": 0.08
+      },
+      {
+       "color": "#5c5c5c",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#000000",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 2,
+     "radius": 8,
+     "height": 56,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Ver los autos del patio",
+      "Chatea con nosotros"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.relative.h-[58svh] → radial-gradient(80% 70% at 50% 58%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)",
+      "section#contacto.relative.grid → radial-gradient(70% 80% at 28% 62%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 2,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 56
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.37
+     },
+     {
+      "type": "img",
+      "ratio": 0.37
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "questrial"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 5489,
+    "margins": {
+     "left": 43,
+     "right": 109
+    },
+    "sections": [
+     {
+      "sel": "div.bg-black.md:grid",
+      "tag": "div",
+      "top": 56,
+      "height": 4151,
+      "words": 258,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "astorel",
+       "size": 310,
+       "tag": "h1"
+      },
+      "left": 32,
+      "right": 35,
+      "textLeft": 64,
+      "textRight": 35,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section#contacto.relative.grid",
+      "tag": "section",
+      "top": 4207,
+      "height": 810,
+      "words": 24,
+      "media": 1,
+      "middle": 107,
+      "heading": {
+       "text": "Ven a verlo en persona.",
+       "size": 63,
+       "tag": "h2"
+      },
+      "left": 43,
+      "right": 304,
+      "textLeft": 784,
+      "textRight": 304,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-band.text-band-fg",
+      "tag": "footer",
+      "top": 5017,
+      "height": 473,
+      "words": 43,
+      "media": 0,
+      "middle": 294,
+      "heading": {
+       "text": "Autos",
+       "size": 13,
+       "tag": "h4"
+      },
+      "left": 96,
+      "right": 316,
+      "textLeft": 96,
+      "textRight": 316,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "astorel : autos usados con ficha legal y visor 3D",
+      "size": 310,
+      "top": 581,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 741,
+      "n": 9
+     },
+     {
+      "x": 765,
+      "n": 3
+     },
+     {
+      "x": 784,
+      "n": 2
+     },
+     {
+      "x": 547,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 15,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.1,
+    "voidBox": {
+     "x": 1140,
+     "y": 120,
+     "w": 300,
+     "h": 420
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 6,
+   "filled": [
+    0.99,
+    0.67,
+    0.96,
+    0.83,
+    0.99,
+    0.99
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 0,
+    "transitions": 1,
+    "scripted": 18,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 5668,
+     "screens": 5.5,
+     "words": 346,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 4,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg",
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "astorel : autos usados con ficha legal y visor 3D",
+     "words": 10,
+     "chars": 49,
+     "lines": 1,
+     "size": 165.1,
+     "vw": 21.5,
+     "font": "Questrial",
+     "weight": 400,
+     "tracking": -0.04,
+     "leading": 0.9,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "right",
+     "widthRatio": 0.62,
+     "top": 835,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "astorel : autos usados con ficha legal y visor 3D",
+     "words": 10,
+     "lines": 1,
+     "size": 165.1,
+     "font": "Questrial"
+    },
+    "headings": [
+     {
+      "text": "astorel : autos usados con ficha legal y visor 3D",
+      "words": 10,
+      "chars": 49,
+      "lines": 1,
+      "size": 165.1,
+      "vw": 21.5,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.62,
+      "top": 835,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Elige un auto y míralo a la izquierda.",
+      "words": 8,
+      "chars": 38,
+      "lines": 2,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.4,
+      "top": 1112,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Toyota Corolla 2006",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.4,
+      "top": 1361,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "$8.000",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.4,
+      "top": 1408,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Sin sorpresas al llegar.",
+      "words": 4,
+      "chars": 24,
+      "lines": 2,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.4,
+      "top": 2002,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Así compras aquí.",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.4,
+      "top": 3170,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ven a verlo en persona.",
+      "words": 5,
+      "chars": 23,
+      "lines": 2,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.38,
+      "top": 4775,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Questrial",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      24,
+      34,
+      40,
+      165
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "Questrial",
+      "size": 18,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 21
+     },
+     "measureChars": 29,
+     "max": {
+      "size": 165.1,
+      "vw": 21.5,
+      "font": "Questrial",
+      "text": "astorel"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.04,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#000000",
+       "top": 56,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 1024,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 1914,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#000000",
+       "share": 0.55
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.35
+      },
+      {
+       "color": "#a1a1a6",
+       "share": 0.08
+      },
+      {
+       "color": "#5c5c5c",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#000000",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 2,
+     "radius": 8,
+     "height": 56,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Ver los autos del patio",
+      "Chatea con nosotros"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.relative.h-[58svh] → radial-gradient(80% 70% at 50% 58%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)",
+      "section#contacto.relative.grid → radial-gradient(70% 80% at 28% 62%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 2,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 56
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.34
+     },
+     {
+      "type": "img",
+      "ratio": 0.34
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "questrial"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 5668,
+    "margins": {
+     "left": 16,
+     "right": 56
+    },
+    "sections": [
+     {
+      "sel": "div.bg-black.md:grid",
+      "tag": "div",
+      "top": 56,
+      "height": 4218,
+      "words": 258,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "astorel",
+       "size": 165,
+       "tag": "h1"
+      },
+      "left": 32,
+      "right": 19,
+      "textLeft": 64,
+      "textRight": 19,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section#contacto.relative.grid",
+      "tag": "section",
+      "top": 4274,
+      "height": 922,
+      "words": 24,
+      "media": 1,
+      "middle": 71,
+      "heading": {
+       "text": "Ven a verlo en persona.",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 23,
+      "right": 57,
+      "textLeft": 432,
+      "textRight": 57,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-band.text-band-fg",
+      "tag": "footer",
+      "top": 5196,
+      "height": 473,
+      "words": 43,
+      "media": 0,
+      "middle": 77,
+      "heading": {
+       "text": "Autos",
+       "size": 13,
+       "tag": "h4"
+      },
+      "left": 16,
+      "right": 65,
+      "textLeft": 16,
+      "textRight": 65,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "astorel : autos usados con ficha legal y visor 3D",
+      "size": 165,
+      "top": 835,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 409,
+      "n": 9
+     },
+     {
+      "x": 432,
+      "n": 5
+     },
+     {
+      "x": 292,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 15,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    1,
+    0.57,
+    0.72,
+    1,
+    0.54,
+    1,
+    0.94,
+    1
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 0,
+    "transitions": 1,
+    "scripted": 18,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 6104,
+     "screens": 7.2,
+     "words": 339,
+     "img": 4,
+     "video": 0,
+     "canvas": 0,
+     "svg": 4,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg",
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "astorel : autos usados con ficha legal y visor 3D",
+     "words": 10,
+     "chars": 49,
+     "lines": 1,
+     "size": 81.9,
+     "vw": 21,
+     "font": "Questrial",
+     "weight": 400,
+     "tracking": -0.04,
+     "leading": 0.9,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 1,
+     "top": 546,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "astorel : autos usados con ficha legal y visor 3D",
+     "words": 10,
+     "lines": 1,
+     "size": 81.9,
+     "font": "Questrial"
+    },
+    "headings": [
+     {
+      "text": "astorel : autos usados con ficha legal y visor 3D",
+      "words": 10,
+      "chars": 49,
+      "lines": 1,
+      "size": 81.9,
+      "vw": 21,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 1,
+      "top": 546,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Elige un auto y míralo a la izquierda.",
+      "words": 8,
+      "chars": 38,
+      "lines": 2,
+      "size": 34,
+      "vw": 8.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 986,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Toyota Corolla 2006",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 34,
+      "vw": 8.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1529,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "$8.000",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 34,
+      "vw": 8.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1576,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Sin sorpresas al llegar.",
+      "words": 4,
+      "chars": 24,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 1,
+      "top": 2171,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Revisión de detalles",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2332,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ficha legal clara",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2620,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Recorrido en 3D",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2883,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Así compras aquí.",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 3363,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ven a verlo en persona.",
+      "words": 5,
+      "chars": 23,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 4996,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Questrial",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      24,
+      34,
+      40,
+      82
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "Questrial",
+      "size": 18,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 21
+     },
+     "measureChars": 29,
+     "max": {
+      "size": 81.9,
+      "vw": 21,
+      "font": "Questrial",
+      "text": "astorel"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.03,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Toyota Corolla 2006 · 180.000 km",
+      "above": "astorel : autos usados con ficha legal y",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": true,
+      "size": 15,
+      "top": 507
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#000000",
+       "top": 56,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 898,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 2083,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#000000",
+       "share": 0.57
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.32
+      },
+      {
+       "color": "#a1a1a6",
+       "share": 0.08
+      },
+      {
+       "color": "#5c5c5c",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#000000"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 1,
+     "radius": 8,
+     "height": 56,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Ver los autos del patio"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 3,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.relative.h-[58svh] → radial-gradient(80% 70% at 50% 58%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)",
+      "div.relative.mb-8 → radial-gradient(80% 70% at 50% 58%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)",
+      "section#contacto.relative.grid → radial-gradient(70% 80% at 28% 62%, rgb(52, 53, 59) 0%, rgb(11, 11, 13) 72%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 2,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.54
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "questrial"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 6104,
+    "margins": {
+     "left": 16,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "aside.p-3.md:sticky",
+      "tag": "aside",
+      "top": 56,
+      "height": 514,
+      "words": 6,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 12,
+      "right": 12,
+      "textLeft": 44,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.relative.z-10",
+      "tag": "div",
+      "top": 570,
+      "height": 3795,
+      "words": 245,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Sin sorpresas al llegar.",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 34,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contacto.relative.grid",
+      "tag": "section",
+      "top": 4365,
+      "height": 972,
+      "words": 24,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 23,
+      "textLeft": 20,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-band.text-band-fg",
+      "tag": "footer",
+      "top": 5337,
+      "height": 768,
+      "words": 43,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Autos",
+       "size": 13,
+       "tag": "h4"
+      },
+      "left": 16,
+      "right": 55,
+      "textLeft": 16,
+      "textRight": 55,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "astorel : autos usados con ficha legal y visor 3D",
+      "size": 82,
+      "top": 546,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 12
+     },
+     {
+      "x": 44,
+      "n": 3
+     }
+    ],
+    "leftBlocks": 15,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "1 eyebrow/kicker label(s) above headings: \"Ver los autos del patio\" above \"astorel : autos usados con ficha legal y\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "10 different font sizes (13, 14, 15, 16, 17, 18, 26, 43, 63, 310).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 2 picture(s) on the page (2 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "FAIL",
+   "id": "off-centre",
+   "width": 1440,
+   "message": "The page sits off-centre: its content comes to 43px from the left edge but only to 109px from the right, at 1440px.",
+   "fix": "Give the page one pair of equal margins. Check the wrapper for a max-width without margin-inline: auto, a grid with an empty last column, or padding on one side only. If one side is meant to hold air, it must still be closed by something that reaches the margin (a picture, the navigation's last item, a figure).",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "covered-text",
+   "width": 768,
+   "message": "Large text lies under another element at some scroll position: \"Sin sorpresas al llegar.\" (screen 2, 38% hidden)",
+   "fix": "Nothing may sit on top of a headline or statement. Move the picture, shorten the pinned run, or raise the text above it (z-index) and give it a ground."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/split/desktop-fold.jpg",
+   "pages": [
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/split/desktop-page-01.jpg",
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/split/desktop-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/split/tablet-fold.jpg",
+   "pages": [
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/split/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/split/mobile-fold.jpg",
+   "pages": [
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/split/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

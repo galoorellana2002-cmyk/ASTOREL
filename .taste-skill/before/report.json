@@ -1,0 +1,2213 @@
+{
+ "url": "http://localhost:3000/",
+ "at": "2026-10-28T16:05:17.203Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    1,
+    1,
+    1,
+    0.49,
+    0.68
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 1,
+    "transitions": 1,
+    "scripted": 17,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 3797,
+     "screens": 4.2,
+     "words": 313,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 29,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Primero lo ves en 3D.",
+     "words": 5,
+     "chars": 21,
+     "lines": 1,
+     "size": 77.8,
+     "vw": 5.4,
+     "font": "Questrial",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 1.02,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.47,
+     "top": 625,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Primero lo ves en 3D.",
+     "words": 5,
+     "lines": 1,
+     "size": 77.8,
+     "font": "Questrial"
+    },
+    "headings": [
+     {
+      "text": "Primero lo ves en 3D.",
+      "words": 5,
+      "chars": 21,
+      "lines": 1,
+      "size": 77.8,
+      "vw": 5.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 625,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Conoce los autos del patio",
+      "words": 5,
+      "chars": 26,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 1004,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Gíralo. Acércate. Revisa cada detalle.",
+      "words": 5,
+      "chars": 38,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 2102,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Sin sorpresas al llegar",
+      "words": 4,
+      "chars": 23,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 2944,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 3,
+     "medianWords": 5,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Questrial",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      19,
+      20,
+      24,
+      26,
+      52,
+      78
+     ],
+     "sizeCount": 12,
+     "notLoaded": [],
+     "body": {
+      "font": "Questrial",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.7
+     },
+     "measureChars": 49,
+     "max": {
+      "size": 77.8,
+      "vw": 5.4,
+      "font": "Questrial",
+      "text": "Primero lo ves en 3D."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 3,
+     "microLabelShare": 0.013,
+     "microSamples": [
+      "Visor 3D",
+      "Visor 3D",
+      "Ejemplo"
+     ],
+     "upperShare": 0.02,
+     "centerShare": 0.18,
+     "smallText": 3
+    },
+    "eyebrows": [
+     {
+      "text": "Visor 3D",
+      "above": "Primero lo ves en 3D.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 13,
+      "top": 586
+     },
+     {
+      "text": "Visor 3D",
+      "above": "Gíralo. Acércate. Revisa cada detalle.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 13,
+      "top": 2075
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#000000",
+       "top": 56,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 900,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#0b0b0d",
+       "top": 1971,
+       "hsl": {
+        "h": 240,
+        "s": 0.08,
+        "l": 0.05
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#ffffff",
+       "share": 0.25
+      },
+      {
+       "color": "#5c5c5c",
+       "share": 0.23
+      },
+      {
+       "color": "#a1a1a6",
+       "share": 0.17
+      },
+      {
+       "color": "#d4d5d8",
+       "share": 0.13
+      },
+      {
+       "color": "#9a9ba0",
+       "share": 0.11
+      }
+     ],
+     "button": {
+      "bg": "#000000",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 38,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Probar el visor",
+      "Chatea con nosotros"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 9,
+     "scrims": 2,
+     "gradientSamples": [
+      "div.relative.h-[clamp(580px,calc(100svh-56px),860px)] → radial-gradient(80% 70% at 50% 46%, rgb(51, 52, 58) 0%, rgb(18, 19, 22) 58%, rgb(0, 0, 0) 100%)",
+      "div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%)",
+      "div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%)",
+      "div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "a.inline-flex.min-h-11 1248px",
+      "div.flex.flex-col 1248px"
+     ],
+     "outlinedBoxes": 8,
+     "dashed": 0,
+     "blurred": 6,
+     "roundedBoxes": 8,
+     "boxRadius": 22,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 22,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "svg",
+      "ratio": 0.17
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "questrial"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 3797,
+    "margins": {
+     "left": 96,
+     "right": 102
+    },
+    "sections": [
+     {
+      "sel": "header#top.group.relative",
+      "tag": "header",
+      "top": 56,
+      "height": 844,
+      "words": 19,
+      "media": 1,
+      "middle": 246,
+      "heading": null,
+      "left": 16,
+      "right": 16,
+      "textLeft": 96,
+      "textRight": 664,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#autos.py-[clamp(56px,8vw,104px)].bg-alt",
+      "tag": "section",
+      "top": 900,
+      "height": 1007,
+      "words": 69,
+      "media": 7,
+      "middle": 1217,
+      "heading": {
+       "text": "Conoce los autos del patio",
+       "size": 52,
+       "tag": "h2"
+      },
+      "left": 97,
+      "right": 0,
+      "textLeft": 117,
+      "textRight": 256,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#visor.py-[clamp(56px,8vw,104px)].overflow-hidden",
+      "tag": "section",
+      "top": 1971,
+      "height": 869,
+      "words": 37,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Gíralo. Acércate. Revisa cada detalle.",
+       "size": 52,
+       "tag": "h2"
+      },
+      "left": 315,
+      "right": 306,
+      "textLeft": 315,
+      "textRight": 306,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#confianza.py-[clamp(56px,8vw,104px)]",
+      "tag": "section",
+      "top": 2840,
+      "height": 490,
+      "words": 66,
+      "media": 0,
+      "middle": 28,
+      "heading": {
+       "text": "Sin sorpresas al llegar",
+       "size": 52,
+       "tag": "h2"
+      },
+      "left": 96,
+      "right": 103,
+      "textLeft": 96,
+      "textRight": 103,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-band.text-band-fg",
+      "tag": "footer",
+      "top": 3330,
+      "height": 468,
+      "words": 43,
+      "media": 0,
+      "middle": 294,
+      "heading": {
+       "text": "Autos",
+       "size": 13,
+       "tag": "h4"
+      },
+      "left": 96,
+      "right": 316,
+      "textLeft": 96,
+      "textRight": 316,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Primero lo ves en 3D.",
+      "size": 78,
+      "top": 625,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 96,
+      "n": 3
+     },
+     {
+      "x": 524,
+      "n": 2
+     },
+     {
+      "x": 952,
+      "n": 2
+     },
+     {
+      "x": 117,
+      "n": 1
+     },
+     {
+      "x": 196,
+      "n": 1
+     },
+     {
+      "x": 540,
+      "n": 1
+     },
+     {
+      "x": 650,
+      "n": 1
+     },
+     {
+      "x": 962,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 12,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.15,
+    "voidBox": {
+     "x": 780,
+     "y": 480,
+     "w": 660,
+     "h": 300
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    1,
+    1,
+    0.64,
+    0.65
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 1,
+    "transitions": 1,
+    "scripted": 17,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 3642,
+     "screens": 3.6,
+     "words": 313,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 29,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Primero lo ves en 3D.",
+     "words": 5,
+     "chars": 21,
+     "lines": 1,
+     "size": 41.5,
+     "vw": 5.4,
+     "font": "Questrial",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 1.02,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.47,
+     "top": 684,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Primero lo ves en 3D.",
+     "words": 5,
+     "lines": 1,
+     "size": 41.5,
+     "font": "Questrial"
+    },
+    "headings": [
+     {
+      "text": "Primero lo ves en 3D.",
+      "words": 5,
+      "chars": 21,
+      "lines": 1,
+      "size": 41.5,
+      "vw": 5.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 684,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Conoce los autos del patio",
+      "words": 5,
+      "chars": 26,
+      "lines": 1,
+      "size": 33.8,
+      "vw": 4.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 977,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Toyota Corolla",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 1438,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Chevrolet D-Max",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.41,
+      "top": 1438,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Mazda 3",
+      "words": 2,
+      "chars": 7,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.41,
+      "top": 1438,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Hyundai Tucson",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.41,
+      "top": 1438,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Toyota Hilux",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.41,
+      "top": 1438,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Chevrolet Sail",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.41,
+      "top": 1438,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Kia Sportage",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.41,
+      "top": 1438,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Gíralo. Acércate. Revisa cada detalle.",
+      "words": 5,
+      "chars": 38,
+      "lines": 1,
+      "size": 33.8,
+      "vw": 4.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 1943,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Sin sorpresas al llegar",
+      "words": 4,
+      "chars": 23,
+      "lines": 1,
+      "size": 33.8,
+      "vw": 4.4,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 2633,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 11,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 3,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Questrial",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      19,
+      20,
+      24,
+      26,
+      34,
+      42
+     ],
+     "sizeCount": 12,
+     "notLoaded": [],
+     "body": {
+      "font": "Questrial",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.7
+     },
+     "measureChars": 44,
+     "max": {
+      "size": 41.5,
+      "vw": 5.4,
+      "font": "Questrial",
+      "text": "Primero lo ves en 3D."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 3,
+     "microLabelShare": 0.013,
+     "microSamples": [
+      "Visor 3D",
+      "Visor 3D",
+      "Ejemplo"
+     ],
+     "upperShare": 0.02,
+     "centerShare": 0.18,
+     "smallText": 3
+    },
+    "eyebrows": [
+     {
+      "text": "Visor 3D",
+      "above": "Primero lo ves en 3D.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 13,
+      "top": 644
+     },
+     {
+      "text": "Visor 3D",
+      "above": "Gíralo. Acércate. Revisa cada detalle.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 13,
+      "top": 1916
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#000000",
+       "top": 56,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 916,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#0b0b0d",
+       "top": 1854,
+       "hsl": {
+        "h": 240,
+        "s": 0.08,
+        "l": 0.05
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#ffffff",
+       "share": 0.25
+      },
+      {
+       "color": "#5c5c5c",
+       "share": 0.23
+      },
+      {
+       "color": "#a1a1a6",
+       "share": 0.17
+      },
+      {
+       "color": "#d4d5d8",
+       "share": 0.13
+      },
+      {
+       "color": "#9a9ba0",
+       "share": 0.11
+      }
+     ],
+     "button": {
+      "bg": "#000000",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 38,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Probar el visor",
+      "Chatea con nosotros"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 9,
+     "scrims": 2,
+     "gradientSamples": [
+      "div.relative.h-[clamp(580px,calc(100svh-56px),860px)] → radial-gradient(80% 70% at 50% 46%, rgb(51, 52, 58) 0%, rgb(18, 19, 22) 58%, rgb(0, 0, 0) 100%)",
+      "div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%)",
+      "div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%)",
+      "div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "a.inline-flex.min-h-11 736px",
+      "div.flex.flex-col 736px"
+     ],
+     "outlinedBoxes": 8,
+     "dashed": 0,
+     "blurred": 6,
+     "roundedBoxes": 8,
+     "boxRadius": 22,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 22,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "svg",
+      "ratio": 0.1
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "questrial"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 3642,
+    "margins": {
+     "left": 16,
+     "right": 21
+    },
+    "sections": [
+     {
+      "sel": "header#top.group.relative",
+      "tag": "header",
+      "top": 56,
+      "height": 860,
+      "words": 19,
+      "media": 1,
+      "middle": 82,
+      "heading": null,
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 389,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#autos.py-[clamp(56px,8vw,104px)].bg-alt",
+      "tag": "section",
+      "top": 916,
+      "height": 874,
+      "words": 56,
+      "media": 7,
+      "middle": 1538,
+      "heading": {
+       "text": "Conoce los autos del patio",
+       "size": 34,
+       "tag": "h2"
+      },
+      "left": 17,
+      "right": 0,
+      "textLeft": 37,
+      "textRight": 112,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#visor.py-[clamp(56px,8vw,104px)].overflow-hidden",
+      "tag": "section",
+      "top": 1854,
+      "height": 717,
+      "words": 37,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Gíralo. Acércate. Revisa cada detalle.",
+       "size": 34,
+       "tag": "h2"
+      },
+      "left": 59,
+      "right": 50,
+      "textLeft": 59,
+      "textRight": 50,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#confianza.py-[clamp(56px,8vw,104px)]",
+      "tag": "section",
+      "top": 2571,
+      "height": 603,
+      "words": 66,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Sin sorpresas al llegar",
+       "size": 34,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 21,
+      "textLeft": 16,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-band.text-band-fg",
+      "tag": "footer",
+      "top": 3175,
+      "height": 468,
+      "words": 43,
+      "media": 0,
+      "middle": 111,
+      "heading": {
+       "text": "Autos",
+       "size": 13,
+       "tag": "h4"
+      },
+      "left": 16,
+      "right": 65,
+      "textLeft": 16,
+      "textRight": 65,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Primero lo ves en 3D.",
+      "size": 41,
+      "top": 684,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 5
+     },
+     {
+      "x": 402,
+      "n": 2
+     },
+     {
+      "x": 37,
+      "n": 1
+     },
+     {
+      "x": 116,
+      "n": 1
+     },
+     {
+      "x": 415,
+      "n": 1
+     },
+     {
+      "x": 525,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 11,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    1,
+    1,
+    0.93,
+    0.42,
+    1
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 1,
+    "transitions": 1,
+    "scripted": 17,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 4022,
+     "screens": 4.8,
+     "words": 313,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 29,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "4c649594-b57a-405f-82c6-8a4d9c6b73b6.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Primero lo ves en 3D.",
+     "words": 5,
+     "chars": 21,
+     "lines": 1,
+     "size": 40,
+     "vw": 10.3,
+     "font": "Questrial",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 1.02,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 597,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Primero lo ves en 3D.",
+     "words": 5,
+     "lines": 1,
+     "size": 40,
+     "font": "Questrial"
+    },
+    "headings": [
+     {
+      "text": "Primero lo ves en 3D.",
+      "words": 5,
+      "chars": 21,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 597,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Conoce los autos del patio",
+      "words": 5,
+      "chars": 26,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 872,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Toyota Corolla",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.64,
+      "top": 1288,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Chevrolet D-Max",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.64,
+      "top": 1288,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Mazda 3",
+      "words": 2,
+      "chars": 7,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.64,
+      "top": 1288,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Hyundai Tucson",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.64,
+      "top": 1288,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Toyota Hilux",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.64,
+      "top": 1288,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Chevrolet Sail",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.64,
+      "top": 1288,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Kia Sportage",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.64,
+      "top": 1288,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Gíralo. Acércate. Revisa cada detalle.",
+      "words": 5,
+      "chars": 38,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1912,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Sin sorpresas al llegar",
+      "words": 4,
+      "chars": 23,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2537,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Revisión de detalles",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2683,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ficha legal clara",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2901,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Recorrido en 3D",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Questrial",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3095,
+      "tag": "h3",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 14,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 3,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Questrial",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      19,
+      20,
+      24,
+      26,
+      30,
+      40
+     ],
+     "sizeCount": 12,
+     "notLoaded": [],
+     "body": {
+      "font": "Questrial",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.7
+     },
+     "measureChars": 45,
+     "max": {
+      "size": 40,
+      "vw": 10.3,
+      "font": "Questrial",
+      "text": "Primero lo ves en 3D."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 3,
+     "microLabelShare": 0.013,
+     "microSamples": [
+      "Visor 3D",
+      "Visor 3D",
+      "Ejemplo"
+     ],
+     "upperShare": 0.03,
+     "centerShare": 0.17,
+     "smallText": 3
+    },
+    "eyebrows": [
+     {
+      "text": "Visor 3D",
+      "above": "Primero lo ves en 3D.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 13,
+      "top": 561
+     },
+     {
+      "text": "Visor 3D",
+      "above": "Gíralo. Acércate. Revisa cada detalle.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 13,
+      "top": 1885
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#000000",
+       "top": 56,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 816,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#0b0b0d",
+       "top": 1829,
+       "hsl": {
+        "h": 240,
+        "s": 0.08,
+        "l": 0.05
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#ffffff",
+       "share": 0.24
+      },
+      {
+       "color": "#5c5c5c",
+       "share": 0.23
+      },
+      {
+       "color": "#a1a1a6",
+       "share": 0.18
+      },
+      {
+       "color": "#d4d5d8",
+       "share": 0.13
+      },
+      {
+       "color": "#9a9ba0",
+       "share": 0.11
+      }
+     ],
+     "button": {
+      "bg": "#000000",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 1,
+     "radius": "pill",
+     "height": 38,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Probar el visor"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 9,
+     "scrims": 2,
+     "gradientSamples": [
+      "div.relative.h-[clamp(580px,calc(100svh-56px),860px)] → radial-gradient(80% 70% at 50% 46%, rgb(51, 52, 58) 0%, rgb(18, 19, 22) 58%, rgb(0, 0, 0) 100%)",
+      "div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%)",
+      "div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%)",
+      "div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "a.flex.min-h-16 358px",
+      "a.flex.min-h-16 358px",
+      "div.flex.flex-col 358px"
+     ],
+     "outlinedBoxes": 8,
+     "dashed": 0,
+     "blurred": 3,
+     "roundedBoxes": 8,
+     "boxRadius": 22,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 22,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "svg",
+      "ratio": 0.19
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "questrial"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 4022,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "header#top.group.relative",
+      "tag": "header",
+      "top": 56,
+      "height": 760,
+      "words": 19,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 24,
+      "textLeft": 16,
+      "textRight": 24,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#autos.py-[clamp(56px,8vw,104px)].bg-alt",
+      "tag": "section",
+      "top": 816,
+      "height": 819,
+      "words": 45,
+      "media": 7,
+      "middle": 1526,
+      "heading": {
+       "text": "Conoce los autos del patio",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 17,
+      "right": 0,
+      "textLeft": 28,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div#contacto.bg-band.text-band-fg",
+      "tag": "div",
+      "top": 1635,
+      "height": 194,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 147,
+      "right": 111,
+      "textLeft": 147,
+      "textRight": 111,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#visor.py-[clamp(56px,8vw,104px)].overflow-hidden",
+      "tag": "section",
+      "top": 1829,
+      "height": 652,
+      "words": 37,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Gíralo. Acércate. Revisa cada detalle.",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 22,
+      "right": 22,
+      "textLeft": 22,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#confianza.py-[clamp(56px,8vw,104px)]",
+      "tag": "section",
+      "top": 2481,
+      "height": 782,
+      "words": 66,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Sin sorpresas al llegar",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 17,
+      "textLeft": 16,
+      "textRight": 17,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-band.text-band-fg",
+      "tag": "footer",
+      "top": 3263,
+      "height": 759,
+      "words": 43,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Autos",
+       "size": 13,
+       "tag": "h4"
+      },
+      "left": 16,
+      "right": 17,
+      "textLeft": 16,
+      "textRight": 17,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Primero lo ves en 3D.",
+      "size": 40,
+      "top": 597,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 7
+     },
+     {
+      "x": 37,
+      "n": 1
+     },
+     {
+      "x": 116,
+      "n": 1
+     },
+     {
+      "x": 351,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 10,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "2 eyebrow/kicker label(s) above headings: \"Visor 3D\" above \"Primero lo ves en 3D.\"; \"Visor 3D\" above \"Gíralo. Acércate. Revisa cada detalle.\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "3 tiny uppercase letter-spaced labels (e.g. \"Visor 3D\", \"Visor 3D\", \"Ejemplo\").",
+   "fix": "Use sentence-case text at a readable size, or delete the label.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "width": 1440,
+   "message": "9 gradient fill(s): div.relative.h-[clamp(580px,calc(100svh-56px),860px)] → radial-gradient(80% 70% at 50% 46%, rgb(51, 52, 58) 0%, rgb(18, 19, 22) 58%, rgb(0, 0, 0) 100%) | div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%) | div.relative.flex → radial-gradient(80% 70% at 50% 62%, rgb(52, 53, 59) 0%, rgb(13, 14, 17) 70%)",
+   "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "2 thin rule(s)/divider line(s): a.inline-flex.min-h-11 1248px | div.flex.flex-col 1248px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "8 boxes drawn with a 1px outline.",
+   "fix": "Define a surface by its fill (one tone step from the page) or leave the content unboxed.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "glass",
+   "width": 1440,
+   "message": "6 backdrop-blur surfaces.",
+   "fix": "One blurred sticky bar at most; glass cards are a tell.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "12 different font sizes (11, 12, 13, 14, 15, 16, 19, 20, 24, 26, 52, 78).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "grey-body",
+   "width": 1440,
+   "message": "The running text is a soft grey on its ground (6.7:1).",
+   "fix": "Set body copy in the full ink (7:1 or more). Keep the muted ink for secondary notes; pages read thin and unfinished when everything is grey.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 1 picture(s) on the page (1 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "side-scroll",
+   "width": 1440,
+   "message": "1 row(s) scroll sideways with content past their edge.",
+   "fix": "Jurors and most visitors read a row cut at the edge as clipped, not as scrollable. Wrap it onto more lines, or end it inside the grid.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "small-text",
+   "width": 1440,
+   "message": "3 text block(s) under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "empty-middle",
+   "width": 1440,
+   "message": "1 section(s) have content at both edges and 1217px of nothing between: \"Conoce los autos del patio\"",
+   "fix": "Bring the two parts together on the grid, or put the picture or figure of the section in the middle. An empty middle third reads as a hole, the same as an empty half.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "ragged-edges",
+   "width": 1440,
+   "message": "Left-aligned text starts at 8 different lines (96px, 524px, 952px, 117px, 196px, 540px, 650px); the three most used hold only 58% of it.",
+   "fix": "Pick two or three anchor lines from the grid and start every heading and paragraph on one of them."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/before/desktop-fold.jpg",
+   "pages": [
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/before/desktop-page-01.jpg",
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/before/desktop-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/before/tablet-fold.jpg",
+   "pages": [
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/before/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/before/mobile-fold.jpg",
+   "pages": [
+    "/Users/alejandroorellana/Documents/patio-virtual-app/.taste-skill/before/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

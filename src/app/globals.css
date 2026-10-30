@@ -64,6 +64,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 56px;
   }
   body {
     @apply bg-bg font-sans text-base text-fg antialiased;

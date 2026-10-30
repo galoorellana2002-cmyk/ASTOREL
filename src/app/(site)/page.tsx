@@ -51,8 +51,13 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <div className="bg-band text-band-fg" id="contacto">
+      <section className="scroll-mt-14 bg-band text-band-fg" id="contacto" aria-labelledby="contacto-t">
         <div className="container">
+          <div className="py-[clamp(40px,6vw,72px)] text-center">
+            <span className="mb-2 block text-[13px] uppercase tracking-[.16em] text-band-mut">Contacto</span>
+            <h2 id="contacto-t" className="text-balance text-[clamp(26px,3.6vw,42px)] leading-[1.1] tracking-tightest">Escríbenos y te respondemos hoy</h2>
+            <p className="mx-auto mt-3 max-w-[480px] text-band-mut">Pregunta por un auto, agenda una visita o pide más fotos. Atendemos por WhatsApp.</p>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3">
             {actions.map((a) => {
               const Icon = a.icon;
@@ -71,7 +76,7 @@ export default async function HomePage() {
             })}
           </div>
         </div>
-      </div>
+      </section>
 
       <section id="visor" className={`${SECTION} overflow-hidden bg-vbg text-vfg`}>
         <div className="container">
