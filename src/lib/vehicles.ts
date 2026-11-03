@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import { db } from "./db";
 import { BODY_ART } from "./constants";
 
@@ -58,7 +59,7 @@ export interface CatalogFilters {
   orden?: "recientes" | "precio-asc" | "precio-desc" | "km";
 }
 
-export async function getCatalog(f: CatalogFilters = {}, take?: number): Promise<VehicleCardData[]> {
+async function queryCatalog(f: CatalogFilters, take?: number): Promise<VehicleCardData[]> {
   const where: Record<string, unknown> = { published: true, status: { not: "SOLD" } };
   if (f.tipo) where["bodyType"] = f.tipo;
   if (f.max) where["priceCents"] = { lte: f.max * 100 };
@@ -68,6 +69,18 @@ export async function getCatalog(f: CatalogFilters = {}, take?: number): Promise
   const orderBy =
     f.orden === "precio-asc" ? { priceCents: "asc" } : f.orden === "precio-desc" ? { priceCents: "desc" } : f.orden === "km" ? { km: "asc" } : { createdAt: "desc" };
   return (await queryCards(where, orderBy, take)).map(toCard);
+}
+
+const cachedCatalog = unstable_cache(async (filters: string, take: number) => queryCatalog(JSON.parse(filters) as CatalogFilters, take || undefined), ["catalog-v1"], { revalidate: 60, tags: ["catalog"] });
+
+/** Catálogo con caché de 60 s (el admin lo invalida al guardar), para no consultar la base en cada visita. */
+export function getCatalog(f: CatalogFilters = {}, take?: number): Promise<VehicleCardData[]> {
+  return cachedCatalog(JSON.stringify(f), take ?? 0);
+}
+
+const cachedCount = unstable_cache(async () => db.vehicle.count({ where: { published: true, status: { not: "SOLD" } } }), ["catalog-count-v1"], { revalidate: 60, tags: ["catalog"] });
+export function getCatalogCount(): Promise<number> {
+  return cachedCount();
 }
 
 export async function getVehicleBySlug(slug: string) {

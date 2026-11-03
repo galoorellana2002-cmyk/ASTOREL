@@ -3,7 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   async headers() {
+    const longCache = [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }];
     return [
+      { source: "/design/:path*", headers: longCache },
+      { source: "/brand/:path*", headers: longCache },
       {
         source: "/(.*)",
         headers: [

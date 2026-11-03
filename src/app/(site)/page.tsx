@@ -5,11 +5,11 @@ import { slideFrom, type HeroSlide } from "@/lib/hero";
 import { VehicleCard } from "@/components/VehicleCard";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/ui/reveal";
-import { getCatalog } from "@/lib/vehicles";
+import { getCatalog, getCatalogCount } from "@/lib/vehicles";
 import { BODY_TYPES } from "@/lib/constants";
 import { WHATSAPP, waLink } from "@/lib/format";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 export const metadata = { alternates: { canonical: "/" } };
 
 const SECTION = "py-[clamp(48px,6vw,72px)]";
@@ -27,7 +27,7 @@ const PRICES = [10000, 15000, 20000, 30000, 50000];
 const sel = "h-14 w-full cursor-pointer appearance-none border border-hair bg-transparent px-[18px] text-xs text-fg focus-visible:outline-fg";
 
 export default async function HomePage() {
-  const all = await getCatalog({});
+  const [all, total] = await Promise.all([getCatalog({}, 12), getCatalogCount()]);
   const shown = all.slice(0, 3);
   const slides = all.map(slideFrom).filter((s): s is HeroSlide => s !== null).slice(0, 3);
   const phone = WHATSAPP ? `+${WHATSAPP.replace(/^(\d{3})(\d{2})(\d{3})(\d{4})$/, "$1 $2 $3 $4")}` : null;
@@ -43,7 +43,7 @@ export default async function HomePage() {
             <span className={EYEBROW}>01 / Encuentra el tuyo</span>
             <h2 className={H2}>Una selección que se distingue.</h2>
           </div>
-          <p className="text-xs text-mut">{all.length === 1 ? "1 vehículo disponible" : `${all.length} vehículos disponibles`}</p>
+          <p className="text-xs text-mut">{total === 1 ? "1 vehículo disponible" : `${total} vehículos disponibles`}</p>
         </Reveal>
 
         <form method="get" action="/autos" className="mt-8 grid gap-3 md:grid-cols-[minmax(0,1.4fr)_1fr_1fr_auto]">
@@ -98,7 +98,7 @@ export default async function HomePage() {
 
         <div className="mt-12 flex justify-center">
           <Link href="/autos" className="inline-flex h-[50px] items-center gap-6 border border-line px-[22px] text-[13px] transition hover:bg-fg hover:text-bg focus-visible:outline-fg">
-            {all.length > 3 ? `Ver los ${all.length} vehículos` : "Ver todos los autos"}
+            {total > 3 ? `Ver los ${total} vehículos` : "Ver todos los autos"}
             <ArrowUpRight className="size-[17px]" strokeWidth={1.4} aria-hidden="true" />
           </Link>
         </div>
@@ -117,7 +117,7 @@ export default async function HomePage() {
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_332px]">
             <Reveal y={30} className="relative min-h-[300px] overflow-hidden bg-vcard sm:aspect-[956/470] lg:aspect-auto lg:h-[470px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/design/visor.png" alt="Ejemplo de visor 3D con un auto gris" loading="lazy" className="absolute inset-0 size-full object-cover" />
+              <img src="/design/visor.webp" alt="Ejemplo de visor 3D con un auto gris" loading="lazy" className="absolute inset-0 size-full object-cover" />
               <span className="absolute left-5 top-5 inline-flex items-center gap-2 text-[11px] tracking-[.1em]"><Box className="size-4" strokeWidth={1.4} aria-hidden="true" />VISTA 360° · EJEMPLO</span>
               <span aria-hidden="true" className="absolute right-5 top-5 grid size-[34px] place-items-center bg-vcard/80"><Maximize2 className="size-[18px]" strokeWidth={1.4} /></span>
               <span aria-hidden="true" className="absolute left-[36%] top-[56%] grid size-[30px] place-items-center rounded-full border border-white/70 bg-black/50"><Plus className="size-3.5" /></span>
@@ -198,8 +198,8 @@ export default async function HomePage() {
             <h2 className="text-[clamp(32px,3.8vw,42px)] leading-[1.1] tracking-[-0.045em]">Buenas decisiones.<br />Historias reales.</h2>
             <div className="flex gap-[54px] pt-3">
               <div className="flex flex-col gap-[7px]">
-                <span className="text-[35px] tracking-[-0.04em] tabular-nums">{all.length}</span>
-                <span className="text-[11px] text-mut">{all.length === 1 ? "auto disponible" : "autos disponibles"}</span>
+                <span className="text-[35px] tracking-[-0.04em] tabular-nums">{total}</span>
+                <span className="text-[11px] text-mut">{total === 1 ? "auto disponible" : "autos disponibles"}</span>
               </div>
               <div className="flex flex-col gap-[7px]">
                 <span className="text-[35px] tracking-[-0.04em]">3D</span>

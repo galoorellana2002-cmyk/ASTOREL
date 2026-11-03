@@ -2,7 +2,7 @@
 
 import bcrypt from "bcryptjs";
 import { redirect } from "next/navigation";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { headers } from "next/headers";
 import { z } from "zod";
 import { db } from "@/lib/db";
@@ -152,6 +152,7 @@ export async function saveVehicle(_prev: FormState, formData: FormData): Promise
   }
 
   revalidatePath("/", "layout");
+  revalidateTag("catalog");
   redirect(`/admin/vehicles?saved=${vehicleId}`);
 }
 
@@ -163,6 +164,7 @@ export async function deleteVehicle(formData: FormData) {
   await db.vehicle.delete({ where: { id } });
   await Promise.all([removeUpload(v.modelUrl), removeUpload(v.coverUrl)]);
   revalidatePath("/", "layout");
+  revalidateTag("catalog");
   redirect("/admin/vehicles");
 }
 
@@ -208,6 +210,7 @@ export async function setReservationStatus(formData: FormData) {
     await db.vehicle.update({ where: { id: r.vehicleId }, data: { status: confirmed > 0 ? "RESERVED" : "AVAILABLE" } });
   }
   revalidatePath("/", "layout");
+  revalidateTag("catalog");
 }
 
 // ---------- Finanzas ----------
@@ -245,6 +248,7 @@ export async function addMovement(_prev: FormState, formData: FormData): Promise
     if (d.category === "VENTA_AUTO" && d.vehicleId) await tx.vehicle.update({ where: { id: d.vehicleId }, data: { status: "SOLD" } });
   });
   revalidatePath("/", "layout");
+  revalidateTag("catalog");
   redirect("/admin/finance?ok=1");
 }
 

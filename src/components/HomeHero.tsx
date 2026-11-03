@@ -8,7 +8,7 @@ import type { HeroSlide } from "@/lib/hero";
 
 const CHECKS = ["Fichas legales claras", "Defectos marcados en 3D", "Recorrido por fuera y por dentro", "Atención directa por WhatsApp"];
 
-const DEMO: HeroSlide = { key: "demo", image: "/design/portada.png", title: "Porsche 911 Carrera", meta: "Foto de ejemplo · Pronto verás aquí los autos del patio", href: "/autos" };
+const DEMO: HeroSlide = { key: "demo", image: "/design/portada.webp", title: "Porsche 911 Carrera", meta: "Foto de ejemplo · Pronto verás aquí los autos del patio", href: "/autos" };
 
 export function HomeHero({ slides }: { slides: HeroSlide[] }) {
   const list = slides.length ? slides : [DEMO];
