@@ -35,8 +35,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Esta conversación llegó al límite. Escríbenos por WhatsApp." }, { status: 429 });
   }
   if (!session) {
-    const lead = await db.lead.create({ data: { source: "CHAT" } });
-    session = await db.chatSession.create({ data: { leadId: lead.id }, include: { lead: true, _count: { select: { messages: true } } } });
+    // Chat reiniciado: la conversación es nueva (el bot no ve lo anterior) pero sigue siendo el mismo cliente.
+    const prev = parsed.data.continueFrom ? await db.chatSession.findUnique({ where: { id: parsed.data.continueFrom }, select: { leadId: true } }) : null;
+    const leadId = prev?.leadId ?? (await db.lead.create({ data: { source: "CHAT" } })).id;
+    session = await db.chatSession.create({ data: { leadId }, include: { lead: true, _count: { select: { messages: true } } } });
   }
 
   await db.chatMessage.create({ data: { sessionId: session.id, role: "user", content: message } });

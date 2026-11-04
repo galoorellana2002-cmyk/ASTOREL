@@ -54,6 +54,8 @@ export const reservationStatusSchema = z.enum(RESERVATION_STATUS);
 
 export const chatSchema = z.object({
   sessionId: z.string().min(1).max(60).optional(),
+  /** Chat reiniciado: conversación nueva, pero del mismo cliente. */
+  continueFrom: z.string().min(1).max(60).optional(),
   message: z.string().trim().min(1).max(500),
   currentSlug: z.string().max(80).optional(),
   viewed: z.number().int().min(0).max(500).optional(),

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { MessageCircle, Send, X } from "lucide-react";
+import { MessageCircle, RotateCcw, Send, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Msg {
@@ -38,15 +38,18 @@ export function ChatWidget() {
   const [sugg, setSugg] = useState<string[]>(START_SUGGESTIONS);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
+  const [confirming, setConfirming] = useState(false);
   const sessionId = useRef<string | null>(null);
+  const continueFrom = useRef<string | null>(null);
   const log = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
     try {
-      const saved = JSON.parse(localStorage.getItem(STORE) || "null") as { sessionId?: string; msgs?: Msg[] } | null;
+      const saved = JSON.parse(localStorage.getItem(STORE) || "null") as { sessionId?: string; continueFrom?: string; msgs?: Msg[] } | null;
       if (saved?.sessionId) sessionId.current = saved.sessionId;
+      if (saved?.continueFrom) continueFrom.current = saved.continueFrom;
       if (saved?.msgs?.length) {
         setMsgs(saved.msgs);
         setSugg([]);
@@ -69,7 +72,7 @@ export function ChatWidget() {
 
   function persist(next: Msg[]) {
     try {
-      localStorage.setItem(STORE, JSON.stringify({ sessionId: sessionId.current, msgs: next.slice(-40) }));
+      localStorage.setItem(STORE, JSON.stringify({ sessionId: sessionId.current, continueFrom: continueFrom.current, msgs: next.slice(-40) }));
     } catch {
       /* sin almacenamiento */
     }
@@ -89,11 +92,12 @@ export function ChatWidget() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ sessionId: sessionId.current ?? undefined, message, currentSlug: slug, viewed: viewedCount(), viewerOpens: readCount("patio_viewer_opens") }),
+        body: JSON.stringify({ sessionId: sessionId.current ?? undefined, continueFrom: sessionId.current ? undefined : continueFrom.current ?? undefined, message, currentSlug: slug, viewed: viewedCount(), viewerOpens: readCount("patio_viewer_opens") }),
       });
       const data = (await res.json()) as { sessionId?: string; reply?: string; suggestions?: string[]; error?: string };
       if (!res.ok || !data.reply) throw new Error(data.error || "No pude responder.");
       sessionId.current = data.sessionId ?? sessionId.current;
+      if (data.sessionId) continueFrom.current = null;
       next = [...withUser, { role: "bot", text: data.reply }];
       setSugg(data.suggestions ?? []);
     } catch (e) {
@@ -104,6 +108,21 @@ export function ChatWidget() {
       setBusy(false);
     }
   }
+
+  function reset() {
+    if (busy) return;
+    // La conversación vieja queda en el panel del patio; la nueva sigue ligada al mismo cliente.
+    if (sessionId.current) continueFrom.current = sessionId.current;
+    sessionId.current = null;
+    setMsgs([GREETING]);
+    setSugg(START_SUGGESTIONS);
+    setInput("");
+    setConfirming(false);
+    persist([GREETING]);
+    inputRef.current?.focus();
+  }
+
+  const userMsgs = msgs.filter((m) => m.role === "user").length;
 
   return (
     <>
@@ -148,10 +167,32 @@ export function ChatWidget() {
                   Respuestas al instante
                 </small>
               </div>
+              <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={() => (userMsgs >= 2 ? setConfirming(true) : reset())}
+                disabled={busy || userMsgs === 0}
+                aria-label="Empezar un chat nuevo"
+                title="Chat nuevo"
+                className="grid size-9 place-items-center rounded-full text-white/80 transition hover:bg-white/10 hover:text-white focus-visible:outline-white disabled:opacity-30 disabled:hover:bg-transparent"
+              >
+                <RotateCcw className="size-[18px]" />
+              </button>
               <button type="button" onClick={() => setOpen(false)} aria-label="Cerrar el chat" className="grid size-9 place-items-center rounded-full text-white/80 transition hover:bg-white/10 hover:text-white focus-visible:outline-white">
                 <X className="size-5" />
               </button>
+              </div>
             </div>
+
+            {confirming && (
+              <div role="alertdialog" aria-label="Empezar de nuevo" className="flex flex-wrap items-center justify-between gap-2 border-b border-hair bg-alt px-4 py-2.5 text-[13px]">
+                <span>¿Empezar un chat nuevo? Se borra esta conversación de tu pantalla.</span>
+                <span className="flex gap-2">
+                  <button type="button" onClick={() => setConfirming(false)} className="rounded-full border border-line px-3 py-1 transition hover:border-fg">Cancelar</button>
+                  <button type="button" onClick={reset} className="rounded-full bg-inv px-3 py-1 text-inv-fg transition hover:opacity-85">Sí, empezar</button>
+                </span>
+              </div>
+            )}
 
             <div ref={log} role="log" aria-live="polite" className="flex flex-1 flex-col gap-2.5 overflow-y-auto bg-bg p-4">
               {msgs.map((m, i) => (
