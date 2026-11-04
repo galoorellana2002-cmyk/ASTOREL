@@ -8,7 +8,7 @@ import type { HeroSlide } from "@/lib/hero";
 
 const CHECKS = ["Fichas legales claras", "Defectos marcados en 3D", "Recorrido por fuera y por dentro", "Atención directa por WhatsApp"];
 
-const DEMO: HeroSlide = { key: "demo", image: "/design/portada.webp", title: "Porsche 911 Carrera", meta: "Foto de ejemplo · Pronto verás aquí los autos del patio", href: "/autos" };
+const DEMO: HeroSlide = { key: "demo", image: "/design/portada.webp", title: "Autos que brillan con luz propia", meta: "Foto de ejemplo · Pronto verás aquí los autos del patio", href: "/autos" };
 
 export function HomeHero({ slides }: { slides: HeroSlide[] }) {
   const list = slides.length ? slides : [DEMO];
@@ -44,7 +44,7 @@ export function HomeHero({ slides }: { slides: HeroSlide[] }) {
         <AnimatePresence initial={false}>
           <motion.div key={s.key} className="absolute inset-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.7 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <motion.img src={s.image} alt={s.title} className="size-full object-cover object-[60%_65%]" fetchPriority="high" initial={{ scale: 1.07 }} animate={{ scale: 1 }} transition={{ duration: 2, ease: [0.2, 0.7, 0.2, 1] }} />
+            <motion.img src={s.image} alt={s.title} className="size-full object-cover object-[70%_60%]" fetchPriority="high" initial={{ scale: 1.07 }} animate={{ scale: 1 }} transition={{ duration: 2, ease: [0.2, 0.7, 0.2, 1] }} />
           </motion.div>
         </AnimatePresence>
         <motion.div className="container absolute inset-x-0 bottom-5 flex items-end justify-between gap-3 md:bottom-7" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6, ease: [0.2, 0.7, 0.2, 1] }}>
