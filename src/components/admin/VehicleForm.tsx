@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { saveVehicle, type FormState } from "@/app/admin/actions";
 import { Plus, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -62,7 +63,7 @@ async function uploadDirect(file: File, kind: Kind): Promise<string> {
 }
 
 export function VehicleForm({ vehicle }: { vehicle?: VehicleFormData }) {
-  const [state, action] = useFormState<FormState, FormData>(saveVehicle, {});
+  const [state, action] = useActionState<FormState, FormData>(saveVehicle, {});
   const [defects, setDefects] = useState<DefectRow[]>(vehicle?.defects ?? []);
   const [legal, setLegal] = useState<LegalRow[]>(vehicle?.legal ?? DEFAULT_LEGAL);
   const [modelUrl, setModelUrl] = useState("");

@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { motion } from "framer-motion";
 import { login, type FormState } from "@/app/admin/actions";
 import { Button } from "@/components/ui/button";
@@ -16,7 +17,7 @@ function Submit() {
 }
 
 export function LoginForm() {
-  const [state, action] = useFormState<FormState, FormData>(login, {});
+  const [state, action] = useActionState<FormState, FormData>(login, {});
   return (
     <motion.form
       action={action}

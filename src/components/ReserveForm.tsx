@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { CheckCircle2 } from "lucide-react";
 import { createReservation, type ReserveState } from "@/app/actions";
 import { Button } from "@/components/ui/button";
@@ -20,7 +21,7 @@ function Submit() {
 const initial: ReserveState = { ok: false };
 
 export function ReserveForm({ vehicleId }: { vehicleId: string }) {
-  const [state, action] = useFormState(createReservation, initial);
+  const [state, action] = useActionState(createReservation, initial);
   if (state.ok) {
     return (
       <div role="status" className="mt-7 flex items-start gap-3 rounded-2xl border border-ok/30 bg-ok/10 p-5 text-ok">

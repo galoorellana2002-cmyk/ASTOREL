@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { addMovement, type FormState } from "@/app/admin/actions";
 import { CATEGORY_LABEL, EXPENSE_CATEGORIES, INCOME_CATEGORIES } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,7 @@ function Submit() {
 }
 
 export function MovementForm({ vehicles, today }: { vehicles: Array<{ id: string; label: string }>; today: string }) {
-  const [state, action] = useFormState<FormState, FormData>(addMovement, {});
+  const [state, action] = useActionState<FormState, FormData>(addMovement, {});
   const [type, setType] = useState<"GASTO" | "INGRESO">("GASTO");
   const cats = type === "GASTO" ? EXPENSE_CATEGORIES : INCOME_CATEGORIES;
   return (
