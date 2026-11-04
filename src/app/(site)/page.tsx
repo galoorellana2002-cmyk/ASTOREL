@@ -4,6 +4,8 @@ import { HomeHero } from "@/components/HomeHero";
 import { slideFrom, type HeroSlide } from "@/lib/hero";
 import { VehicleCard } from "@/components/VehicleCard";
 import { ContactForm } from "@/components/ContactForm";
+import { CountUp } from "@/components/CountUp";
+import { FamilyPhoto } from "@/components/FamilyPhoto";
 import { Reveal } from "@/components/ui/reveal";
 import { getCatalog, getCatalogCount } from "@/lib/vehicles";
 import { BODY_TYPES } from "@/lib/constants";
@@ -63,9 +65,9 @@ export default async function HomePage() {
               <option key={p} value={p}>Hasta ${p.toLocaleString("es-EC")}</option>
             ))}
           </select>
-          <button type="submit" className="inline-flex h-14 items-center justify-center gap-3 bg-inv px-8 text-[13px] text-inv-fg transition hover:opacity-85 focus-visible:outline-fg">
+          <button type="submit" className="group inline-flex h-14 items-center justify-center gap-3 bg-inv px-8 text-[13px] text-inv-fg transition hover:opacity-85 focus-visible:outline-fg">
             Buscar
-            <ArrowUpRight className="size-4" strokeWidth={1.4} aria-hidden="true" />
+            <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.4} aria-hidden="true" />
           </button>
         </form>
 
@@ -97,9 +99,9 @@ export default async function HomePage() {
         )}
 
         <div className="mt-12 flex justify-center">
-          <Link href="/autos" className="inline-flex h-[50px] items-center gap-6 border border-line px-[22px] text-[13px] transition hover:bg-fg hover:text-bg focus-visible:outline-fg">
+          <Link href="/autos" className="group inline-flex h-[50px] items-center gap-6 border border-line px-[22px] text-[13px] transition hover:bg-fg hover:text-bg focus-visible:outline-fg">
             {total > 3 ? `Ver los ${total} vehículos` : "Ver todos los autos"}
-            <ArrowUpRight className="size-[17px]" strokeWidth={1.4} aria-hidden="true" />
+            <ArrowUpRight className="size-[17px] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.4} aria-hidden="true" />
           </Link>
         </div>
       </section>
@@ -120,8 +122,8 @@ export default async function HomePage() {
               <img src="/design/visor.webp" alt="Ejemplo de visor 3D con un auto gris" loading="lazy" className="absolute inset-0 size-full object-cover" />
               <span className="absolute left-5 top-5 inline-flex items-center gap-2 text-[11px] tracking-[.1em]"><Box className="size-4" strokeWidth={1.4} aria-hidden="true" />VISTA 360° · EJEMPLO</span>
               <span aria-hidden="true" className="absolute right-5 top-5 grid size-[34px] place-items-center bg-vcard/80"><Maximize2 className="size-[18px]" strokeWidth={1.4} /></span>
-              <span aria-hidden="true" className="absolute left-[36%] top-[56%] grid size-[30px] place-items-center rounded-full border border-white/70 bg-black/50"><Plus className="size-3.5" /></span>
-              <span aria-hidden="true" className="absolute left-[68%] top-[50%] grid size-[30px] place-items-center rounded-full border border-white/70 bg-black/50"><Plus className="size-3.5" /></span>
+              <span aria-hidden="true" className="absolute left-[36%] top-[56%] grid size-[30px] place-items-center rounded-full border border-white/70 bg-black/50"><span className="absolute inset-0 rounded-full border border-white/60 motion-safe:animate-ping2" /><Plus className="size-3.5" /></span>
+              <span aria-hidden="true" className="absolute left-[68%] top-[50%] grid size-[30px] place-items-center rounded-full border border-white/70 bg-black/50"><span className="absolute inset-0 rounded-full border border-white/60 motion-safe:animate-ping2" /><Plus className="size-3.5" /></span>
               <div className="absolute inset-x-5 bottom-5 flex items-center justify-between gap-3 text-[13px]">
                 <span className="flex">
                   <span className="bg-white px-5 py-3 text-black">Exterior</span>
@@ -146,9 +148,9 @@ export default async function HomePage() {
                   </div>
                 ))}
               </dl>
-              <Link href="/autos" className="mt-auto inline-flex h-[50px] w-fit items-center gap-6 bg-white px-[22px] text-[13px] text-black transition hover:bg-white/85 focus-visible:outline-white">
+              <Link href="/autos" className="group mt-auto inline-flex h-[50px] w-fit items-center gap-6 bg-white px-[22px] text-[13px] text-black transition hover:bg-white/85 focus-visible:outline-white">
                 Probar el visor
-                <ArrowUpRight className="size-[17px]" strokeWidth={1.4} aria-hidden="true" />
+                <ArrowUpRight className="size-[17px] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.4} aria-hidden="true" />
               </Link>
             </Reveal>
           </div>
@@ -191,6 +193,24 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section id="nosotros" aria-labelledby="nosotros-t" className="scroll-mt-14 border-t border-hair">
+        <div className="container grid items-center gap-10 py-[clamp(48px,6vw,72px)] md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-[clamp(40px,8vw,120px)]">
+          <Reveal y={30} className="aspect-[4/5] w-full max-w-[460px] overflow-hidden bg-alt md:max-w-none">
+            <FamilyPhoto alt="La familia detrás del patio ASTOREL" />
+          </Reveal>
+          <Reveal delay={0.1} className="flex flex-col gap-6">
+            <span className={EYEBROW}>Quiénes somos</span>
+            <h2 id="nosotros-t" className="text-balance text-[clamp(32px,4.4vw,50px)] leading-[1.08] tracking-[-0.045em]">Un patio de familia, ahora también en línea.</h2>
+            <p className="max-w-[520px] text-[15px] leading-[1.7] text-mut">Somos una familia de Quito. Creamos ASTOREL para que puedas ver cada auto con calma, con sus detalles a la vista, y llegar al patio sabiendo lo que vas a encontrar.</p>
+            <p className="max-w-[520px] text-[15px] leading-[1.7] text-mut">Aquí no hay letra pequeña: si algo del auto no está perfecto, lo marcamos y te lo explicamos. Ven a conocerlo, te esperamos.</p>
+            <a href={wa} target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-11 w-fit items-center gap-3 border-b border-fg text-[13px] focus-visible:outline-fg">
+              Conversemos por WhatsApp
+              <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.4} aria-hidden="true" />
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
       <section id="confianza" className="scroll-mt-14 bg-alt py-[clamp(40px,6vw,64px)]">
         <div className="container flex flex-col gap-12 lg:flex-row lg:gap-[90px]">
           <Reveal className="flex flex-col gap-[22px] lg:w-[470px] lg:shrink-0">
@@ -198,7 +218,7 @@ export default async function HomePage() {
             <h2 className="text-[clamp(32px,3.8vw,42px)] leading-[1.1] tracking-[-0.045em]">Buenas decisiones.<br />Historias reales.</h2>
             <div className="flex gap-[54px] pt-3">
               <div className="flex flex-col gap-[7px]">
-                <span className="text-[35px] tracking-[-0.04em] tabular-nums">{total}</span>
+                <CountUp value={total} className="text-[35px] tracking-[-0.04em] tabular-nums" />
                 <span className="text-[11px] text-mut">{total === 1 ? "auto disponible" : "autos disponibles"}</span>
               </div>
               <div className="flex flex-col gap-[7px]">
@@ -227,7 +247,7 @@ export default async function HomePage() {
             <p className="max-w-[450px] text-sm leading-[1.7] text-mut">¿Encontraste tu próximo auto o necesitas orientación? Conversemos y agenda una visita al patio.</p>
             <a href={wa} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-[13px] underline-offset-4 hover:underline focus-visible:outline-fg">
               {phone ? `WhatsApp ${phone}` : "Escríbenos por WhatsApp"}
-              <ArrowUpRight className="size-4" strokeWidth={1.4} aria-hidden="true" />
+              <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.4} aria-hidden="true" />
             </a>
           </Reveal>
           <Reveal delay={0.1} className="flex min-w-0 flex-1">

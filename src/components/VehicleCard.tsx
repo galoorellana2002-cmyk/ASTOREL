@@ -8,7 +8,7 @@ import type { VehicleCardData } from "@/lib/vehicles";
 export function VehicleCard({ v, className }: { v: VehicleCardData; className?: string }) {
   const tag = v.status === "RESERVED" ? "RESERVADO" : v.defectCount === 0 ? "SIN DETALLES" : "EXPLORAR EN 3D";
   return (
-    <Link href={`/autos/${v.slug}`} className={cn("group flex min-w-0 flex-col border border-hair bg-card transition duration-300 hover:border-line hover:shadow-lift focus-visible:outline-fg", className)}>
+    <Link href={`/autos/${v.slug}`} className={cn("group flex min-w-0 flex-col border border-hair bg-card transition duration-300 motion-safe:hover:-translate-y-1 hover:border-line hover:shadow-lift focus-visible:outline-fg", className)}>
       <div className="relative flex h-[236px] items-center justify-center overflow-hidden bg-alt px-[6%] pt-[6%]">
         {v.coverUrl ? (
           // eslint-disable-next-line @next/next/no-img-element

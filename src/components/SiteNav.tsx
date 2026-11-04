@@ -12,7 +12,7 @@ const LINKS = [
   { href: "/autos", label: "Inventario" },
   { href: "/#visor", label: "Experiencia 3D" },
   { href: "/#beneficios", label: "Cómo comprar" },
-  { href: "/#confianza", label: "Nosotros" },
+  { href: "/#nosotros", label: "Nosotros" },
 ];
 
 export function SiteNav({ name }: { name: string }) {
@@ -55,9 +55,9 @@ export function SiteNav({ name }: { name: string }) {
             <Link href="/autos" aria-label="Ver autos del patio" className="hidden min-h-11 min-w-11 items-center justify-center sm:inline-flex focus-visible:outline-fg">
               <Heart className="size-5" strokeWidth={1.4} aria-hidden="true" />
             </Link>
-            <Link href="/#contacto" className="inline-flex h-11 items-center gap-[18px] border border-fg px-[18px] text-xs transition hover:bg-fg hover:text-bg focus-visible:outline-fg">
+            <Link href="/#contacto" className="group inline-flex h-11 items-center gap-[18px] border border-fg px-[18px] text-xs transition hover:bg-fg hover:text-bg focus-visible:outline-fg">
               Hablemos
-              <ArrowUpRight className="size-4" strokeWidth={1.4} aria-hidden="true" />
+              <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.4} aria-hidden="true" />
             </Link>
             <Dialog.Trigger asChild>
               <button type="button" aria-label="Menú" className="inline-flex min-h-11 min-w-11 items-center justify-center md:hidden focus-visible:outline-fg">
