@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -248,6 +250,9 @@ export function ChatWidget() {
                 <Send className="size-[18px]" />
               </button>
             </form>
+            <p className="bg-bg px-4 pb-2.5 text-[10px] leading-snug text-mut">
+              Al escribir aceptas el tratamiento de tus datos según nuestra <Link href="/privacidad" className="underline underline-offset-2">política de privacidad</Link>.
+            </p>
           </motion.section>
         )}
       </AnimatePresence>

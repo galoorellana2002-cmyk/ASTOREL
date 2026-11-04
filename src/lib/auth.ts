@@ -5,7 +5,7 @@ import { COOKIE_NAME, SESSION_SECONDS, verifyToken } from "./token";
 import { db } from "./db";
 
 export async function getAdmin() {
-  const token = cookies().get(COOKIE_NAME)?.value;
+  const token = (await cookies()).get(COOKIE_NAME)?.value;
   const session = await verifyToken(token);
   if (!session) return null;
   // Revalida contra la base: si borran al admin, la sesión deja de servir.
@@ -19,8 +19,8 @@ export async function requireAdmin() {
   return admin;
 }
 
-export function setSessionCookie(token: string) {
-  cookies().set(COOKIE_NAME, token, {
+export async function setSessionCookie(token: string) {
+  (await cookies()).set(COOKIE_NAME, token, {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
@@ -29,6 +29,6 @@ export function setSessionCookie(token: string) {
   });
 }
 
-export function clearSessionCookie() {
-  cookies().delete(COOKIE_NAME);
+export async function clearSessionCookie() {
+  (await cookies()).delete(COOKIE_NAME);
 }

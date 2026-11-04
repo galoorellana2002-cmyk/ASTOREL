@@ -14,7 +14,8 @@ export const dynamic = "force-dynamic";
 
 type Search = { q?: string; tipo?: string; max?: string; orden?: string };
 
-export default async function AutosPage({ searchParams }: { searchParams: Search }) {
+export default async function AutosPage(props: { searchParams: Promise<Search> }) {
+  const searchParams = await props.searchParams;
   const maxN = Number(searchParams.max);
   const orden: CatalogFilters["orden"] = (["precio-asc", "precio-desc", "km", "recientes"] as const).find((o) => o === searchParams.orden);
   const filters: CatalogFilters = {

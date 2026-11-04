@@ -14,14 +14,16 @@ import { kmFmt, money, waLink } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const v = await getVehicleBySlug(params.slug);
   return v ? { title: `${v.brand} ${v.model} ${v.year}` } : { title: "Auto no encontrado" };
 }
 
 const tag = "inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-[3px] text-[13px]";
 
-export default async function VehiclePage({ params }: { params: { slug: string } }) {
+export default async function VehiclePage(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const v = await getVehicleBySlug(params.slug);
   if (!v) notFound();
 

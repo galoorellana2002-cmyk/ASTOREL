@@ -155,3 +155,10 @@ model Movement {
   @@index([type, category])
   @@index([vehicleId])
 }
+
+// Contador para limitar intentos (login, chat, reservas). Compartido entre servidores.
+model RateLimit {
+  key     String   @id
+  count   Int      @default(1)
+  resetAt DateTime
+}

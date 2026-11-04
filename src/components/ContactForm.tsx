@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { waLink } from "@/lib/format";
@@ -52,7 +54,7 @@ export function ContactForm({ interests }: { interests: string[] }) {
       </div>
       <label className="flex cursor-pointer items-start gap-2.5 text-[11px] text-mut">
         <input type="checkbox" required className="mt-0.5 size-[14px] shrink-0 cursor-pointer accent-[rgb(var(--fg))]" />
-        Acepto que ASTOREL me contacte por WhatsApp con la información que envío.
+        <span>Acepto que ASTOREL me contacte por WhatsApp con la información que envío y he leído la <Link href="/privacidad" target="_blank" className="underline underline-offset-[3px]">política de privacidad</Link>.</span>
       </label>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <p className="text-[11px] text-mut" role="status">{sent ? "Se abrió WhatsApp con tu mensaje. Solo falta enviarlo." : "Se abre WhatsApp con tus datos listos para enviar."}</p>

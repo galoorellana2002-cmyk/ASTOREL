@@ -5,7 +5,8 @@ import { deleteVehicle } from "../../../actions";
 import { ConfirmButton } from "@/components/admin/ConfirmButton";
 import { AdminHead } from "@/components/admin/ui";
 
-export default async function EditVehiclePage({ params }: { params: { id: string } }) {
+export default async function EditVehiclePage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const v = await db.vehicle.findUnique({ where: { id: params.id }, include: { defects: true, legal: true } });
   if (!v) notFound();
   return (

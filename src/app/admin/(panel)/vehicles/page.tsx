@@ -9,7 +9,8 @@ import { Panel } from "@/components/ui/card";
 import { Small, Table, TBody, TD, TH, THead, TR } from "@/components/ui/table";
 import { AdminHead, Flash } from "@/components/admin/ui";
 
-export default async function VehiclesAdminPage({ searchParams }: { searchParams: { saved?: string } }) {
+export default async function VehiclesAdminPage(props: { searchParams: Promise<{ saved?: string }> }) {
+  const searchParams = await props.searchParams;
   const vehicles = await db.vehicle.findMany({ orderBy: { createdAt: "desc" }, include: { _count: { select: { defects: true } } } });
   return (
     <>

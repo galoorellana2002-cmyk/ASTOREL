@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { chatSchema } from "@/lib/validators";
-import { rateLimit } from "@/lib/rateLimit";
+import { clientIp, rateLimit } from "@/lib/rateLimit";
 import { getBotInventory } from "@/lib/vehicles";
 import { llmReply, respond } from "@/lib/bot";
 import { refreshLead } from "@/lib/leads";
@@ -12,8 +12,8 @@ export const dynamic = "force-dynamic";
 const MAX_MESSAGES_PER_SESSION = 200;
 
 export async function POST(req: Request) {
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
-  if (!rateLimit(`chat:${ip}`, 20, 60_000)) {
+  const ip = clientIp(req.headers);
+  if (!(await rateLimit(`chat:${ip}`, 20, 60_000)) || !(await rateLimit(`chat-day:${ip}`, 300, 24 * 3600_000))) {
     return NextResponse.json({ error: "Demasiados mensajes. Espera un momento." }, { status: 429 });
   }
 

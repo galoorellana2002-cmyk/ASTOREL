@@ -7,7 +7,8 @@ import { Pill } from "@/components/ui/badge";
 import { Small, Table, TBody, TD, TH, THead, TR } from "@/components/ui/table";
 import { AdminHead, ChipLink, ChipRow } from "@/components/admin/ui";
 
-export default async function LeadsPage({ searchParams }: { searchParams: { segment?: string } }) {
+export default async function LeadsPage(props: { searchParams: Promise<{ segment?: string }> }) {
+  const searchParams = await props.searchParams;
   const segment = SEGMENTS.find((s) => s === searchParams.segment);
   const [leads, grouped] = await Promise.all([
     db.lead.findMany({

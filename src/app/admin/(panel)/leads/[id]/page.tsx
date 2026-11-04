@@ -15,7 +15,8 @@ import { Small } from "@/components/ui/table";
 import { AdminHead, Stack, TwoCol } from "@/components/admin/ui";
 import { cn } from "@/lib/utils";
 
-export default async function LeadDetailPage({ params }: { params: { id: string } }) {
+export default async function LeadDetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const lead = await db.lead.findUnique({
     where: { id: params.id },
     include: {

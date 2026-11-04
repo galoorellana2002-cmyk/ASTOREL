@@ -12,7 +12,8 @@ const csvCell = (v: string) => {
   return `"${safe.replace(/"/g, '""')}"`;
 };
 
-export async function GET(req: Request, { params }: { params: { format: string } }) {
+export async function GET(req: Request, props: { params: Promise<{ format: string }> }) {
+  const params = await props.params;
   if (!(await getAdmin())) return new Response("No autorizado", { status: 401 });
   const period = parsePeriod(new URL(req.url).searchParams.get("period"));
   const { summary, movements, vehicles } = await loadFinance(period);

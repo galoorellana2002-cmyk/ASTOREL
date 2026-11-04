@@ -2,7 +2,7 @@
 import { SignJWT, jwtVerify } from "jose";
 
 export const COOKIE_NAME = "patio_admin";
-export const SESSION_SECONDS = 60 * 60 * 24 * 7;
+export const SESSION_SECONDS = 60 * 60 * 12;
 
 function secret(): Uint8Array {
   const s = process.env.AUTH_SECRET;

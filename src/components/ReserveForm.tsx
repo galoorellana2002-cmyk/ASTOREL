@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useFormState, useFormStatus } from "react-dom";
 import { CheckCircle2 } from "lucide-react";
 import { createReservation, type ReserveState } from "@/app/actions";
@@ -50,6 +52,10 @@ export function ReserveForm({ vehicleId }: { vehicleId: string }) {
       <Field label="Comentario (opcional)">
         <Textarea name="note" maxLength={300} rows={2} />
       </Field>
+      <label className="flex cursor-pointer items-start gap-2.5 text-xs text-mut">
+        <input type="checkbox" name="consent" required className="mt-0.5 size-[14px] shrink-0 cursor-pointer accent-[rgb(var(--fg))]" />
+        <span>Acepto que usen mis datos para gestionar mi reserva, según la <Link href="/privacidad" target="_blank" className="underline underline-offset-[3px]">política de privacidad</Link>.</span>
+      </label>
       {state.error && (
         <p role="alert" className="text-sm text-bad">
           {state.error}

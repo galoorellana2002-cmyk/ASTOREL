@@ -15,7 +15,8 @@ import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
-export default async function FinancePage({ searchParams }: { searchParams: { period?: string; ok?: string } }) {
+export default async function FinancePage(props: { searchParams: Promise<{ period?: string; ok?: string }> }) {
+  const searchParams = await props.searchParams;
   const period = parsePeriod(searchParams.period);
   const { summary: s, movements, vehicles } = await loadFinance(period);
   const label = new Map(vehicles.map((v) => [v.id, v.label]));

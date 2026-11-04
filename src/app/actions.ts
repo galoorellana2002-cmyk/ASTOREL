@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 import { db } from "@/lib/db";
 import { reservationInputSchema } from "@/lib/validators";
-import { rateLimit } from "@/lib/rateLimit";
+import { clientIp, rateLimit } from "@/lib/rateLimit";
 import { refreshLead } from "@/lib/leads";
 
 export interface ReserveState {
@@ -17,8 +17,10 @@ export async function createReservation(_prev: ReserveState, formData: FormData)
   // Campo trampa: los bots lo llenan, las personas no lo ven.
   if (formData.get("website")) return { ok: true };
 
-  const ip = headers().get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
-  if (!rateLimit(`reserve:${ip}`, 5, 10 * 60_000)) return { ok: false, error: "Demasiados intentos. Prueba en unos minutos." };
+  if (formData.get("consent") !== "on") return { ok: false, error: "Debes aceptar la política de privacidad para continuar." };
+
+  const ip = clientIp(await headers());
+  if (!(await rateLimit(`reserve:${ip}`, 5, 10 * 60_000))) return { ok: false, error: "Demasiados intentos. Prueba en unos minutos." };
 
   const parsed = reservationInputSchema.safeParse({
     vehicleId: formData.get("vehicleId"),

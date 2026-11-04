@@ -2,13 +2,13 @@
 
 import bcrypt from "bcryptjs";
 import { redirect } from "next/navigation";
-import { revalidatePath, revalidateTag } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
 import { headers } from "next/headers";
 import { z } from "zod";
 import { db } from "@/lib/db";
 import { clearSessionCookie, requireAdmin, setSessionCookie } from "@/lib/auth";
 import { signToken } from "@/lib/token";
-import { rateLimit } from "@/lib/rateLimit";
+import { clientIp, rateLimit } from "@/lib/rateLimit";
 import { movementSchema, leadUpdateSchema, reservationStatusSchema, vehicleSchema } from "@/lib/validators";
 import { removeUpload, verifyUpload } from "@/lib/uploads";
 import { slugify } from "@/lib/format";
@@ -23,8 +23,8 @@ export interface FormState {
 const DUMMY_HASH = "$2a$10$CwTycUXWue0Thq9StjUM0uJ8.2mP1o1h3o9y4vQ1rJZ5m1b7m8y0e";
 
 export async function login(_prev: FormState, formData: FormData): Promise<FormState> {
-  const ip = headers().get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
-  if (!rateLimit(`login:${ip}`, 8, 10 * 60_000)) return { error: "Demasiados intentos. Prueba en 10 minutos." };
+  const ip = clientIp(await headers());
+  if (!(await rateLimit(`login:${ip}`, 8, 10 * 60_000))) return { error: "Demasiados intentos. Prueba en 10 minutos." };
 
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
   const password = String(formData.get("password") ?? "");
@@ -32,12 +32,12 @@ export async function login(_prev: FormState, formData: FormData): Promise<FormS
   const ok = await bcrypt.compare(password, admin?.passwordHash ?? DUMMY_HASH);
   if (!admin || !ok) return { error: "Correo o contraseña incorrectos." };
 
-  setSessionCookie(await signToken(admin.id, admin.email));
+  await setSessionCookie(await signToken(admin.id, admin.email));
   redirect("/admin");
 }
 
 export async function logout() {
-  clearSessionCookie();
+  await clearSessionCookie();
   redirect("/admin/login");
 }
 
@@ -152,7 +152,7 @@ export async function saveVehicle(_prev: FormState, formData: FormData): Promise
   }
 
   revalidatePath("/", "layout");
-  revalidateTag("catalog");
+  updateTag("catalog");
   redirect(`/admin/vehicles?saved=${vehicleId}`);
 }
 
@@ -164,7 +164,7 @@ export async function deleteVehicle(formData: FormData) {
   await db.vehicle.delete({ where: { id } });
   await Promise.all([removeUpload(v.modelUrl), removeUpload(v.coverUrl)]);
   revalidatePath("/", "layout");
-  revalidateTag("catalog");
+  updateTag("catalog");
   redirect("/admin/vehicles");
 }
 
@@ -210,7 +210,7 @@ export async function setReservationStatus(formData: FormData) {
     await db.vehicle.update({ where: { id: r.vehicleId }, data: { status: confirmed > 0 ? "RESERVED" : "AVAILABLE" } });
   }
   revalidatePath("/", "layout");
-  revalidateTag("catalog");
+  updateTag("catalog");
 }
 
 // ---------- Finanzas ----------
@@ -248,7 +248,7 @@ export async function addMovement(_prev: FormState, formData: FormData): Promise
     if (d.category === "VENTA_AUTO" && d.vehicleId) await tx.vehicle.update({ where: { id: d.vehicleId }, data: { status: "SOLD" } });
   });
   revalidatePath("/", "layout");
-  revalidateTag("catalog");
+  updateTag("catalog");
   redirect("/admin/finance?ok=1");
 }
 
