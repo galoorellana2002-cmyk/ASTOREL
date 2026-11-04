@@ -28,10 +28,9 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-[38px] flex flex-col gap-2 border-t border-band-line pt-[22px] text-[9px] text-band-mut sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} {PATIO_NAME}. Todos los derechos reservados.</span>
+          <span><Link href="/admin" aria-label="Acceso del personal" className="cursor-default text-inherit no-underline outline-none focus-visible:underline">©</Link> {new Date().getFullYear()} {PATIO_NAME}. Todos los derechos reservados.</span>
           <span>Los defectos y la ficha legal son referenciales. Confirma siempre en la visita.</span>
           <Link href="/privacidad" className="inline-flex min-h-11 w-fit items-center underline underline-offset-[3px] transition hover:text-white focus-visible:outline-white">Política de privacidad</Link>
-          <Link href="/admin" className="inline-flex min-h-11 w-fit items-center underline underline-offset-[3px] transition hover:text-white focus-visible:outline-white">Acceso administrador</Link>
         </div>
       </div>
     </footer>
