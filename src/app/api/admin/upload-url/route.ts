@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getAdmin } from "@/lib/auth";
+import { rateLimit } from "@/lib/rateLimit";
 import { createUploadTarget } from "@/lib/uploads";
 
 export const dynamic = "force-dynamic";
@@ -12,7 +13,9 @@ const schema = z.object({
 });
 
 export async function POST(req: Request) {
-  if (!(await getAdmin())) return NextResponse.json({ error: "No autorizado." }, { status: 401 });
+  const admin = await getAdmin();
+  if (!admin) return NextResponse.json({ error: "No autorizado." }, { status: 401 });
+  if (!(await rateLimit(`upload:${admin.id}`, 40, 60_000))) return NextResponse.json({ error: "Demasiadas subidas seguidas. Espera un momento." }, { status: 429 });
   const parsed = schema.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "Solicitud inválida." }, { status: 400 });
   try {

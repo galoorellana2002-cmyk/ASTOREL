@@ -22,7 +22,7 @@ export async function requireAdmin() {
 export async function setSessionCookie(token: string) {
   (await cookies()).set(COOKIE_NAME, token, {
     httpOnly: true,
-    sameSite: "lax",
+    sameSite: "strict",
     secure: process.env.NODE_ENV === "production",
     path: "/",
     maxAge: SESSION_SECONDS,

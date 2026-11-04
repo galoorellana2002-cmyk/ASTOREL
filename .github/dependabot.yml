@@ -1,0 +1,8 @@
+# Revisa cada semana si hay versiones nuevas o parches de seguridad y abre un aviso en GitHub.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5

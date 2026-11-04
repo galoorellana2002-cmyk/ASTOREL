@@ -37,7 +37,12 @@ export async function rateLimit(key: string, max: number, windowMs: number): Pro
   }
 }
 
-/** IP del visitante. En Vercel, x-real-ip y x-vercel-forwarded-for los pone la plataforma. */
+/**
+ * IP del visitante. Solo se confía en las cabeceras de IP cuando corremos en Vercel,
+ * donde la plataforma las fija y descarta las que manda el cliente. Fuera de Vercel
+ * cualquiera podría falsificarlas para saltarse los límites, así que se usa un cubo común.
+ */
 export function clientIp(h: Headers): string {
-  return h.get("x-vercel-forwarded-for")?.split(",")[0]?.trim() || h.get("x-real-ip")?.trim() || h.get("x-forwarded-for")?.split(",").pop()?.trim() || "local";
+  if (!process.env.VERCEL) return "local";
+  return h.get("x-vercel-forwarded-for")?.split(",")[0]?.trim() || h.get("x-real-ip")?.trim() || h.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
 }

@@ -1,7 +1,8 @@
 // Compatible con el runtime Edge (lo usa el middleware): solo depende de jose.
 import { SignJWT, jwtVerify } from "jose";
 
-export const COOKIE_NAME = "patio_admin";
+// En producción el prefijo __Host- obliga a Secure, path=/ y sin dominio: la cookie no se puede fijar desde un subdominio.
+export const COOKIE_NAME = process.env.NODE_ENV === "production" ? "__Host-patio_admin" : "patio_admin";
 export const SESSION_SECONDS = 60 * 60 * 12;
 
 function secret(): Uint8Array {
