@@ -1,18 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowDownRight, ArrowRight } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import type { HeroSlide } from "@/lib/hero";
 
 const CHECKS = ["Fichas legales claras", "Defectos marcados en 3D", "Recorrido por fuera y por dentro", "Atención directa por WhatsApp"];
 
-const DEMO: HeroSlide = { key: "demo", image: "/design/portada.webp", title: "Autos que brillan con luz propia", meta: "Foto de ejemplo · Pronto verás aquí los autos del patio", href: "/autos" };
+const DEMO: HeroSlide = { key: "demo", image: "/design/portada.webp", title: "Autos que brillan con luz propia", meta: "Patio virtual · Quito, Ecuador", href: "/autos" };
 
-export function HomeHero({ slides }: { slides: HeroSlide[] }) {
-  const list = slides.length ? slides : [DEMO];
-  const [i, setI] = useState(0);
+export function HomeHero(_: { slides?: HeroSlide[] }) {
+  const list = [DEMO]; // portada fija de marca; los autos se ven en el inventario
+  const i = 0;
   const s = list[i % list.length] ?? DEMO;
   return (
     <>
@@ -49,20 +48,10 @@ export function HomeHero({ slides }: { slides: HeroSlide[] }) {
         </AnimatePresence>
         <motion.div className="container absolute inset-x-0 bottom-5 flex items-end justify-between gap-3 md:bottom-7" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6, ease: [0.2, 0.7, 0.2, 1] }}>
           <Link href={s.href} className="flex min-w-0 flex-col gap-1.5 bg-white px-5 py-[15px] text-black focus-visible:outline-black">
-            <span className="text-[9px] tracking-[.16em] text-[#5c5c5c]">EL ELEGIDO DE LA SEMANA</span>
+            <span className="text-[9px] tracking-[.16em] text-[#5c5c5c]">ASTOREL</span>
             <span className="truncate text-lg">{s.title}</span>
             <span className="text-[11px] text-[#5c5c5c]">{s.meta}</span>
           </Link>
-          <button
-            type="button"
-            onClick={() => setI((n) => (n + 1) % list.length)}
-            disabled={list.length < 2}
-            aria-label="Ver el siguiente auto"
-            className="inline-flex shrink-0 items-center gap-3 bg-white p-3.5 text-[11px] text-black disabled:cursor-default focus-visible:outline-black"
-          >
-            {String((i % list.length) + 1).padStart(2, "0")} / {String(list.length).padStart(2, "0")}
-            <ArrowRight className="size-[18px]" strokeWidth={1.4} aria-hidden="true" />
-          </button>
         </motion.div>
       </div>
 
