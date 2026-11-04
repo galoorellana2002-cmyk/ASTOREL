@@ -7,13 +7,13 @@ const csp = [
   "font-src 'self' data: https://fonts.gstatic.com",
   "img-src 'self' data: blob: https://*.supabase.co",
   "media-src 'self' blob: https://*.supabase.co",
-  "connect-src 'self' blob: data: https://*.supabase.co https://www.gstatic.com",
+  `connect-src 'self' blob: data: https://*.supabase.co https://www.gstatic.com${isDev ? " ws: http://localhost:*" : ""}`,
   "worker-src 'self' blob:",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
   "frame-ancestors 'self'",
-  "upgrade-insecure-requests",
+  ...(isDev ? [] : ["upgrade-insecure-requests"]),
 ].join("; ");
 
 const nextConfig = {
@@ -30,7 +30,7 @@ const nextConfig = {
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+          ...(isDev ? [] : [{ key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" }]),
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
           { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
           { key: "Content-Security-Policy", value: csp },
